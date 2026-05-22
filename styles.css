@@ -383,29 +383,96 @@ body {
 
 .commands-status[hidden] { display: none; }
 
+/* Scrollable container — caps the commands list at ~20 rows tall */
+.commands-scroll {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    max-height: clamp(28rem, 60vh, 40rem);
+    overflow-y: auto;
+    position: relative;
+
+    /* Themed scrollbar — Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--pp-deep) transparent;
+}
+
+/* Themed scrollbar — Webkit */
+.commands-scroll::-webkit-scrollbar { width: 8px; }
+.commands-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-left: 1px solid var(--rule-soft);
+}
+.commands-scroll::-webkit-scrollbar-thumb {
+    background: var(--pp-deep);
+    border-radius: 4px;
+    transition: background 0.18s ease;
+}
+.commands-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--pp-2);
+}
+
+/* Edge fade — soft cue that there's more content below */
+.commands-scroll::after {
+    content: '';
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 1.5rem;
+    margin-top: -1.5rem;
+    background: linear-gradient(180deg, transparent, var(--bg-elevated));
+    pointer-events: none;
+}
+
+.scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+.scroll-hint svg {
+    animation: hint-bob 2.2s ease-in-out infinite;
+}
+
+@keyframes hint-bob {
+    0%, 100% { transform: translateY(0); opacity: 0.7; }
+    50%      { transform: translateY(2px); opacity: 1; }
+}
+
+/* Compact terminal-row style — IRC-log feeling, ~20 visible at a time */
 .commands-list {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
-    gap: 0.75rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .cmd {
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.35rem 1rem;
-    padding: 1rem 1.15rem;
-    background: var(--bg-elevated);
-    border: 1px solid var(--rule-soft);
-    border-radius: 4px;
-    transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+    grid-template-columns: minmax(7rem, 11rem) 1fr auto;
+    align-items: baseline;
+    gap: 0 1.1rem;
+    padding: 0.65rem 1.15rem;
+    border-bottom: 1px solid var(--rule-soft);
+    cursor: pointer;
+    transition: background 0.12s ease;
     position: relative;
-    overflow: hidden;
+}
+
+.cmd:last-child {
+    border-bottom: none;
 }
 
 .cmd::before {
-    /* Left edge accent — appears on hover */
+    /* Left edge accent on hover / expand */
     content: '';
     position: absolute;
     left: 0;
@@ -414,53 +481,46 @@ body {
     width: 2px;
     background: var(--pp-1);
     transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.2s ease;
+    transform-origin: center;
+    transition: transform 0.18s ease;
 }
 
 .cmd:hover,
 .cmd:focus-within {
     background: var(--bg-card);
-    border-color: var(--pp-deep);
-    transform: translateY(-1px);
 }
 
 .cmd:hover::before,
-.cmd:focus-within::before {
+.cmd:focus-within::before,
+.cmd[data-expanded="true"]::before {
     transform: scaleY(1);
 }
 
 .cmd-title {
-    grid-row: 1;
-    grid-column: 1 / -1;
     font-family: var(--font-mono);
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 700;
     color: var(--pp-1);
     letter-spacing: -0.01em;
     word-break: break-all;
+    line-height: 1.4;
 }
 
-.cmd-title { grid-column: 1; }
-
 .cmd-metas {
-    grid-row: 1;
-    grid-column: 2;
     justify-self: end;
-    align-self: center;
     display: inline-flex;
-    gap: 0.35rem;
+    gap: 0.3rem;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
 
 .cmd-meta {
     font-family: var(--font-mono);
-    font-size: 0.62rem;
+    font-size: 0.58rem;
     color: var(--text-faint);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 0.15rem 0.5rem;
+    padding: 0.12rem 0.45rem;
     background: var(--bg-card-hi);
     border: 1px solid transparent;
     border-radius: 2px;
@@ -479,26 +539,51 @@ body {
     border-color: rgba(168, 136, 204, 0.18);
 }
 
+.cmd-response {
+    font-size: 0.88rem;
+    color: var(--text-soft);
+    line-height: 1.45;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.cmd[data-expanded="true"] {
+    background: var(--bg-card);
+}
+
+.cmd[data-expanded="true"] .cmd-response {
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    padding-top: 0.15rem;
+}
+
 .cmd-dynamic-note {
     color: var(--text-mute);
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-variation-settings: 'opsz' 24;
 }
 
-.cmd-row {
-    display: contents;
-}
-
-.cmd-response {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    font-size: 0.94rem;
-    color: var(--text-soft);
-    line-height: 1.5;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+/* On narrow screens, stack title + response */
+@media (max-width: 620px) {
+    .cmd {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 0.2rem 0.6rem;
+    }
+    .cmd-title    { grid-column: 1; grid-row: 1; }
+    .cmd-metas    { grid-column: 2; grid-row: 1; }
+    .cmd-response { grid-column: 1 / -1; grid-row: 2; }
 }
 
 .cmd-response a {
@@ -924,6 +1009,194 @@ input[type="range"]:active::-webkit-slider-thumb {
     }
     .example-arrow { display: none; }
     .examples li::before { right: 0.65rem; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   THEMES
+   ───────────────────────────────────────────────────────────────────────── */
+
+.themes-status {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.themes-status[hidden] { display: none; }
+
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18.5rem), 1fr));
+    gap: 1.1rem;
+}
+
+/* Each card wears its own theme via inline CSS vars set in JS */
+.theme-card {
+    --t-text: #fff;
+    --t-primary: #ce7aff;
+    --t-secondary: #a888cc;
+    --t-bar: #1a1e24;
+    --t-dark: #12161c;
+    --t-light: #1e2430;
+
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(155deg, var(--t-dark) 0%, var(--t-light) 100%);
+    color: var(--t-text);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 5 / 4;
+    min-height: 18rem;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.theme-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 38px -18px rgba(0, 0, 0, 0.7);
+}
+
+/* Top bar mock — mimics the dashboard's navigation strip */
+.theme-card-bar {
+    height: 1.85rem;
+    background: var(--t-bar);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    flex-shrink: 0;
+}
+
+.theme-card-bar::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--t-primary);
+    box-shadow:
+        7px 0 0 0 color-mix(in srgb, var(--t-text) 35%, transparent),
+        14px 0 0 0 color-mix(in srgb, var(--t-text) 35%, transparent);
+}
+
+.theme-card-bar-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--t-text) 12%, transparent), transparent);
+    margin: 0 0.4rem;
+}
+
+.theme-card-bar-tick {
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background: var(--t-secondary);
+    opacity: 0.7;
+}
+
+/* Body — name, button, accent stripe */
+.theme-card-body {
+    flex: 1;
+    padding: 1.1rem 1.15rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    min-height: 0;
+}
+
+.theme-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--t-text) 45%, transparent);
+}
+
+.theme-card-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 2.5vw, 2.1rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--t-text);
+    font-variation-settings: 'opsz' 80, 'SOFT' 30;
+    text-transform: lowercase;
+    margin-top: -0.1rem;
+}
+
+.theme-card-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: auto;
+}
+
+.theme-card-button {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.85rem;
+    background: var(--t-primary);
+    color: var(--t-dark);
+    border-radius: 3px;
+    font-weight: 700;
+    border: none;
+    pointer-events: none; /* decorative */
+}
+
+.theme-card-bar-accent {
+    flex: 1;
+    height: 2px;
+    background: var(--t-secondary);
+    border-radius: 1px;
+    opacity: 0.85;
+}
+
+/* Swatch row — actual hex codes for the design-curious */
+.theme-swatches {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    padding: 0.85rem 1.15rem 1rem;
+    background: color-mix(in srgb, var(--t-dark) 70%, black 30%);
+    border-top: 1px solid color-mix(in srgb, var(--t-text) 6%, transparent);
+}
+
+.theme-swatches li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    min-width: 0;
+}
+
+.theme-swatches .sw-color {
+    width: 100%;
+    height: 1rem;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.theme-swatches .sw-hex {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.02em;
+    color: color-mix(in srgb, var(--t-text) 55%, transparent);
+    line-height: 1;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .theme-card { aspect-ratio: auto; min-height: 17rem; }
 }
 
 /* ─────────────────────────────────────────────────────────────────────────

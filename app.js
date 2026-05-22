@@ -132,10 +132,10 @@
             }
 
             return `
-                <li class="cmd" role="listitem">
+                <li class="cmd" role="listitem" tabindex="0" data-expanded="false">
                     <span class="cmd-title">${titleHi}</span>
-                    ${metaBlock}
                     <p class="cmd-response">${respBody}</p>
+                    ${metaBlock}
                 </li>
             `;
         }).join('');
@@ -263,10 +263,123 @@
     // Boot
     // ──────────────────────────────────────────────────────────────────────
 
+    function wireCommandExpansion() {
+        // Event delegation — click or Enter/Space on any row toggles its expanded state.
+        function toggle(row) {
+            if (!row) return;
+            const cur = row.getAttribute('data-expanded') === 'true';
+            row.setAttribute('data-expanded', cur ? 'false' : 'true');
+        }
+        els.list.addEventListener('click', (e) => {
+            // Don't hijack clicks on links inside the response
+            if (e.target.closest('a')) return;
+            const row = e.target.closest('.cmd');
+            toggle(row);
+        });
+        els.list.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const row = e.target.closest('.cmd');
+            if (!row) return;
+            e.preventDefault();
+            toggle(row);
+        });
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // Themes — load + render
+    // ──────────────────────────────────────────────────────────────────────
+
+    const THEMES_URL = './themes.json';
+
+    const themeEls = {
+        grid:   $('#themes-grid'),
+        status: $('#themes-status')
+    };
+
+    function loadThemes() {
+        return fetch(THEMES_URL, { cache: 'no-cache' })
+            .then((r) => {
+                if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                return r.json();
+            })
+            .then((data) => {
+                themeEls.status.hidden = true;
+                renderThemes(data);
+            })
+            .catch((err) => {
+                console.error('[themes] load failed:', err);
+                themeEls.status.textContent = 'Could not load themes.json.';
+                themeEls.status.style.color = 'var(--cap)';
+            });
+    }
+
+    function renderThemes(themes) {
+        const names = Object.keys(themes);
+        const html = names.map((name, i) => {
+            const t = themes[name];
+            const text  = t['main-text-color']      || '#fff';
+            const pri   = t['primary-color']        || '#888';
+            const sec   = t['secondary-color']      || '#666';
+            const bar   = t['background-bar-color'] || '#1a1a1a';
+            const dark  = t['gradient-dark']        || '#111';
+            const light = t['gradient-light']       || '#222';
+
+            const num = String(i + 1).padStart(2, '0');
+            const swatches = [
+                { label: pri,   color: pri,   key: 'primary' },
+                { label: sec,   color: sec,   key: 'secondary' },
+                { label: bar,   color: bar,   key: 'bar' },
+                { label: dark,  color: dark,  key: 'dark' },
+                { label: light, color: light, key: 'light' }
+            ];
+
+            const style = [
+                `--t-text: ${text}`,
+                `--t-primary: ${pri}`,
+                `--t-secondary: ${sec}`,
+                `--t-bar: ${bar}`,
+                `--t-dark: ${dark}`,
+                `--t-light: ${light}`
+            ].join('; ');
+
+            const swatchHtml = swatches.map((s) => `
+                <li title="${escapeHtml(s.key)} · ${escapeHtml(s.label)}">
+                    <span class="sw-color" style="background: ${escapeHtml(s.color)}"></span>
+                    <span class="sw-hex">${escapeHtml(s.label.toUpperCase())}</span>
+                </li>
+            `).join('');
+
+            return `
+                <article class="theme-card" style="${style}">
+                    <div class="theme-card-bar">
+                        <span class="theme-card-bar-rule"></span>
+                        <span class="theme-card-bar-tick"></span>
+                    </div>
+                    <div class="theme-card-body">
+                        <span class="theme-card-eyebrow">Theme ${num}</span>
+                        <h3 class="theme-card-name">${escapeHtml(name)}</h3>
+                        <div class="theme-card-tools">
+                            <span class="theme-card-button">Action</span>
+                            <span class="theme-card-bar-accent"></span>
+                        </div>
+                    </div>
+                    <ul class="theme-swatches">${swatchHtml}</ul>
+                </article>
+            `;
+        }).join('');
+
+        themeEls.grid.innerHTML = html;
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // Boot
+    // ──────────────────────────────────────────────────────────────────────
+
     function init() {
         // Commands
         if (els.list && els.filter) {
             els.filter.addEventListener('input', onFilterInput);
+            wireCommandExpansion();
             // Cmd/Ctrl+K focuses the filter — a small power-user touch
             document.addEventListener('keydown', (e) => {
                 if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
@@ -282,6 +395,11 @@
         if (calcEls.slider && calcEls.fates) {
             calcEls.slider.addEventListener('input', onSliderChange);
             onSliderChange();
+        }
+
+        // Themes
+        if (themeEls.grid) {
+            loadThemes();
         }
     }
 
