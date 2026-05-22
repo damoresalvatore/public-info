@@ -441,22 +441,51 @@ body {
     word-break: break-all;
 }
 
-.cmd-meta {
+.cmd-title { grid-column: 1; }
+
+.cmd-metas {
     grid-row: 1;
     grid-column: 2;
     justify-self: end;
     align-self: center;
+    display: inline-flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.cmd-meta {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     color: var(--text-faint);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 0.15rem 0.5rem;
     background: var(--bg-card-hi);
+    border: 1px solid transparent;
     border-radius: 2px;
+    white-space: nowrap;
 }
 
-.cmd-title { grid-column: 1; }
+.cmd-meta--dynamic {
+    color: var(--pp-3);
+    background: rgba(206, 122, 255, 0.06);
+    border-color: var(--pp-deep);
+}
+
+.cmd-meta--auto {
+    color: var(--text-mute);
+    background: rgba(168, 136, 204, 0.05);
+    border-color: rgba(168, 136, 204, 0.18);
+}
+
+.cmd-dynamic-note {
+    color: var(--text-mute);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.92rem;
+    font-variation-settings: 'opsz' 24;
+}
 
 .cmd-row {
     display: contents;

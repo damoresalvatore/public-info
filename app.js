@@ -103,18 +103,39 @@
 
         const html = list.map((cmd) => {
             const titleEscaped = escapeHtml(cmd.title);
-            const respEscaped  = escapeHtml(cmd.response || '');
-            const respLinked   = linkify(respEscaped);
             const titleHi      = highlight(titleEscaped, queryEscaped);
-            const respHi       = highlight(respLinked, queryEscaped);
-            const interval     = cmd.interval && cmd.interval !== false
-                ? `<span class="cmd-meta">${escapeHtml(String(cmd.interval))}</span>`
-                : '';
+
+            // Compose meta tags (right-aligned chips: AUTO for interval timers,
+            // DYNAMIC for function-type commands generated at runtime by the bot)
+            const metas = [];
+            if (cmd.type === 'function') {
+                metas.push('<span class="cmd-meta cmd-meta--dynamic">Dynamic</span>');
+            }
+            if (cmd.interval && cmd.interval !== false) {
+                const label = cmd.interval === true ? 'Auto' : `Every ${escapeHtml(String(cmd.interval))}`;
+                metas.push(`<span class="cmd-meta cmd-meta--auto">${label}</span>`);
+            }
+            const metaBlock = metas.length ? `<span class="cmd-metas">${metas.join('')}</span>` : '';
+
+            // Render response. Function commands with empty responses get an
+            // explanatory placeholder instead of looking like broken rows.
+            let respBody;
+            const trimmedResp = (cmd.response || '').trim();
+            if (!trimmedResp && cmd.type === 'function') {
+                respBody = '<em class="cmd-dynamic-note">Bot generates this in real time.</em>';
+            } else if (!trimmedResp) {
+                respBody = '<em class="cmd-dynamic-note">No response set.</em>';
+            } else {
+                const respEscaped = escapeHtml(cmd.response);
+                const respLinked  = linkify(respEscaped);
+                respBody = highlight(respLinked, queryEscaped);
+            }
+
             return `
                 <li class="cmd" role="listitem">
                     <span class="cmd-title">${titleHi}</span>
-                    ${interval}
-                    <p class="cmd-response">${respHi}</p>
+                    ${metaBlock}
+                    <p class="cmd-response">${respBody}</p>
                 </li>
             `;
         }).join('');
