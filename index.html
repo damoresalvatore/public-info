@@ -149,7 +149,7 @@
                         <div class="rule">
                             <dt>Per-target cap</dt>
                             <dd>
-                                <strong>10 minutes</strong> total per stream session.
+                                <strong>30 minutes</strong> total per stream session.
                                 Once they hit the cap, more bits don't buy more time.
                             </dd>
                         </div>
@@ -180,18 +180,17 @@
                             type="range"
                             id="calc-bits"
                             min="0"
-                            max="3000"
+                            max="5000"
                             step="50"
-                            value="500"
+                            value="1000"
                             aria-label="Bits to cheer">
                         <div class="calc-scale" aria-hidden="true">
                             <span>0</span>
-                            <span>500</span>
                             <span>1k</span>
-                            <span>1.5k</span>
                             <span>2k</span>
-                            <span>2.5k</span>
                             <span>3k</span>
+                            <span>4k</span>
+                            <span>5k</span>
                         </div>
                     </div>
 
@@ -219,7 +218,12 @@
                         <li>
                             <code class="example-cmd">!to @rival Cheer1500</code>
                             <span class="example-arrow" aria-hidden="true">→</span>
-                            <span class="example-result">Capped at 10 min. The other 500 bits buy you bragging rights.</span>
+                            <span class="example-result">One target. 30 minutes. The maximum a single cheer can buy.</span>
+                        </li>
+                        <li>
+                            <code class="example-cmd">!to @rival Cheer3000</code>
+                            <span class="example-arrow" aria-hidden="true">→</span>
+                            <span class="example-result">Capped at 30 min. The other 1500 bits buy you bragging rights.</span>
                         </li>
                         <li>
                             <code class="example-cmd">!to @upatree Cheer1000</code>

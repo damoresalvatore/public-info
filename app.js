@@ -175,7 +175,7 @@
     const CALC = {
         // Pulled from collector.js PAID_TIMEOUT_DEFAULTS
         secondsPer100Bits:        120,    // 100 bits = 2 min
-        maxSessionSecondsPerUser: 600,    // per-target cap
+        maxSessionSecondsPerUser: 1800,   // per-target cap (30 min)
         minBitsPerTimeout:        100     // floor per target
     };
 
