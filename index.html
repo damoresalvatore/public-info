@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpATree — Command Index</title>
+    <meta name="description" content="Chat commands and timeout-with-bits reference for the UpATree Twitch channel.">
+    <meta property="og:title" content="UpATree — Command Index">
+    <meta property="og:description" content="The bot's vocabulary, and the price of revenge.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="hero-status" aria-hidden="true">
+                <span class="status-dot"></span>
+                <span class="status-label">UPATREE / PUBLIC INDEX</span>
+                <span class="status-sep">·</span>
+                <span class="status-meta">v1 · updated <time datetime="2026-05-21">21 MAY 2026</time></span>
+            </div>
+
+            <h1 class="display-title">
+                <span class="display-line">The bot's</span>
+                <span class="display-line">vocabulary,</span>
+                <span class="display-line display-line--alt">and the price</span>
+                <span class="display-line display-line--alt">of revenge.</span>
+            </h1>
+
+            <nav class="hero-nav" aria-label="Sections">
+                <a href="#commands">
+                    <span class="nav-num">01</span>
+                    <span class="nav-label">Chat Commands</span>
+                </a>
+                <a href="#timeout">
+                    <span class="nav-num">02</span>
+                    <span class="nav-label">Timeout with Bits</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="hero-rail" aria-hidden="true">
+            <div class="rail-mark">A</div>
+            <div class="rail-line"></div>
+            <div class="rail-mark">Z</div>
+        </div>
+    </header>
+
+    <main>
+        <section id="commands" class="section section--commands">
+            <header class="section-head">
+                <div class="section-eyebrow">
+                    <span class="eyebrow-num">/01</span>
+                    <span class="eyebrow-rule"></span>
+                </div>
+                <h2 class="section-title">Chat Commands</h2>
+                <p class="section-lede">
+                    Anything chat-typeable that the bot responds to. Type the trigger in chat
+                    and the bot answers in kind. Search to narrow the list.
+                </p>
+            </header>
+
+            <div class="filter-bar">
+                <label class="filter-label" for="filter-input">
+                    <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+                        <circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="13.5" y1="13.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Filter
+                </label>
+                <input
+                    id="filter-input"
+                    type="search"
+                    autocomplete="off"
+                    placeholder="!bttv, money, code..."
+                    spellcheck="false">
+                <output class="filter-count" id="filter-count" for="filter-input">—</output>
+            </div>
+
+            <div class="commands-status" id="commands-status" role="status" aria-live="polite">
+                Loading commands…
+            </div>
+
+            <ul class="commands-list" id="commands-list" role="list"></ul>
+
+            <p class="empty-state" id="empty-state" hidden>
+                Nothing matches that filter. Try a shorter query.
+            </p>
+        </section>
+
+        <section id="timeout" class="section section--timeout">
+            <header class="section-head">
+                <div class="section-eyebrow">
+                    <span class="eyebrow-num">/02</span>
+                    <span class="eyebrow-rule"></span>
+                </div>
+                <h2 class="section-title">Timeout with Bits</h2>
+                <p class="section-lede">
+                    A self-hosted replacement for the long-dead timeoutwithbits.com.
+                    Cheer bits in chat to time someone out. Cap your malice at three users.
+                </p>
+            </header>
+
+            <div class="timeout-grid">
+                <article class="card rules-card">
+                    <header class="card-head">
+                        <span class="card-tag">Rules</span>
+                        <h3 class="card-title">The Conditions</h3>
+                    </header>
+                    <dl class="rules-list">
+                        <div class="rule">
+                            <dt>Trigger</dt>
+                            <dd>
+                                Use <code>!to</code>, <code>!timeout</code>, or <code>!timeoutwithbits</code>
+                                as the first word, then <code>@</code>-mention up to three users, then cheer.
+                            </dd>
+                        </div>
+                        <div class="rule">
+                            <dt>Rate</dt>
+                            <dd><strong>100 bits</strong> buys <strong>2 minutes</strong>. Linear from there.</dd>
+                        </div>
+                        <div class="rule">
+                            <dt>Minimum</dt>
+                            <dd>100 bits per target. Below that, nothing happens.</dd>
+                        </div>
+                        <div class="rule">
+                            <dt>Max targets</dt>
+                            <dd>Three per command. Bits are split evenly across all targets.</dd>
+                        </div>
+                        <div class="rule">
+                            <dt>Per-target cap</dt>
+                            <dd>
+                                <strong>10 minutes</strong> total per stream session.
+                                Once they hit the cap, more bits don't buy more time.
+                            </dd>
+                        </div>
+                        <div class="rule">
+                            <dt>Immunity</dt>
+                            <dd>VIPs cannot be timed out. Mods and the broadcaster either.</dd>
+                        </div>
+                        <div class="rule">
+                            <dt>Anonymous</dt>
+                            <dd>Anonymous cheerers can't initiate. Show your face.</dd>
+                        </div>
+                    </dl>
+                </article>
+
+                <article class="card calc-card">
+                    <header class="card-head">
+                        <span class="card-tag">Calculator</span>
+                        <h3 class="card-title">Three Fates</h3>
+                        <p class="card-sub">Slide. See what your cheer buys.</p>
+                    </header>
+
+                    <div class="calc-input">
+                        <label for="calc-bits">
+                            <span>Bits to cheer</span>
+                            <span class="calc-value" id="calc-value">500</span>
+                        </label>
+                        <input
+                            type="range"
+                            id="calc-bits"
+                            min="0"
+                            max="3000"
+                            step="50"
+                            value="500"
+                            aria-label="Bits to cheer">
+                        <div class="calc-scale" aria-hidden="true">
+                            <span>0</span>
+                            <span>500</span>
+                            <span>1k</span>
+                            <span>1.5k</span>
+                            <span>2k</span>
+                            <span>2.5k</span>
+                            <span>3k</span>
+                        </div>
+                    </div>
+
+                    <div class="fates" id="fates">
+                        <!-- Rendered by app.js -->
+                    </div>
+                </article>
+
+                <article class="card examples-card">
+                    <header class="card-head">
+                        <span class="card-tag">Field Notes</span>
+                        <h3 class="card-title">Worked Examples</h3>
+                    </header>
+                    <ol class="examples">
+                        <li>
+                            <code class="example-cmd">!to @viewer Cheer200</code>
+                            <span class="example-arrow" aria-hidden="true">→</span>
+                            <span class="example-result">One target. 4 minutes. Clean.</span>
+                        </li>
+                        <li>
+                            <code class="example-cmd">!to @a @b @c Cheer600</code>
+                            <span class="example-arrow" aria-hidden="true">→</span>
+                            <span class="example-result">Three targets. 200 bits each, 4 minutes apiece.</span>
+                        </li>
+                        <li>
+                            <code class="example-cmd">!to @rival Cheer1500</code>
+                            <span class="example-arrow" aria-hidden="true">→</span>
+                            <span class="example-result">Capped at 10 min. The other 500 bits buy you bragging rights.</span>
+                        </li>
+                        <li>
+                            <code class="example-cmd">!to @upatree Cheer1000</code>
+                            <span class="example-arrow" aria-hidden="true">→</span>
+                            <span class="example-result">Nothing. The broadcaster is immune. Aim lower.</span>
+                        </li>
+                    </ol>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-mark">UPT</span>
+            <span class="footer-text">
+                Built by
+                <a href="https://twitch.tv/upatree" rel="noopener">UpATree</a>
+                · twitch.tv/upatree
+            </span>
+            <span class="footer-meta" aria-hidden="true">END / TRANSMISSION</span>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

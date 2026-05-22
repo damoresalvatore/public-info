@@ -1,0 +1,76 @@
+{
+  "commands": [
+    {
+      "title": "!ban",
+      "response": "All the mods are fucking stoners, your van will get back to you in 3-5 business days.",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!bmr",
+      "response": "So let me tell you a little bit about Earthbound... Kappa",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!bongo",
+      "response": "Well, at least you didn't lose 45 minutes to Bongo Bongo again... Kappa",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!bridge",
+      "response": "Hey Sal, remember that time you had to make that bridge jump? salHeh",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!bttv",
+      "response": "Awesome extension/addon that hosts custom emotes for channels. If you want to enjoy the salHeh salPleb salLOL salBlocked salOut head over to http://nightdev.com/betterttv/",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!feefees",
+      "response": "MUH FEEFEES",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!info",
+      "response": "Find out more about us in the squares below!",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!mionixcode",
+      "response": "Use code #Kaboom! to get 10% off your next mionix purchase :D",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!money",
+      "response": "BITCH BETTA HAVE MY MUNNAY",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!nightbot",
+      "response": "Officially dead. RIP Nightbot",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!nr",
+      "response": "no rush BabyRage",
+      "type": "text",
+      "interval": false
+    },
+    {
+      "title": "!obsmod",
+      "response": "http://www.teamliquid.net/forum/starcraft-2/427113-new-sc2-ui-mod-standard-enchanced",
+      "type": "text",
+      "interval": false
+    }
+  ]
+}
