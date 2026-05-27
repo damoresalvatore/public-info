@@ -324,7 +324,7 @@
             const dark  = t['gradient-dark']        || '#111';
             const light = t['gradient-light']       || '#222';
 
-            const num = String(i + 1).padStart(2, '0');
+            const num = String(i).padStart(2, '0');
             const swatches = [
                 { label: pri,   color: pri,   key: 'primary' },
                 { label: sec,   color: sec,   key: 'secondary' },
