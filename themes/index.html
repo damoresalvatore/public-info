@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream themes · UpATree</title>
+    <meta name="description" content="Every color theme the UpATree overlay ships with.">
+    <meta property="og:title" content="Stream themes · UpATree">
+    <meta property="og:description" content="Every color theme the UpATree overlay ships with.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="themes">
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar" id="topbar"></header>
+
+    <main>
+        <section id="themes" class="section section--page section--themes">
+            <header class="section-head">
+                <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+                <h1 class="section-title">Stream Themes</h1>
+                <p class="section-lede">
+                    Every theme the dashboard ships with. Each card is rendered in
+                    its own colors — what you see is what the stream wears when it's on.
+                </p>
+            </header>
+
+            <div class="themes-status" id="themes-status" role="status" aria-live="polite">
+                Loading themes…
+            </div>
+
+            <div class="themes-grid" id="themes-grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="../site.js"></script>
+    <script src="../app.js" defer></script>
+</body>
+</html>

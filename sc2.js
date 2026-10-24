@@ -7,7 +7,8 @@
 (function () {
     'use strict';
 
-    const BASE = './sc2/';
+    // sc2/ sits next to this script, whichever page loads it.
+    const BASE = new URL('sc2/', document.currentScript.src).href;
     const CHART_MONTHS = 6;
     const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const GRADES = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D', 'F'];
