@@ -13,6 +13,8 @@ Live at: **https://&lt;your-github-username&gt;.github.io/public-info/**
 | `styles.css` | All visual styling. Dark theme, purple accents, Fraunces + DM Sans + JetBrains Mono via Google Fonts. |
 | `app.js` | Loads `commands.json` at page load, renders the list, wires up the filter input and the calculator. |
 | `commands.json` | Source of truth for the command list. Shape: `{ "commands": [ { "title": "!cmd", "response": "...", "type": "text", "interval": false }, ... ] }`. |
+| `sc2.js` | Renders the SC2 Games section from `sc2/`. |
+| `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit by hand. |
 
 No build step. No framework. No npm. GitHub Pages serves the files as-is.
 
