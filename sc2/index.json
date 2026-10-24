@@ -1,9 +1,9 @@
 {
-  "games": 7554,
-  "wins": 3738,
-  "losses": 3816,
+  "games": 7680,
+  "wins": 3796,
+  "losses": 3884,
   "first_game": "2024-12-12T21:52:50Z",
-  "last_game": "2026-10-09T21:19:01Z",
+  "last_game": "2026-10-24T13:14:54Z",
   "columns": [
     "game_id",
     "time_utc",
@@ -35,13 +35,13 @@
   "files": [
     {
       "name": "all.csv",
-      "games": 7554,
-      "bytes": 933999
+      "games": 7680,
+      "bytes": 953897
     },
     {
       "name": "all.json",
-      "games": 7554,
-      "bytes": 4871500
+      "games": 7680,
+      "bytes": 5020167
     }
   ],
   "months": [
@@ -223,11 +223,11 @@
     },
     {
       "month": "2026-10",
-      "games": 74,
-      "wins": 40,
-      "losses": 34,
-      "csv_bytes": 11491,
-      "json_bytes": 88050
+      "games": 200,
+      "wins": 98,
+      "losses": 102,
+      "csv_bytes": 31389,
+      "json_bytes": 236717
     }
   ]
 }
