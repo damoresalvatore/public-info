@@ -1,26 +1,43 @@
 # public-info
 
-Public reference page for the UpATree Twitch channel. Hosts the bot command index and the rules for cheering bits to time someone out.
+Public info site for the UpATree Twitch channel: the bot's chat commands, the timeout-with-bits rules, the stream themes, every SC2 ladder game, and the files behind them.
 
-Live at: **https://&lt;your-github-username&gt;.github.io/public-info/**
-(after the GitHub Pages setup step below).
+Live at: **https://damoresalvatore.github.io/public-info/**
 
 ## What's here
 
+Each section is its own page in its own folder. The home page lists them, grouped by where a viewer meets them.
+
 | File | What it does |
 |---|---|
-| `index.html` | The page itself. Two sections: Chat Commands and Timeout with Bits. |
+| `index.html` | Home: a short intro and a card for every section. |
+| `commands/index.html` | Chat commands, searchable. |
+| `sc2/index.html` | SC2 games: stats, MMR chart, games by month, downloads. |
+| `timeout/index.html` | Timeout with bits: rules, calculator, examples. |
+| `themes/index.html` | Every stream theme, drawn in its own colors. |
+| `data/index.html` | Open data: every downloadable file in one list. |
+| `site.js` | The list of sections. Draws the top bar, breadcrumbs, footer sitemap and the home page cards from it. |
 | `styles.css` | All visual styling. Dark theme, purple accents, Fraunces + DM Sans + JetBrains Mono via Google Fonts. |
-| `app.js` | Loads `commands.json` at page load, renders the list, wires up the filter input and the calculator. |
+| `app.js` | Commands list and filter, the bits calculator, and the theme cards. Each part runs only on the page that has it. |
+| `sc2.js` | Renders the SC2 page from `sc2/`. |
+| `data.js` | Renders the open data list from `sc2/index.json`. |
 | `commands.json` | Source of truth for the command list. Shape: `{ "commands": [ { "title": "!cmd", "response": "...", "type": "text", "interval": false }, ... ] }`. |
-| `sc2.js` | Renders the SC2 Games section from `sc2/`. |
-| `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit by hand. |
+| `themes.json` | Every theme and its colors. |
+| `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit the data files by hand. `sc2/index.html` is the page and is safe to edit. |
+
+The scripts find the data files relative to their own location, and `site.js` builds every link from its own location, so the site works under `/public-info/` today and at the root of a custom domain later.
+
+## Adding a section
+
+1. Copy one of the section folders, say `themes/`, to a new folder and change its content.
+2. Add one entry to `SECTIONS` in `site.js` (and a new group to `GROUPS` if it needs one).
+3. Push. The top bar, the home card and the footer link show up on every page.
 
 No build step. No framework. No npm. GitHub Pages serves the files as-is.
 
 ## Updating the command list
 
-The page reads `commands.json` from this same directory at load time. To update what visitors see:
+The Commands page reads `commands.json` from the site root at load time. To update what visitors see:
 
 1. Edit `commands.json` directly, or copy a fresh export from the private Overlay repo's `Bot/commands.json`.
 2. `git commit` and `git push`.
@@ -30,7 +47,7 @@ The page sorts commands alphabetically by title and supports live search across 
 
 ## Updating the Timeout with Bits rules
 
-The rules are baked into `index.html` (the static "Rules" card) and `app.js` (the calculator math, in the `CALC` object near the top). If the collector's `PAID_TIMEOUT_DEFAULTS` change, update both — they should stay in sync.
+The rules are baked into `timeout/index.html` (the static "Rules" card) and `app.js` (the calculator math, in the `CALC` object near the top). If the collector's `PAID_TIMEOUT_DEFAULTS` change, update both — they should stay in sync.
 
 Current constants mirror collector.js:
 ```
@@ -52,14 +69,14 @@ That's it.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or for proper fetch behavior:
+Serve the folder with any static server:
 
 ```bash
 python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
-Without a local server, the `fetch('./commands.json')` call fails in some browsers due to `file://` CORS rules.
+Opening `index.html` straight from disk doesn't work well: the data fetches fail under `file://`, and folder links like `commands/` don't open their `index.html`.
 
 ## Notes
 

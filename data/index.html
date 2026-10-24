@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open data · UpATree</title>
+    <meta name="description" content="Every downloadable file on the UpATree info site: SC2 games, chat commands and themes.">
+    <meta property="og:title" content="Open data · UpATree">
+    <meta property="og:description" content="Every downloadable file on the UpATree info site: SC2 games, chat commands and themes.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="data">
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar" id="topbar"></header>
+
+    <main>
+        <section id="data" class="section section--page section--data">
+            <header class="section-head">
+                <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+                <h1 class="section-title">Open Data</h1>
+                <p class="section-lede">
+                    Every file behind the site, free to download. Times are UTC.
+                    The SC2 files are rebuilt every night.
+                </p>
+            </header>
+
+            <div class="themes-status" id="data-status" role="status" aria-live="polite">
+                Loading files…
+            </div>
+
+            <article class="card" id="data-body" hidden>
+                <div class="sc2-tablewrap">
+                    <table class="sc2-table">
+                        <thead>
+                            <tr><th>Section</th><th>File</th><th>What it is</th><th>Size</th><th></th></tr>
+                        </thead>
+                        <tbody id="data-rows"></tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="../site.js"></script>
+    <script src="../data.js" defer></script>
+</body>
+</html>

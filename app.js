@@ -10,6 +10,9 @@
     // Utilities
     // ──────────────────────────────────────────────────────────────────────
 
+    // Data files sit next to this script, whichever page loads it.
+    const BASE = new URL('.', document.currentScript.src);
+
     const $  = (sel, root) => (root || document).querySelector(sel);
     const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
 
@@ -58,7 +61,7 @@
     // Commands — load + render + filter
     // ──────────────────────────────────────────────────────────────────────
 
-    const COMMANDS_URL = './commands.json';
+    const COMMANDS_URL = new URL('commands.json', BASE);
     let allCommands = [];
 
     const els = {
@@ -86,7 +89,7 @@
             })
             .catch((err) => {
                 console.error('[commands] load failed:', err);
-                els.status.textContent = 'Could not load commands.json — check the file is committed alongside index.html.';
+                els.status.textContent = 'Could not load commands.json — check the file is committed alongside app.js.';
                 els.status.style.color = 'var(--cap)';
             });
     }
@@ -289,7 +292,7 @@
     // Themes — load + render
     // ──────────────────────────────────────────────────────────────────────
 
-    const THEMES_URL = './themes.json';
+    const THEMES_URL = new URL('themes.json', BASE);
 
     const themeEls = {
         grid:   $('#themes-grid'),
