@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream stats · UpATree</title>
+    <meta name="description" content="Leaderboards, records and charts from the UpATree stream: SC2, Break Time, predictions, timeouts and Pokemon.">
+    <meta property="og:title" content="Stream stats · UpATree">
+    <meta property="og:description" content="Leaderboards, records and charts from the UpATree stream: SC2, Break Time, predictions, timeouts and Pokemon.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../stats.css">
+</head>
+<body data-page="stats">
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar" id="topbar"></header>
+
+    <main>
+        <section class="section section--page st">
+            <header class="section-head">
+                <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
+                <h1 class="section-title">Stream stats</h1>
+                <p class="section-lede">Leaderboards, records and charts from the stream, rebuilt every night.</p>
+            </header>
+            <nav class="subtabs" aria-label="Stats sections">
+                <a href="#sc2" style="--c:var(--c-sc2)"><i></i>SC2</a>
+                <a href="#bt" style="--c:var(--c-bt)"><i></i>Break Time</a>
+                <a href="#pred" style="--c:var(--c-pred)"><i></i>Predictions</a>
+                <a href="#to" style="--c:var(--c-to)"><i></i>Timeouts</a>
+                <a href="#pk" style="--c:var(--c-pk)"><i></i>Pokemon</a>
+            </nav>
+<section class="panel" id="p-sc2" role="tabpanel" hidden>
+      <div class="dhead">
+        <span class="label" style="color:var(--c-sc2)">StarCraft II</span>
+        <h2 id="sc2-title"></h2>
+        <p id="sc2-sub"></p>
+      </div>
+
+      <div class="box">
+        <div class="boxhead"><h3>MMR over time</h3><span class="label">EU Terran, end of each week</span></div>
+        <div id="sc2mmr"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Matchups</h3><span class="label">EU Terran win rate</span></div>
+        <div class="mus" id="sc2mu"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Rivals and maps</h3><span class="label">games played</span></div>
+        <div class="fly" id="sc2boards"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Records</h3><span class="label">all time</span></div>
+        <div class="recs" id="sc2recs"></div>
+      </div>
+
+      <a class="box datalink" style="margin-top:1.1rem;--c-sc2:#7cb8ff" href="../sc2/">
+        <div><h3>Every game, downloadable</h3><p class="note" style="margin:.3rem 0 0">The full table and the CSV and JSON files live on the SC2 games page.</p></div>
+        <span class="btn">Open SC2 games →</span>
+      </a>
+    </section>
+<section class="panel" id="p-bt" role="tabpanel" hidden>
+      <div class="dhead">
+        <span class="label" style="color:var(--c-bt)">Break Time</span>
+        <h2 id="bt-title"></h2>
+        <p>The between-games phrase guessing game. Letters fill in over time, and the first viewer to type the phrase wins the round. Phrases stay secret, so only who, how fast, and how much was showing are published.</p>
+      </div>
+
+      <div class="box">
+        <div class="boxhead"><h3>Top Guesser Leaderboard</h3><button class="btn" id="bttoggle" type="button">Show top 25</button></div>
+        <div class="board" id="btboard" style="--c:var(--c-bt)"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Records</h3><span class="label">all time</span></div>
+        <div class="recs" id="btrecs"></div>
+      </div>
+
+      <div class="grid2 two">
+        <div class="box">
+          <div class="boxhead"><h3>Letters showing at the solve</h3></div>
+          <p class="note">How much of the phrase was revealed when someone got it. Bars further left are solves with fewer letters showing.</p>
+          <div id="btshown"></div>
+        </div>
+        <div class="box">
+          <div class="boxhead"><h3>How close the snipes were</h3></div>
+          <p class="note">A snipe is winning a round when someone else typed the answer right behind you. This is how close each one was.</p>
+          <div id="btmonthly"></div>
+        </div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Latest games</h3><span class="label">round by round</span></div>
+        <div class="games" id="btgames"></div>
+      </div>
+      <p class="foot">Rounds before October have estimated times, so solve-time records count October onward.</p>
+    </section>
+<section class="panel" id="p-pred" role="tabpanel" hidden>
+      <div class="dhead">
+        <span class="label" style="color:var(--c-pred)">Predictions</span>
+        <h2 id="pred-title"></h2>
+        <p>Every prediction resolved on stream, with the top 10 predictors on each outcome as reported by Twitch. Smaller bets aren't recorded, so totals lean toward the big spenders.</p>
+        <div class="scope" role="group" aria-label="Time range">
+          <button type="button" aria-pressed="true">All time</button>
+          <button type="button" disabled title="Not wired up in the mockup">30 days</button>
+          <button type="button" disabled title="Not wired up in the mockup">7 days</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="boxhead"><h3>Top Predictor Leaderboard</h3><button class="btn" id="flytoggle" type="button">Show top 25</button></div>
+        <div class="fly" id="fly"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Points on the line, by month</h3><span class="label">channel points bet each month, 2026</span></div>
+        <div id="monthly"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Biggest pots</h3><span class="label">points · winning outcome</span></div>
+        <div class="pots" id="pots"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Records</h3><span class="label">all time</span></div>
+        <div class="recs" id="recs"></div>
+      </div>
+    </section>
+<section class="panel" id="p-to" role="tabpanel" hidden>
+      <div class="dhead">
+        <span class="label" style="color:var(--c-to)">Timeouts</span>
+        <h2 id="to-title"></h2>
+        <p>Viewers can spend bits to time each other out. These are the people who end up in the box most, and the people paying to put them there.</p>
+      </div>
+
+      <div class="box">
+        <div class="boxhead"><h3>Timeout Leaderboard</h3>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+            <div class="scope" role="group" aria-label="Rank by" id="toscope">
+              <button type="button" aria-pressed="true" data-by="T">Time</button>
+              <button type="button" aria-pressed="false" data-by="C">Count</button>
+            </div>
+            <button class="btn" id="totoggle" type="button">Show top 25</button>
+          </div>
+        </div>
+        <div class="fly" id="toboards"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Timeouts by month</h3></div>
+        <div id="tomonthly"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Rowdiest streams</h3><span class="label">timeouts · time · people</span></div>
+        <div class="pots" id="tostreams"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Records</h3><span class="label">all time</span></div>
+        <div class="recs" id="torecs"></div>
+      </div>
+    </section>
+<section class="panel" id="p-pk" role="tabpanel" hidden>
+      <div class="dhead">
+        <span class="label" style="color:var(--c-pk)">Pokemon</span>
+        <h2 id="pk-title"></h2>
+        <p id="pk-sub"></p>
+      </div>
+
+      <div class="box">
+        <div class="boxhead"><h3>How far each run got</h3></div>
+        <p class="note">Every attempt this season, oldest on the left. Bar height is the highest level anyone in the party reached before the wipe.</p>
+        <div id="pkruns"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Viewer Leaderboard</h3><button class="btn" id="pktoggle" type="button">Show top 25</button></div>
+        <div class="fly" id="pkboards"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Where they fall</h3><span class="label">deaths</span></div>
+        <div class="fly" id="pkdeadly"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Records</h3><span class="label">this season</span></div>
+        <div class="recs" id="pkrecs"></div>
+      </div>
+
+      <div class="box" style="margin-top:1.1rem">
+        <div class="boxhead"><h3>Graveyard</h3><span class="label">most recent first</span></div>
+        <div class="grave" id="pkgrave"></div>
+      </div>
+    </section>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="../site.js"></script>
+    <script src="../stats.js"></script>
+</body>
+</html>

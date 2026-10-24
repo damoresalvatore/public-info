@@ -1,6 +1,6 @@
 # public-info
 
-Public info site for the UpATree Twitch channel: the bot's chat commands, the timeout-with-bits rules, the stream themes, every SC2 ladder game, and the files behind them.
+Public info site for the UpATree Twitch channel: stream stats, the bot's chat commands, the timeout-with-bits rules, the stream themes, every SC2 ladder game, and the files behind them.
 
 Live at: **https://damoresalvatore.github.io/public-info/**
 
@@ -10,7 +10,8 @@ Each section is its own page in its own folder. The home page lists them, groupe
 
 | File | What it does |
 |---|---|
-| `index.html` | Home: a short intro and a card for every section. |
+| `index.html` | Home: a short intro, the headline stats and a shuffle of fun facts, and a card for every section. |
+| `stats/index.html` | Stream stats: SC2, Break Time, Predictions, Timeouts and Pokemon tabs (`#sc2`, `#bt`, ...). |
 | `commands/index.html` | Chat commands, searchable. |
 | `sc2/index.html` | SC2 games: stats, MMR chart, games by month, downloads. |
 | `timeout/index.html` | Timeout with bits: rules, calculator, examples. |
@@ -20,10 +21,13 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `styles.css` | All visual styling. Dark theme, purple accents, Fraunces + DM Sans + JetBrains Mono via Google Fonts. |
 | `app.js` | Commands list and filter, the bits calculator, and the theme cards. Each part runs only on the page that has it. |
 | `sc2.js` | Renders the SC2 page from `sc2/`. |
+| `stats.js`, `stats.css` | Render the Stats page from `stats/stats.json`. |
+| `home-stats.js` | The home page's headline numbers and fun facts, from `stats/stats.json`. |
 | `data.js` | Renders the open data list from `sc2/index.json`. |
 | `commands.json` | Source of truth for the command list. Shape: `{ "commands": [ { "title": "!cmd", "response": "...", "type": "text", "interval": false }, ... ] }`. |
 | `themes.json` | Every theme and its colors. |
 | `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit the data files by hand. `sc2/index.html` is the page and is safe to edit. |
+| `stats/stats.json` | The summarized stats behind the Stats page and the home page facts. Rebuilt and pushed nightly by `scripts/export-stats.js` (run from `export-sc2.sh`) on the Overlay box; don't edit it by hand. |
 
 The scripts find the data files relative to their own location, and `site.js` builds every link from its own location, so the site works under `/public-info/` today and at the root of a custom domain later.
 

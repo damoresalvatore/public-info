@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stats.css">
 </head>
 <body data-page="home">
     <div class="grain" aria-hidden="true"></div>
@@ -24,14 +25,20 @@
         <section class="home-hero">
             <h1 class="home-title">The stream's <em>public record.</em></h1>
             <p class="home-lede">
-                What the bot says, what bits buy, what the overlay looks like, and every
-                ladder game since December 2024. The game data updates every night.
+                Leaderboards, records and fun facts from every corner of the stream, plus
+                what the bot says, what bits buy and how the overlay looks. Rebuilt every night.
             </p>
-            <p class="home-facts" id="home-facts" hidden>
-                <span><b data-fact="games"></b> SC2 games</span>
-                <span><b data-fact="winrate"></b> win rate</span>
-                <span>last game <b data-fact="last"></b></span>
-            </p>
+
+        </section>
+
+        <section class="home-stats st" aria-label="Stream stats">
+            <div class="headline" id="headline"></div>
+      <div class="sumhead">
+        <h2>Fun facts</h2>
+        <button class="btn" id="shuffle" type="button">Shuffle ↻</button>
+      </div>
+      <div class="facts" id="cards"></div>
+            <p class="foot">A different handful each visit. <a href="stats/">All the stats →</a></p>
         </section>
 
         <div class="home-groups" id="home-groups"></div>
@@ -40,6 +47,7 @@
     <footer class="footer" id="footer"></footer>
 
     <script src="site.js"></script>
+    <script src="home-stats.js"></script>
     
 </body>
 </html>
