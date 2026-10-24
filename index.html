@@ -47,6 +47,10 @@
                     <span class="nav-num">03</span>
                     <span class="nav-label">Stream Themes</span>
                 </a>
+                <a href="#sc2">
+                    <span class="nav-num">04</span>
+                    <span class="nav-label">SC2 Games</span>
+                </a>
             </nav>
         </div>
 
@@ -254,6 +258,84 @@
 
             <div class="themes-grid" id="themes-grid"></div>
         </section>
+
+        <section id="sc2" class="section section--sc2">
+            <header class="section-head">
+                <div class="section-eyebrow">
+                    <span class="eyebrow-num">/04</span>
+                    <span class="eyebrow-rule"></span>
+                </div>
+                <h2 class="section-title">SC2 Games</h2>
+                <p class="section-lede">
+                    Every 1v1 game since the tracker started, with MMR, the tracker's grade,
+                    and the replay metrics. Rebuilt every night. Grab the whole set or one
+                    month as CSV or JSON and do your own math.
+                </p>
+            </header>
+
+            <div class="themes-status" id="sc2-status" role="status" aria-live="polite">
+                Loading games…
+            </div>
+
+            <div id="sc2-body" hidden>
+                <div class="sc2-strip" id="sc2-strip"></div>
+
+                <div class="sc2-grid">
+                    <article class="card sc2-chart">
+                        <header class="card-head sc2-head">
+                            <h3 class="card-title" id="sc2-mmr-title">MMR</h3>
+                            <span class="sc2-label" id="sc2-mmr-sub"></span>
+                        </header>
+                        <div id="sc2-mmr"></div>
+                    </article>
+                    <article class="card">
+                        <header class="card-head sc2-head">
+                            <h3 class="card-title">Matchups</h3>
+                            <span class="sc2-label">last 6 months, main race</span>
+                        </header>
+                        <div class="sc2-bars" id="sc2-mu"></div>
+                        <div class="sc2-sub">
+                            <span class="sc2-label">Grades, last 6 months</span>
+                            <div class="sc2-grades" id="sc2-grades"></div>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="card sc2-wide">
+                    <header class="card-head sc2-head">
+                        <h3 class="card-title">Games by month</h3>
+                        <button type="button" class="sc2-toggle" id="sc2-offrace" aria-pressed="true">Off-race games: shown</button>
+                    </header>
+                    <div class="sc2-months" id="sc2-months" role="group" aria-label="Month"></div>
+                    <div class="sc2-tablewrap">
+                        <table class="sc2-table">
+                            <thead>
+                                <tr><th>Ended (UTC)</th><th>Result</th><th>Map</th><th>Matchup</th><th>Opponent</th><th>MMR</th><th>±</th><th>Length</th><th>Grade</th><th>Region</th></tr>
+                            </thead>
+                            <tbody id="sc2-rows"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="card sc2-wide">
+                    <header class="card-head sc2-head">
+                        <h3 class="card-title">Download the data</h3>
+                        <span class="sc2-label" id="sc2-dl-meta"></span>
+                    </header>
+                    <div class="sc2-dls" id="sc2-dls"></div>
+                    <details class="sc2-details">
+                        <summary class="sc2-label">What one game looks like</summary>
+                        <pre class="sc2-pre" id="sc2-sample"></pre>
+                    </details>
+                    <p class="sc2-fine">
+                        Files are <code>sc2/all.csv</code>, <code>sc2/all.json</code>, one
+                        <code>sc2/games-YYYY-MM</code> pair per month, and <code>sc2/index.json</code>
+                        with the totals and file list. Times are UTC, when the game ended. MMR is going
+                        into the game; MMR after is an estimate until the next game confirms it.
+                    </p>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -269,5 +351,6 @@
     </footer>
 
     <script src="app.js" defer></script>
+    <script src="sc2.js" defer></script>
 </body>
 </html>

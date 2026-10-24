@@ -1,0 +1,233 @@
+{
+  "games": 7554,
+  "wins": 3738,
+  "losses": 3816,
+  "first_game": "2024-12-12T21:52:50Z",
+  "last_game": "2026-10-09T21:19:01Z",
+  "columns": [
+    "game_id",
+    "time_utc",
+    "hero_name",
+    "hero_race",
+    "hero_mmr",
+    "region",
+    "account",
+    "villain_name",
+    "villain_race",
+    "villain_mmr",
+    "map",
+    "duration_sec",
+    "outcome",
+    "off_race",
+    "hero_mmr_after",
+    "grade",
+    "grade_score",
+    "sq",
+    "supply_block_sec",
+    "avg_supply_cushion",
+    "workers_built",
+    "army_efficiency",
+    "spending_ratio",
+    "income_vs_opponent",
+    "avg_unspent",
+    "race_mechanic_rate"
+  ],
+  "files": [
+    {
+      "name": "all.csv",
+      "games": 7554,
+      "bytes": 933999
+    },
+    {
+      "name": "all.json",
+      "games": 7554,
+      "bytes": 4871500
+    }
+  ],
+  "months": [
+    {
+      "month": "2024-12",
+      "games": 81,
+      "wins": 39,
+      "losses": 42,
+      "csv_bytes": 9590,
+      "json_bytes": 44689
+    },
+    {
+      "month": "2025-01",
+      "games": 374,
+      "wins": 190,
+      "losses": 184,
+      "csv_bytes": 43421,
+      "json_bytes": 206689
+    },
+    {
+      "month": "2025-02",
+      "games": 630,
+      "wins": 311,
+      "losses": 319,
+      "csv_bytes": 73217,
+      "json_bytes": 348657
+    },
+    {
+      "month": "2025-03",
+      "games": 703,
+      "wins": 330,
+      "losses": 373,
+      "csv_bytes": 81934,
+      "json_bytes": 390311
+    },
+    {
+      "month": "2025-04",
+      "games": 224,
+      "wins": 101,
+      "losses": 123,
+      "csv_bytes": 26417,
+      "json_bytes": 124175
+    },
+    {
+      "month": "2025-05",
+      "games": 166,
+      "wins": 78,
+      "losses": 88,
+      "csv_bytes": 19519,
+      "json_bytes": 91763
+    },
+    {
+      "month": "2025-06",
+      "games": 358,
+      "wins": 187,
+      "losses": 171,
+      "csv_bytes": 41867,
+      "json_bytes": 198123
+    },
+    {
+      "month": "2025-07",
+      "games": 425,
+      "wins": 200,
+      "losses": 225,
+      "csv_bytes": 49182,
+      "json_bytes": 235093
+    },
+    {
+      "month": "2025-08",
+      "games": 352,
+      "wins": 178,
+      "losses": 174,
+      "csv_bytes": 40191,
+      "json_bytes": 194641
+    },
+    {
+      "month": "2025-09",
+      "games": 491,
+      "wins": 250,
+      "losses": 241,
+      "csv_bytes": 58095,
+      "json_bytes": 271760
+    },
+    {
+      "month": "2025-10",
+      "games": 350,
+      "wins": 183,
+      "losses": 167,
+      "csv_bytes": 40777,
+      "json_bytes": 193597
+    },
+    {
+      "month": "2025-11",
+      "games": 424,
+      "wins": 216,
+      "losses": 208,
+      "csv_bytes": 50606,
+      "json_bytes": 235604
+    },
+    {
+      "month": "2025-12",
+      "games": 46,
+      "wins": 21,
+      "losses": 25,
+      "csv_bytes": 5843,
+      "json_bytes": 25647
+    },
+    {
+      "month": "2026-01",
+      "games": 432,
+      "wins": 221,
+      "losses": 211,
+      "csv_bytes": 52177,
+      "json_bytes": 240663
+    },
+    {
+      "month": "2026-02",
+      "games": 501,
+      "wins": 221,
+      "losses": 280,
+      "csv_bytes": 59930,
+      "json_bytes": 279417
+    },
+    {
+      "month": "2026-03",
+      "games": 519,
+      "wins": 263,
+      "losses": 256,
+      "csv_bytes": 62321,
+      "json_bytes": 289150
+    },
+    {
+      "month": "2026-04",
+      "games": 413,
+      "wins": 207,
+      "losses": 206,
+      "csv_bytes": 59071,
+      "json_bytes": 382152
+    },
+    {
+      "month": "2026-05",
+      "games": 271,
+      "wins": 129,
+      "losses": 142,
+      "csv_bytes": 43140,
+      "json_bytes": 305153
+    },
+    {
+      "month": "2026-06",
+      "games": 281,
+      "wins": 148,
+      "losses": 133,
+      "csv_bytes": 43793,
+      "json_bytes": 219351
+    },
+    {
+      "month": "2026-07",
+      "games": 120,
+      "wins": 57,
+      "losses": 63,
+      "csv_bytes": 19019,
+      "json_bytes": 139270
+    },
+    {
+      "month": "2026-08",
+      "games": 112,
+      "wins": 58,
+      "losses": 54,
+      "csv_bytes": 17350,
+      "json_bytes": 124461
+    },
+    {
+      "month": "2026-09",
+      "games": 207,
+      "wins": 110,
+      "losses": 97,
+      "csv_bytes": 31648,
+      "json_bytes": 243128
+    },
+    {
+      "month": "2026-10",
+      "games": 74,
+      "wins": 40,
+      "losses": 34,
+      "csv_bytes": 11491,
+      "json_bytes": 88050
+    }
+  ]
+}

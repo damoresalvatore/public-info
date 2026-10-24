@@ -1,0 +1,414 @@
+game_id,time_utc,hero_name,hero_race,hero_mmr,region,account,villain_name,villain_race,villain_mmr,map,duration_sec,outcome,off_race,hero_mmr_after,grade,grade_score,sq,supply_block_sec,avg_supply_cushion,workers_built,army_efficiency,spending_ratio,income_vs_opponent,avg_unspent,race_mechanic_rate
+6006,2026-04-01T16:23:32Z,UpATree,Terran,4652,EU,UpATree EU,DasDied,Protoss,4480,Taito Citadel LE,413,W,0,4669,,,,,,,,,,,
+6007,2026-04-01T16:40:05Z,UpATree,Terran,4669,EU,UpATree EU,IRoH,Zerg,5041,Ruby Rock LE,847,L,0,4645,,,,,,,,,,,
+6008,2026-04-01T16:58:22Z,UpATree,Terran,4645,EU,UpATree EU,Miu,Zerg,4556,10000 Feet LE,736,W,0,4664,,,,,,,,,,,
+6009,2026-04-01T17:17:00Z,UpATree,Terran,4664,EU,UpATree EU,Chrankon,Terran,4846,Old Republic LE,994,L,0,4647,,,,,,,,,,,
+6010,2026-04-01T17:27:12Z,UpATree,Terran,4647,EU,UpATree EU,Mémédivac,Terran,4673,Tourmaline LE,576,L,0,4627,,,,,,,,,,,
+6011,2026-04-01T17:39:05Z,UpATree,Terran,4627,EU,UpATree EU,Tütenkralle,Zerg,4480,Ruby Rock LE,692,W,0,4644,,,,,,,,,,,
+6012,2026-04-01T17:53:49Z,UpATree,Terran,4665,NA,UpATree EU,THEBLOB,Protoss,4679,Tourmaline LE,508,W,0,4698,,,,,,,,,,,
+6013,2026-04-01T17:55:33Z,UpATree,Terran,4644,EU,UpATree EU,SpongeBob,Terran,4783,Celestial Enclave LE,3,W,0,4660,,,,,,,,,,,
+6014,2026-04-01T18:10:06Z,UpATree,Terran,4660,EU,UpATree EU,Rowan,Zerg,4617,Tourmaline LE,786,L,0,4637,,,,,,,,,,,
+6015,2026-04-01T18:30:30Z,UpATree,Terran,4637,EU,UpATree EU,Rowan,Zerg,4640,Taito Citadel LE,1116,L,0,4616,,,,,,,,,,,
+6017,2026-04-01T18:51:00Z,UpATree,Terran,4616,EU,UpATree EU,Rowan,Protoss,4661,Tourmaline LE,1208,L,0,4595,,,,,,,,,,,
+6016,2026-04-01T19:00:49Z,UpATree,Terran,4595,EU,UpATree EU,AbuseEnjoyer,Protoss,4621,Ruby Rock LE,521,W,0,4618,,,,,,,,,,,
+6018,2026-04-01T19:13:11Z,UpATree,Terran,4618,EU,UpATree EU,MacNCheese,Protoss,4453,Ruby Rock LE,332,L,0,4591,,,,,,,,,,,
+6019,2026-04-01T19:20:15Z,UpATree,Terran,4591,EU,UpATree EU,IIIIIIIIIIII,Protoss,4767,10000 Feet LE,398,L,0,4574,,,,,,,,,,,
+6020,2026-04-01T19:34:57Z,UpATree,Terran,4574,EU,UpATree EU,Pupu,Zerg,4662,Ruby Rock LE,807,L,0,4555,,,,,,,,,,,
+6021,2026-04-01T19:52:42Z,UpATree,Terran,4555,EU,UpATree EU,DiSmiSSaL,Protoss,4657,Celestial Enclave LE,1036,L,0,4537,,,,,,,,,,,
+6023,2026-04-01T20:08:22Z,UpATree,Terran,4537,EU,UpATree EU,Macaque,Zerg,4641,Taito Citadel LE,863,L,0,4518,,,,,,,,,,,
+6022,2026-04-02T18:44:45Z,UpATree,Terran,4518,EU,UpATree EU,ejozl,Protoss,4541,Tourmaline LE,659,W,0,4540,,,,,,,,,,,
+6024,2026-04-02T18:55:29Z,UpATree,Terran,4540,EU,UpATree EU,SWPro,Protoss,4563,Old Republic LE,484,W,0,4562,,,,,,,,,,,
+6025,2026-04-02T19:05:40Z,UpATree,Terran,4562,EU,UpATree EU,BraneloB,Zerg,5072,Tourmaline LE,499,L,0,4553,,,,,,,,,,,
+6028,2026-04-02T19:19:28Z,UpATree,Terran,4553,EU,UpATree EU,Breathe,Zerg,4964,Old Republic LE,791,L,0,4539,,,,,,,,,,,
+6026,2026-04-02T19:32:40Z,UpATree,Terran,4539,EU,UpATree EU,ulissesss,Terran,4856,Taito Citadel LE,743,L,0,4526,,,,,,,,,,,
+6027,2026-04-02T19:42:06Z,UpATree,Terran,4526,EU,UpATree EU,ulissesss,Terran,4869,Ruby Rock LE,495,L,0,4513,,,,,,,,,,,
+6029,2026-04-02T19:55:11Z,UpATree,Terran,4513,EU,UpATree EU,Erika,Zerg,4501,Celestial Enclave LE,742,W,0,4534,,,,,,,,,,,
+6033,2026-04-02T20:12:59Z,UpATree,Terran,4698,NA,UpATree EU,Cheesus,Protoss,4546,Ruby Rock LE,918,W,0,4715,,,,,,,,,,,
+6031,2026-04-02T20:22:22Z,UpATree,Terran,4715,NA,UpATree EU,Cheesus,Protoss,4529,Ruby Rock LE,483,L,0,4688,,,,,,,,,,,
+6032,2026-04-02T20:30:57Z,UpATree,Terran,4688,NA,UpATree EU,CannonRusher,Protoss,4703,Celestial Enclave LE,486,W,0,4710,,,,,,,,,,,
+6034,2026-04-02T20:41:53Z,UpATree,Terran,4710,NA,UpATree EU,Alexandros,Protoss,4283,Old Republic LE,508,L,0,4675,,,,,,,,,,,
+6035,2026-04-02T20:47:01Z,UpATree,Terran,4675,NA,UpATree EU,BrenMcBash,Protoss,4760,Ruby Rock LE,244,W,0,4699,,,,,,,,,,,
+6036,2026-04-02T20:50:51Z,UpATree,Terran,4699,NA,UpATree EU,nickname,Zerg,-36400,10000 Feet LE,168,L,0,4682,,,,,,,,,,,
+6037,2026-04-02T21:02:01Z,UpATree,Terran,4682,NA,UpATree EU,nickname,Zerg,-36400,10000 Feet LE,638,W,0,4710,,,,,,,,,,,
+6038,2026-04-02T21:10:38Z,UpATree,Terran,4534,EU,UpATree EU,BakedEagle,Terran,4434,Tourmaline LE,462,W,0,4553,,,,,,,,,,,
+6040,2026-04-02T21:27:12Z,UpATree,Terran,4553,EU,UpATree EU,Macaque,Zerg,4788,Tourmaline LE,744,L,0,4538,,,,,,,,,,,
+6039,2026-04-02T21:38:50Z,UpATree,Terran,4538,EU,UpATree EU,lliTO,Terran,4447,Old Republic LE,630,W,0,4557,,,,,,,,,,,
+6041,2026-04-02T21:48:49Z,UpATree,Terran,4557,EU,UpATree EU,BakedEagle,Terran,4361,Tourmaline LE,378,W,0,4573,,,,,,,,,,,
+6042,2026-04-02T22:10:56Z,UpATree,Terran,4573,EU,UpATree EU,IIIIIIIIIIII,Zerg,4855,10000 Feet LE,998,W,0,4603,,,,,,,,,,,
+6043,2026-04-03T16:35:28Z,UpATree,Terran,4603,EU,UpATree EU,KampfHeld,Terran,4543,10000 Feet LE,1187,W,0,4623,,,,,,,,,,,
+6044,2026-04-03T16:45:44Z,UpATree,Terran,4623,EU,UpATree EU,IIIIIIIIIIII,Protoss,4808,10000 Feet LE,470,L,0,4607,,,,,,,,,,,
+6045,2026-04-03T16:55:20Z,UpATree,Terran,4607,EU,UpATree EU,FIIClicK,Protoss,5268,Taito Citadel LE,528,L,0,4600,,,,,,,,,,,
+6046,2026-04-03T17:05:06Z,UpATree,Terran,4600,EU,UpATree EU,Chikyū,Terran,4604,Old Republic LE,549,L,0,4579,,,,,,,,,,,
+6047,2026-04-03T17:11:03Z,UpATree,Terran,4579,EU,UpATree EU,welp,Terran,4260,Celestial Enclave LE,271,L,0,4549,,,,,,,,,,,
+6048,2026-04-03T17:19:32Z,UpATree,Terran,4549,EU,UpATree EU,HellGoesOn,Terran,4739,10000 Feet LE,484,W,0,4563,,,,,,,,,,,
+6050,2026-04-03T17:37:08Z,UpATree,Terran,4563,EU,UpATree EU,IIIIIIIIIIII,Zerg,4593,Taito Citadel LE,950,L,0,4543,,,,,,,,,,,
+6049,2026-04-03T17:45:13Z,UpATree,Terran,4543,EU,UpATree EU,ejozl,Protoss,4541,Tourmaline LE,466,W,0,4560,,,,,,,,,,,
+6051,2026-04-03T17:54:54Z,UpATree,Terran,4560,EU,UpATree EU,welp,Terran,4272,Tourmaline LE,505,W,0,4574,,,,,,,,,,,
+6053,2026-04-03T18:13:09Z,UpATree,Terran,4574,EU,UpATree EU,ReMinDeR,Terran,4625,Taito Citadel LE,1039,W,0,4597,,,,,,,,,,,
+6052,2026-04-03T18:25:25Z,UpATree,Terran,4597,EU,UpATree EU,Erakko,Protoss,4316,Ruby Rock LE,631,W,0,4613,,,,,,,,,,,
+6055,2026-04-03T18:41:38Z,UpATree,Terran,4613,EU,UpATree EU,Mémédivac,Terran,4760,Old Republic LE,827,W,0,4639,,,,,,,,,,,
+6054,2026-04-03T18:53:29Z,UpATree,Terran,4639,EU,UpATree EU,TcUltimate,Protoss,5112,10000 Feet LE,416,L,0,4629,,,,,,,,,,,
+6056,2026-04-03T18:58:53Z,UpATree,Terran,4629,EU,UpATree EU,DiSmiSSaL,Protoss,4680,Old Republic LE,292,L,0,4609,,,,,,,,,,,
+6057,2026-04-03T19:05:02Z,UpATree,Terran,4609,EU,UpATree EU,Nerzoti,Protoss,4210,Old Republic LE,331,W,0,4621,,,,,,,,,,,
+6059,2026-04-03T19:29:51Z,UpATree,Terran,4621,EU,UpATree EU,llllllllllll,Zerg,4494,Tourmaline LE,1270,W,0,4639,,,,,,,,,,,
+6058,2026-04-03T19:44:44Z,UpATree,Terran,4639,EU,UpATree EU,KampfHeld,Terran,4360,10000 Feet LE,710,L,0,4608,,,,,,,,,,,
+6060,2026-04-03T19:56:12Z,UpATree,Terran,4608,EU,UpATree EU,luke,Protoss,4894,Taito Citadel LE,609,W,0,4639,,,,,,,,,,,
+6061,2026-04-03T20:13:55Z,UpATree,Terran,4639,EU,UpATree EU,farSight,Terran,4512,Old Republic LE,965,W,0,4657,,,,,,,,,,,
+6062,2026-04-03T20:29:05Z,UpATree,Terran,4657,EU,UpATree EU,BakedEagle,Terran,4283,10000 Feet LE,852,L,0,4623,,,,,,,,,,,
+6063,2026-04-04T01:52:01Z,UpATree,Terran,4710,NA,UpATree EU,Truth,Terran,4779,Tourmaline LE,17,L,0,4662,,,,,,,,,,,
+6067,2026-04-04T02:17:07Z,UpATree,Terran,4662,NA,UpATree EU,JetLi,Protoss,4636,Ruby Rock LE,23,L,0,4640,,,,,,,,,,,
+6068,2026-04-04T20:09:31Z,UpATree,Terran,4640,NA,UpATree EU,AngryCactus,Terran,4318,Tourmaline LE,17,L,0,4608,,,,,,,,,,,
+6069,2026-04-04T20:14:50Z,UpATree,Terran,4608,NA,UpATree EU,ninja,Terran,4946,Celestial Enclave LE,8,L,0,4595,,,,,,,,,,,
+6070,2026-04-05T05:21:19Z,UpATree,Terran,4595,NA,UpATree EU,bear,Zerg,4527,Celestial Enclave LE,664,W,0,4615,,,,,,,,,,,
+6071,2026-04-05T05:33:01Z,UpATree,Terran,4615,NA,UpATree EU,eXiled,Protoss,4767,10000 Feet LE,617,L,0,4597,,,,,,,,,,,
+6072,2026-04-05T06:01:53Z,UpATree,Terran,4597,NA,UpATree EU,Microangelo,Zerg,4338,Tourmaline LE,1438,W,0,4611,,,,,,,,,,,
+6073,2026-04-05T08:24:58Z,UpATree,Terran,4611,NA,UpATree EU,llllllllllll,Terran,3998,Old Republic LE,27,L,0,4578,,,,,,,,,,,
+6074,2026-04-05T18:38:36Z,UpATree,Terran,4578,NA,UpATree EU,Torch,Zerg,4150,Old Republic LE,8,L,0,4543,,,,,,,,,,,
+6075,2026-04-05T18:46:08Z,UpATree,Terran,4543,NA,UpATree EU,Squid,Protoss,4460,Tourmaline LE,9,L,0,4519,,,,,,,,,,,
+6076,2026-04-05T18:57:05Z,UpATree,Terran,4519,NA,UpATree EU,Kitten,Protoss,4782,Ruby Rock LE,9,L,0,4504,,,,,,,,,,,
+6077,2026-04-05T19:02:23Z,UpATree,Terran,4504,NA,UpATree EU,Rare,Zerg,4317,10000 Feet LE,23,L,0,4477,,,,,,,,,,,
+6078,2026-04-05T19:12:33Z,UpATree,Terran,4477,NA,UpATree EU,pbj,Terran,4316,Taito Citadel LE,7,L,0,4451,,,,,,,,,,,
+6079,2026-04-05T19:17:35Z,UpATree,Terran,4451,NA,UpATree EU,Yasu,Zerg,4225,Taito Citadel LE,8,L,0,4422,,,,,,,,,,,
+6080,2026-04-06T04:27:47Z,UpATree,Terran,4422,NA,UpATree EU,STEEZ,Zerg,4553,Old Republic LE,674,W,0,4448,,,,,,,,,,,
+6081,2026-04-06T04:39:17Z,UpATree,Terran,4448,NA,UpATree EU,STEEZ,Zerg,4528,Tourmaline LE,613,W,0,4471,,,,,,,,,,,
+6082,2026-04-06T04:52:52Z,UpATree,Terran,4471,NA,UpATree EU,Harkon,Protoss,4749,Ruby Rock LE,441,L,0,4457,,,,,,,,,,,
+6083,2026-04-06T05:03:49Z,UpATree,Terran,4457,NA,UpATree EU,Imperius,Terran,4615,Tourmaline LE,583,L,0,4440,,,,,,,,,,,
+6084,2026-04-06T05:14:06Z,UpATree,Terran,4440,NA,UpATree EU,Cheesologist,Terran,4629,Ruby Rock LE,575,W,0,4467,,,,,,,,,,,
+6085,2026-04-06T05:27:31Z,UpATree,Terran,4467,NA,UpATree EU,Cheesologist,Terran,4602,Old Republic LE,540,W,0,4493,,,,,,,,,,,
+6086,2026-04-06T05:29:14Z,UpATree,Terran,4493,NA,UpATree EU,SuperJGL,Terran,4770,10000 Feet LE,6,W,0,4510,,,,,,,,,,,
+6087,2026-04-06T05:35:16Z,UpATree,Terran,4510,NA,UpATree EU,Cheesologist,Terran,4576,10000 Feet LE,341,W,0,4534,,,,,,,,,,,
+6088,2026-04-06T23:05:53Z,UpATree,Terran,4534,NA,UpATree EU,IIIIIIIII,Terran,4334,Ruby Rock LE,16,L,0,4506,,,,,,,,,,,
+6089,2026-04-06T23:16:27Z,UpATree,Terran,4506,NA,UpATree EU,CaptainClub,Terran,4746,Ruby Rock LE,571,W,0,4535,,,,,,,,,,,
+6090,2026-04-06T23:33:47Z,UpATree,Terran,4535,NA,UpATree EU,Haste,Terran,4859,Tourmaline LE,959,L,0,4522,,,,,,,,,,,
+6091,2026-04-06T23:42:25Z,UpATree,Terran,4522,NA,UpATree EU,Russia,Protoss,4532,10000 Feet LE,384,W,0,4544,,,,,,,,,,,
+6092,2026-04-06T23:58:33Z,UpATree,Terran,4544,NA,UpATree EU,LilianLuna,Terran,4520,Celestial Enclave LE,723,W,0,4564,,,,,,,,,,,
+6093,2026-04-07T00:14:31Z,UpATree,Terran,4564,NA,UpATree EU,Arboria,Zerg,4339,10000 Feet LE,690,W,0,4580,,,,,,,,,,,
+6094,2026-04-07T00:22:44Z,UpATree,Terran,4580,NA,UpATree EU,qwerty,Protoss,4295,Tourmaline LE,374,W,0,4594,,,,,,,,,,,
+6095,2026-04-07T00:35:46Z,UpATree,Terran,4594,NA,UpATree EU,SpikeSpiegel,Terran,4472,Taito Citadel LE,620,W,0,4612,,,,,,,,,,,
+6096,2026-04-07T00:46:29Z,UpATree,Terran,4612,NA,UpATree EU,giPPidy,Zerg,4237,Ruby Rock LE,207,L,0,4579,,,,,,,,,,,
+6097,2026-04-07T00:53:47Z,UpATree,Terran,4579,NA,UpATree EU,IIIIIIIII,Terran,4441,10000 Feet LE,347,W,0,4596,,,,,,,,,,,
+6098,2026-04-07T01:06:58Z,UpATree,Terran,4596,NA,UpATree EU,Life,Terran,4647,Tourmaline LE,541,W,0,4620,,,,,,,,,,,
+6099,2026-04-07T16:22:41Z,UpATree,Terran,4623,EU,UpATree EU,DripDrop,Terran,4294,Ruby Rock LE,440,L,0,4591,,,,,,,,,,,
+6100,2026-04-07T16:29:11Z,UpATree,Terran,4591,EU,UpATree EU,Swardnight,Protoss,4805,Ruby Rock LE,319,L,0,4576,,,,,,,,,,,
+6101,2026-04-07T16:36:56Z,UpATree,Terran,4576,EU,UpATree EU,VJLinkHero,Protoss,4328,Old Republic LE,328,W,0,4591,,,,,,,,,,,
+6102,2026-04-07T16:49:30Z,UpATree,Terran,4591,EU,UpATree EU,SeV,Protoss,4715,Tourmaline LE,332,W,0,4616,,,,,,,,,,,
+6103,2026-04-07T17:00:27Z,UpATree,Terran,4616,EU,UpATree EU,BattleMage,Protoss,4264,Ruby Rock LE,451,W,0,4628,,,,,,,,,,,
+6104,2026-04-07T17:15:34Z,UpATree,Terran,4628,EU,UpATree EU,ReMinDeR,Terran,4564,Ruby Rock LE,611,L,0,4605,,,,,,,,,,,
+6105,2026-04-07T17:23:15Z,UpATree,Terran,4605,EU,UpATree EU,AnT,Protoss,5019,Tourmaline LE,378,L,0,4594,,,,,,,,,,,
+6106,2026-04-07T17:27:11Z,UpATree,Terran,4594,EU,UpATree EU,freed,Zerg,4930,Celestial Enclave LE,6,W,0,4626,,,,,,,,,,,
+6107,2026-04-07T17:36:58Z,UpATree,Terran,4626,EU,UpATree EU,Sareth,Zerg,4328,10000 Feet LE,543,W,0,4640,,,,,,,,,,,
+6108,2026-04-07T18:01:05Z,UpATree,Terran,4640,EU,UpATree EU,theglml,Zerg,4739,Taito Citadel LE,982,L,0,4621,,,,,,,,,,,
+6109,2026-04-07T18:34:27Z,UpATree,Terran,4621,EU,UpATree EU,anyone,Zerg,4296,Old Republic LE,1982,W,0,4634,,,,,,,,,,,
+6110,2026-04-07T18:54:08Z,UpATree,Terran,4634,EU,UpATree EU,RealSlimDeka,Zerg,4678,Tourmaline LE,647,W,0,4657,,,,,,,,,,,
+6111,2026-04-07T19:08:35Z,UpATree,Terran,4657,EU,UpATree EU,Adnap,Terran,4745,Old Republic LE,611,L,0,4638,,,,,,,,,,,
+6112,2026-04-07T19:22:59Z,UpATree,Terran,4638,EU,UpATree EU,Hyren,Zerg,4489,Tourmaline LE,594,L,0,4612,,,,,,,,,,,
+6113,2026-04-07T19:35:28Z,UpATree,Terran,4612,EU,UpATree EU,зедоом,Terran,4371,Taito Citadel LE,541,W,0,4627,,,,,,,,,,,
+6114,2026-04-07T19:53:01Z,UpATree,Terran,4627,EU,UpATree EU,Blisk,Zerg,4556,Tourmaline LE,380,L,0,4603,,,,,,,,,,,
+6115,2026-04-07T20:00:28Z,UpATree,Terran,4603,EU,UpATree EU,JernJan,Zerg,4526,10000 Feet LE,357,W,0,4622,,,,,,,,,,,
+6116,2026-04-08T17:32:48Z,UpATree,Terran,4622,EU,UpATree EU,llllllllllll,Protoss,4510,Taito Citadel LE,600,L,0,4597,,,,,,,,,,,
+6117,2026-04-08T17:38:54Z,UpATree,Terran,4597,EU,UpATree EU,Well,Terran,4498,Old Republic LE,237,L,0,4572,,,,,,,,,,,
+6118,2026-04-08T17:53:36Z,UpATree,Terran,4572,EU,UpATree EU,ReMinDeR,Terran,4748,Tourmaline LE,593,L,0,4556,,,,,,,,,,,
+6119,2026-04-08T18:03:57Z,UpATree,Terran,4556,EU,UpATree EU,QazSakamsky,Terran,4772,Ruby Rock LE,433,L,0,4540,,,,,,,,,,,
+6120,2026-04-08T18:15:32Z,UpATree,Terran,4540,EU,UpATree EU,Bingoking,Terran,4843,Old Republic LE,653,L,0,4526,,,,,,,,,,,
+6121,2026-04-08T18:26:01Z,UpATree,Terran,4526,EU,UpATree EU,Well,Terran,4591,Ruby Rock LE,459,L,0,4507,,,,,,,,,,,
+6122,2026-04-08T18:32:48Z,UpATree,Terran,4507,EU,UpATree EU,Unitarmeduza,Zerg,4328,Old Republic LE,329,L,0,4485,,,,,,,,,,,
+6123,2026-04-08T18:49:08Z,UpATree,Terran,4485,EU,UpATree EU,birdy,Zerg,4909,10000 Feet LE,692,L,0,4474,,,,,,,,,,,
+6124,2026-04-08T19:03:11Z,UpATree,Terran,4474,EU,UpATree EU,ZergyStardst,Zerg,4546,Tourmaline LE,696,L,0,4455,,,,,,,,,,,
+6125,2026-04-08T19:10:16Z,UpATree,Terran,4455,EU,UpATree EU,hybride,Protoss,4363,Old Republic LE,359,W,0,4474,,,,,,,,,,,
+6126,2026-04-08T19:17:29Z,UpATree,Terran,4474,EU,UpATree EU,Countess,Protoss,4542,Tourmaline LE,285,W,0,4498,,,,,,,,,,,
+6127,2026-04-08T19:31:00Z,UpATree,Terran,4498,EU,UpATree EU,IIIIIIIIIIII,Zerg,4465,Tourmaline LE,711,W,0,4518,,,,,,,,,,,
+6128,2026-04-08T19:51:18Z,UpATree,Terran,4518,EU,UpATree EU,Countess,Protoss,4512,Old Republic LE,974,L,0,4496,,,,,,,,,,,
+6129,2026-04-08T19:57:15Z,UpATree,Terran,4496,EU,UpATree EU,IIIIIIIIIIII,Terran,4934,Taito Citadel LE,297,L,0,4486,,,,,,,,,,,
+6130,2026-04-08T20:11:13Z,UpATree,Terran,4486,EU,UpATree EU,IIIIIIIIIIII,Zerg,4349,Taito Citadel LE,816,W,0,4504,,,,,,,,,,,
+6131,2026-04-08T20:29:42Z,UpATree,Terran,4504,EU,UpATree EU,Adnap,Terran,4596,Taito Citadel LE,905,W,0,4528,,,,,,,,,,,
+6132,2026-04-08T20:47:52Z,UpATree,Terran,4528,EU,UpATree EU,Mémédivac,Zerg,4530,Ruby Rock LE,764,W,0,4549,,,,,,,,,,,
+6133,2026-04-08T21:07:01Z,UpATree,Terran,4549,EU,UpATree EU,titan,Terran,4454,10000 Feet LE,1012,L,0,4525,,,,,,,,,,,
+6134,2026-04-09T18:38:08Z,UpATree,Terran,4525,EU,UpATree EU,Zangief,Zerg,4407,10000 Feet LE,604,W,0,4543,,,,,,,,,,,
+6135,2026-04-09T19:05:45Z,UpATree,Terran,4543,EU,UpATree EU,XinxoutX,Zerg,4530,Ruby Rock LE,976,W,0,4564,,,,,,,,,,,
+6136,2026-04-09T19:21:39Z,UpATree,Terran,4564,EU,UpATree EU,mjt,Protoss,4352,Old Republic LE,602,W,0,4580,,,,,,,,,,,
+6137,2026-04-09T19:56:53Z,UpATree,Terran,4580,EU,UpATree EU,Neo,Zerg,4327,Old Republic LE,1870,W,0,4595,,,,,,,,,,,
+6138,2026-04-09T20:13:59Z,UpATree,Terran,4595,EU,UpATree EU,Miszu,Zerg,4732,10000 Feet LE,718,L,0,4577,,,,,,,,,,,
+6139,2026-04-09T20:32:24Z,UpATree,Terran,4577,EU,UpATree EU,ArthitisClem,Terran,4506,Taito Citadel LE,827,W,0,4597,,,,,,,,,,,
+6140,2026-04-09T20:45:33Z,UpATree,Terran,4597,EU,UpATree EU,Propagandalf,Protoss,4574,10000 Feet LE,320,L,0,4566,,,,,,,,,,,
+6141,2026-04-09T20:58:28Z,UpATree,Terran,4566,EU,UpATree EU,Brockstar,Terran,4904,10000 Feet LE,560,L,0,4554,,,,,,,,,,,
+6142,2026-04-10T16:39:52Z,UpATree,Terran,4554,EU,UpATree EU,Miszu,Zerg,4542,10000 Feet LE,1082,L,0,4532,,,,,,,,,,,
+6143,2026-04-10T16:54:11Z,UpATree,Terran,4532,EU,UpATree EU,XinxoutX,Zerg,4516,Tourmaline LE,761,L,0,4510,,,,,,,,,,,
+6144,2026-04-10T17:21:28Z,UpATree,Terran,4510,EU,UpATree EU,Miszu,Zerg,4567,Taito Citadel LE,780,L,0,4490,,,,,,,,,,,
+6145,2026-04-10T17:29:42Z,UpATree,Terran,4490,EU,UpATree EU,Fletch,Protoss,4353,Taito Citadel LE,457,L,0,4464,,,,,,,,,,,
+6146,2026-04-10T17:37:00Z,UpATree,Terran,4464,EU,UpATree EU,Fairespiter,Protoss,5198,Tourmaline LE,414,L,0,4451,,,,,,,,,,,
+6147,2026-04-10T17:45:08Z,UpATree,Terran,4451,EU,UpATree EU,Hirich,Protoss,4409,Celestial Enclave LE,418,W,0,4471,,,,,,,,,,,
+6148,2026-04-10T17:59:26Z,UpATree,Terran,4471,EU,UpATree EU,Breathe,Zerg,4387,Old Republic LE,716,L,0,4447,,,,,,,,,,,
+6149,2026-04-10T18:09:44Z,UpATree,Terran,4447,EU,UpATree EU,Tokibokiloki,Protoss,4732,Old Republic LE,459,L,0,4433,,,,,,,,,,,
+6150,2026-04-10T18:23:26Z,UpATree,Terran,4433,EU,UpATree EU,Jorangei,Terran,3000,Tourmaline LE,530,L,0,4410,,,,,,,,,,,
+6151,2026-04-10T18:36:52Z,UpATree,Terran,4410,EU,UpATree EU,JerryYu,Zerg,4274,Taito Citadel LE,712,W,0,4428,,,,,,,,,,,
+6152,2026-04-10T18:44:53Z,UpATree,Terran,4428,EU,UpATree EU,АнгеЛвКедаХ,Protoss,4589,Tourmaline LE,274,W,0,4454,,,,,,,,,,,
+6153,2026-04-10T18:48:46Z,UpATree,Terran,4454,EU,UpATree EU,Porcia,Terran,4302,Tourmaline LE,1,W,0,4472,,,,,,,,,,,
+6154,2026-04-10T18:58:23Z,UpATree,Terran,4472,EU,UpATree EU,Brockstar,Terran,4901,Old Republic LE,527,L,0,4461,,,,,,,,,,,
+6155,2026-04-10T19:12:25Z,UpATree,Terran,4461,EU,UpATree EU,Aegidius,Zerg,4279,Tourmaline LE,426,L,0,4434,,,,,,,,,,,
+6156,2026-04-10T19:13:15Z,UpATree,Terran,4434,EU,UpATree EU,Porcia,Terran,4312,Ruby Rock LE,1,W,0,4452,,,,,,,,,,,
+6157,2026-04-10T19:20:41Z,UpATree,Terran,4452,EU,UpATree EU,Ricelia,Protoss,4620,Tourmaline LE,421,L,0,4435,,,,,,,,,,,
+6158,2026-04-10T19:21:19Z,UpATree,Terran,4435,EU,UpATree EU,Porcia,Terran,4279,Old Republic LE,3,W,0,4452,,,,,,,,,,,
+6159,2026-04-10T19:29:51Z,UpATree,Terran,4452,EU,UpATree EU,Ricelia,Protoss,4637,10000 Feet LE,457,W,0,4479,,,,,,,,,,,
+6160,2026-04-10T19:41:43Z,UpATree,Terran,4479,EU,UpATree EU,MoDDiB,Terran,4150,10000 Feet LE,486,W,0,4492,,,,,,,,,,,
+6161,2026-04-10T20:16:39Z,UpATree,Terran,4492,EU,UpATree EU,Darkbackpls,Zerg,4972,Taito Citadel LE,2012,W,0,4529,,,,,,,,,,,
+6162,2026-04-10T20:25:11Z,UpATree,Terran,4529,EU,UpATree EU,Seigneur,Terran,5042,Tourmaline LE,239,L,0,4520,,,,,,,,,,,
+6163,2026-04-10T20:31:25Z,UpATree,Terran,4520,EU,UpATree EU,Vulcan,Protoss,4516,Ruby Rock LE,338,L,0,4500,,,,,,,,,,,
+6164,2026-04-10T20:41:53Z,UpATree,Terran,4500,EU,UpATree EU,realmz,Zerg,4219,Tourmaline LE,555,W,0,4514,,,,,,,,,,,
+6165,2026-04-10T20:57:03Z,UpATree,Terran,4514,EU,UpATree EU,Tokibokiloki,Protoss,4803,Tourmaline LE,410,L,0,4500,,,,,,,,,,,
+6166,2026-04-12T00:48:17Z,UpATree,Terran,4620,NA,UpATree EU,Jgoat,Zerg,4766,Ruby Rock LE,1080,L,0,4602,,,,,,,,,,,
+6167,2026-04-12T00:59:25Z,UpATree,Terran,4602,NA,UpATree EU,Kukulza,Protoss,4158,Ruby Rock LE,357,W,0,4613,,,,,,,,,,,
+6168,2026-04-12T01:06:04Z,UpATree,Terran,4613,NA,UpATree EU,NewBreed,Zerg,4312,Old Republic LE,243,L,0,4582,,,,,,,,,,,
+6169,2026-04-12T01:16:03Z,UpATree,Terran,4582,NA,UpATree EU,AkashSky,Terran,4149,Ruby Rock LE,546,W,0,4592,,,,,,,,,,,
+6170,2026-04-12T01:34:07Z,UpATree,Terran,4592,NA,UpATree EU,RiPGreP,Terran,4412,10000 Feet LE,674,L,0,4565,,,,,,,,,,,
+6171,2026-04-12T01:48:01Z,UpATree,Terran,4565,NA,UpATree EU,Greg,Terran,4645,Celestial Enclave LE,787,L,0,4546,,,,,,,,,,,
+6172,2026-04-12T01:56:04Z,UpATree,Terran,4546,NA,UpATree EU,Kukulza,Protoss,4183,Tourmaline LE,365,W,0,4558,,,,,,,,,,,
+6173,2026-04-12T02:06:48Z,UpATree,Terran,4558,NA,UpATree EU,Outrider,Zerg,4398,10000 Feet LE,590,W,0,4575,,,,,,,,,,,
+6174,2026-04-12T02:11:03Z,UpATree,Terran,4575,NA,UpATree EU,Life,Terran,4665,Tourmaline LE,178,L,0,4556,,,,,,,,,,,
+6175,2026-04-12T02:29:21Z,UpATree,Terran,4556,NA,UpATree EU,Life,Terran,4684,Tourmaline LE,1084,W,0,4582,,,,,,,,,,,
+6176,2026-04-13T02:09:03Z,UpATree,Terran,4582,NA,UpATree EU,llllllllllll,Zerg,5051,10000 Feet LE,551,W,0,4619,B,61.9,290.4,40,12.9,63,2.47,,85.8,447.4,0.98
+6177,2026-04-13T02:30:14Z,UpATree,Terran,4619,NA,UpATree EU,Excelle,Zerg,5139,Ruby Rock LE,594,L,0,4610,C+,46.7,144,60,19.7,70,1.41,,76.6,384.1,1.41
+6178,2026-04-13T02:54:04Z,UpATree,Terran,4610,NA,UpATree EU,goya,Terran,4922,10000 Feet LE,1285,W,0,4641,B,63.1,299.9,60,36.4,141,1.1,,115.1,434.4,0.75
+6179,2026-04-13T03:29:37Z,UpATree,Terran,4641,NA,UpATree EU,NetMecH,Terran,4806,Tourmaline LE,1106,W,0,4655,B-,53,380.8,20,11,81,0.86,,128.3,440.5,0.43
+6180,2026-04-13T03:42:47Z,UpATree,Terran,4655,NA,UpATree EU,SmolShrimp,Zerg,4578,Ruby Rock LE,564,W,0,4674,B,67.9,298,70,9.1,63,2.65,,92,368.8,0.96
+6181,2026-04-13T17:52:18Z,UpATree,Terran,4500,EU,UpATree EU,titan,Terran,4630,Tourmaline LE,573,W,0,4526,C+,46.4,190.5,110,13.6,60,2.66,,112.6,396.7,0.42
+6182,2026-04-13T18:00:16Z,UpATree,Terran,4526,EU,UpATree EU,Propagandalf,Protoss,4574,Tourmaline LE,359,W,0,4545,C-,35.4,31.6,60,8.9,26,3.99,,76.7,239,0.33
+6183,2026-04-13T18:07:00Z,UpATree,Terran,4545,EU,UpATree EU,Rowan,Protoss,4322,Old Republic LE,282,L,0,4517,F,12.5,-10.9,50,5.7,23,0.45,,64.3,356.6,0.21
+6184,2026-04-13T18:13:46Z,UpATree,Terran,4517,EU,UpATree EU,Lightweight,Protoss,5107,Tourmaline LE,296,L,0,4509,C-,32.9,-24.7,20,9.8,21,1.17,,72.9,234.2,0.61
+6185,2026-04-13T18:19:35Z,UpATree,Terran,4509,EU,UpATree EU,ULTRABONK,Protoss,4751,Tourmaline LE,317,L,0,4494,D,24.9,17.5,20,6.4,25,0,,75.8,168.7,0.38
+6186,2026-04-13T18:33:55Z,UpATree,Terran,4494,EU,UpATree EU,Angry,Terran,5327,Ruby Rock LE,581,L,0,4489,C,43.5,249.7,90,12.2,65,0.71,,106.9,474.4,0.72
+6187,2026-04-13T18:38:55Z,UpATree,Terran,4489,EU,UpATree EU,Cichlid,Protoss,4454,Ruby Rock LE,184,L,0,4463,D,22.7,-34.9,30,6.4,16,0,,72.3,123.6,0.33
+6188,2026-04-13T18:50:40Z,UpATree,Terran,4463,EU,UpATree EU,Zezuane,Zerg,4524,Celestial Enclave LE,688,W,0,4486,B-,54.3,329.3,30,17.1,62,1.54,,91.3,691.6,1.05
+6189,2026-04-13T18:53:26Z,UpATree,Terran,4486,EU,UpATree EU,ghost,Terran,4373,Taito Citadel LE,2,W,0,4505,,,,,,,,,,,
+6190,2026-04-13T19:03:28Z,UpATree,Terran,4505,EU,UpATree EU,MiNiMaTh,Zerg,4836,Old Republic LE,584,L,0,4492,C+,47.5,310.4,40,18.5,60,0.76,,89.1,432.6,1.23
+6191,2026-04-13T19:19:43Z,UpATree,Terran,4492,EU,UpATree EU,llIIlIlllIIl,Zerg,4873,Taito Citadel LE,655,W,0,4516,B,67.2,307.4,90,16.4,72,2.02,,98.6,506.2,1.19
+6192,2026-04-13T19:59:35Z,UpATree,Terran,4516,EU,UpATree EU,CementEater,Zerg,4729,Old Republic LE,1694,W,0,4544,B-,59.1,373.7,40,17.6,75,1.83,,81,442,0.67
+6193,2026-04-13T20:17:17Z,UpATree,Terran,4544,EU,UpATree EU,DaeJong,Zerg,4245,10000 Feet LE,782,W,0,4558,C-,37.1,273.5,190,10.2,63,1.4,,92.6,704.4,0.84
+6194,2026-04-13T20:38:50Z,UpATree,Terran,4558,EU,UpATree EU,Rowan,Zerg,4697,Old Republic LE,914,L,0,4540,C,41.6,385.5,50,13.9,96,0.98,,77.4,718.5,0.72
+6195,2026-04-13T20:46:45Z,UpATree,Terran,4540,EU,UpATree EU,Søpplenissen,Protoss,-36400,Celestial Enclave LE,356,L,0,4511,B-,57.2,122,140,6.2,42,0.18,,99.9,321.7,1.01
+6196,2026-04-13T21:03:46Z,UpATree,Terran,4511,EU,UpATree EU,MacroArk,Zerg,4654,Ruby Rock LE,939,L,0,4493,B-,55.3,360.3,90,21.1,96,1.26,,75.5,444.2,0.96
+6197,2026-04-13T21:09:57Z,UpATree,Terran,4493,EU,UpATree EU,Peynius,Protoss,4248,Old Republic LE,1,W,0,4508,,,,,,,,,,,
+6198,2026-04-13T21:19:04Z,UpATree,Terran,4508,EU,UpATree EU,Strawhat,Terran,4541,10000 Feet LE,439,W,0,4531,B,66.8,170.3,70,14.7,55,2.88,,106.2,397.6,1.23
+6199,2026-04-13T21:35:56Z,UpATree,Terran,4531,EU,UpATree EU,Strawhat,Terran,4518,Ruby Rock LE,554,W,0,4552,C+,51.4,207.8,80,12.8,67,1.54,,98.3,498.9,0.87
+6200,2026-04-14T17:43:26Z,UpATree,Terran,4552,EU,UpATree EU,MacroMachine,Terran,4815,Celestial Enclave LE,790,W,0,4581,B,63.9,258.9,60,17.5,94,1.38,0.3426,111.6,671.8,0.91
+6201,2026-04-14T17:57:02Z,UpATree,Terran,4581,EU,UpATree EU,HitEdgy,Protoss,4468,Ruby Rock LE,185,L,0,4557,C+,51.7,19.9,20,5.7,24,0,0.2321,99.1,198.6,0.32
+6202,2026-04-14T18:02:05Z,UpATree,Terran,4557,EU,UpATree EU,Voyager,Terran,4660,Tourmaline LE,250,L,0,4538,C-,30.9,36.7,20,8.9,27,1,0.2687,84.1,259.2,0.48
+6203,2026-04-14T18:06:34Z,UpATree,Terran,4538,EU,UpATree EU,Vendettavic,Terran,4275,10000 Feet LE,214,W,0,4552,B,60.9,22.7,30,5,25,250,0.3164,129.4,292.2,0.28
+6204,2026-04-14T18:19:44Z,UpATree,Terran,4552,EU,UpATree EU,llllll,Zerg,4572,Tourmaline LE,658,L,0,4531,C+,47,256.6,220,8.7,83,1.07,0.2502,77.3,483.5,1.09
+6205,2026-04-14T18:33:53Z,UpATree,Terran,4531,EU,UpATree EU,IIIIIIIIIIII,Zerg,4878,Ruby Rock LE,784,L,0,4519,C+,51.4,331.9,100,10.4,73,0.99,0.266,89.7,598.5,0.92
+6206,2026-04-14T18:46:48Z,UpATree,Terran,4519,EU,UpATree EU,Hirich,Protoss,4494,10000 Feet LE,446,W,0,4539,B+,70.5,140.2,110,5.9,45,4,0.2347,87.2,336.7,0.67
+6207,2026-04-14T19:07:12Z,UpATree,Terran,4539,EU,UpATree EU,kotzila,Terran,4298,10000 Feet LE,1112,W,0,4554,B,63.1,390.1,70,19,76,1.14,0.211,126.8,464.2,0.81
+6208,2026-04-14T19:31:30Z,UpATree,Terran,4554,EU,UpATree EU,EntertraineR,Terran,4320,Old Republic LE,1285,W,0,4570,C+,51.2,293.9,30,35.7,100,1.06,0.2417,106.5,420.2,0.61
+6209,2026-04-14T19:41:56Z,UpATree,Terran,4570,EU,UpATree EU,EntertraineR,Terran,4305,Old Republic LE,456,W,0,4584,C-,31.3,0,40,9.3,30,1.54,0.3514,85.9,291.1,0.66
+6210,2026-04-14T19:50:44Z,UpATree,Terran,4584,EU,UpATree EU,EntertraineR,Terran,4290,Old Republic LE,475,W,0,4598,B+,72.7,199.9,60,9.2,58,2.46,0.2422,101.2,415.1,0.88
+6211,2026-04-14T20:02:44Z,UpATree,Terran,4598,EU,UpATree EU,MarineKing,Terran,4638,Ruby Rock LE,504,W,0,4621,C,40.6,174.4,60,17,57,1.41,0.2837,92.1,460.4,0.95
+6212,2026-04-14T20:10:15Z,UpATree,Terran,4621,EU,UpATree EU,theglml,Zerg,4785,Celestial Enclave LE,260,L,0,4604,C-,31.5,47,60,10.7,25,0.8,0.2156,105.3,210.6,0.69
+6213,2026-04-14T20:17:40Z,UpATree,Terran,4604,EU,UpATree EU,Dragonite,Protoss,4830,Ruby Rock LE,315,L,0,4588,C,41.4,59.6,20,6.9,30,1.29,0.3642,80.8,410.4,0.57
+6214,2026-04-14T20:23:43Z,UpATree,Terran,4588,EU,UpATree EU,Countess,Protoss,4499,Old Republic LE,319,W,0,4607,B,66,95.2,70,4.7,35,175,0.2229,86,270.8,0.75
+6215,2026-04-14T20:34:49Z,UpATree,Terran,4607,EU,UpATree EU,Countess,Protoss,4480,Tourmaline LE,356,L,0,4582,B,60.6,107.4,70,11.2,42,0.88,0.1882,88,234.2,1.01
+6216,2026-04-14T20:54:00Z,UpATree,Terran,4582,EU,UpATree EU,Macaque,Zerg,4968,Ruby Rock LE,1101,W,0,4616,B-,59.1,390.3,100,10.2,93,1.23,0.1925,93,438.9,0.65
+6217,2026-04-14T21:13:40Z,UpATree,Terran,4616,EU,UpATree EU,DeeDan,Terran,5160,Tourmaline LE,652,L,0,4607,C-,33.2,283.1,70,20.4,69,0.6,0.221,92.3,448.8,0.46
+6218,2026-04-14T21:29:11Z,UpATree,Terran,4607,EU,UpATree EU,ProtoZZavr,Terran,5420,Old Republic LE,160,L,0,4603,C,41.1,25.7,20,4.2,22,0,0.2343,100.5,207.7,0.38
+6219,2026-04-14T21:29:59Z,UpATree,Terran,4603,EU,UpATree EU,TossTerr,Protoss,4861,Tourmaline LE,1,W,0,4632,,,,,,,,,,,
+6220,2026-04-14T21:38:04Z,UpATree,Terran,4632,EU,UpATree EU,Propagandalf,Protoss,4574,Taito Citadel LE,309,W,0,4644,C+,48.3,58.6,20,6.9,25,35,0.1907,82,193.1,0.39
+6221,2026-04-14T21:57:39Z,UpATree,Terran,4644,EU,UpATree EU,Nishihi,Zerg,4810,10000 Feet LE,925,W,0,4671,C,42.9,355.8,50,15.6,68,1.27,0.2497,87.7,560.3,0.65
+6222,2026-04-15T21:30:34Z,UpATree,Terran,4674,NA,UpATree EU,DonShot,Zerg,4510,Taito Citadel LE,1370,W,0,4691,C,43.9,318.8,50,32.8,87,1.22,0.2588,85,550.9,0.74
+6223,2026-04-15T21:45:50Z,UpATree,Terran,4691,NA,UpATree EU,DonShot,Zerg,4493,Old Republic LE,804,W,0,4708,A-,77.8,431.3,30,19.7,83,1.51,0.2112,99.1,520.6,1.12
+6224,2026-04-15T21:58:50Z,UpATree,Terran,4708,NA,UpATree EU,Kakarott,Terran,4713,Taito Citadel LE,469,W,0,4729,B-,54.8,83.5,90,10.1,47,1.73,0.4037,113.8,507.8,0.9
+6225,2026-04-15T22:35:06Z,UpATree,Terran,4729,NA,UpATree EU,sammyuel,Zerg,5050,Ruby Rock LE,2141,L,0,4716,B,61.1,426.9,200,25.1,120,1.51,0.1787,77,420,0.73
+6226,2026-04-15T22:47:58Z,UpATree,Terran,4716,NA,UpATree EU,HotDirt,Zerg,4231,Ruby Rock LE,602,W,0,4727,B-,57.2,308,40,15.7,61,2.2,0.2931,93,654.1,1
+6227,2026-04-15T22:59:23Z,UpATree,Terran,4727,NA,UpATree EU,Soft,Protoss,4597,Taito Citadel LE,381,L,0,4704,C-,32.6,32.9,20,8.2,30,1.02,0.4578,62.3,474.7,0.63
+6228,2026-04-15T23:14:37Z,UpATree,Terran,4704,NA,UpATree EU,eltakero,Terran,4544,Old Republic LE,731,W,0,4721,B-,54.9,280.2,110,12.2,75,1.4,0.252,121.8,492.2,0.41
+6229,2026-04-15T23:35:03Z,UpATree,Terran,4721,NA,UpATree EU,VertiGGo,Zerg,4865,Tourmaline LE,1186,L,0,4702,C-,36.1,356.2,60,15.5,71,1.07,0.2074,82.6,462.7,0.56
+6230,2026-04-16T06:28:54Z,UpATree,Terran,,NA,UpATree EU,A.I. 1 (Easy),Terran,,10000 Feet LE,0,L,0,4703,,,,,,,,,,,
+6231,2026-04-16T17:31:35Z,UpATree,Terran,4671,EU,UpATree EU,Erika,Zerg,4759,Tourmaline LE,757,W,0,4695,B,63.3,334.4,30,15.1,82,1.45,0.2857,95.2,643.3,0.95
+6232,2026-04-16T17:41:18Z,UpATree,Terran,4695,EU,UpATree EU,muffin,Terran,5034,10000 Feet LE,432,L,0,4682,B,61.3,157.6,100,7.1,51,1.12,0.1865,89.5,275.6,0.97
+6233,2026-04-16T18:01:58Z,UpATree,Terran,4682,EU,UpATree EU,DhcShawN,Zerg,4410,10000 Feet LE,1207,L,0,4652,C-,36.2,346.5,230,15.4,88,1.72,0.3006,69.7,625.8,0.7
+6234,2026-04-16T18:15:11Z,UpATree,Terran,4652,EU,UpATree EU,SeV,Protoss,4689,Taito Citadel LE,331,L,0,4632,D,30,48.6,20,9.6,26,0.64,0.2314,72.3,230.7,0.54
+6235,2026-04-16T18:40:03Z,UpATree,Terran,4632,EU,UpATree EU,whynot,Zerg,4767,Ruby Rock LE,1490,L,0,4614,C,39.2,324.8,160,10.8,89,1.28,0.2492,72.4,491,0.89
+6236,2026-04-16T18:48:20Z,UpATree,Terran,4614,EU,UpATree EU,AlexCool,Terran,4406,Taito Citadel LE,468,W,0,4628,B,64.5,186,110,7.4,53,1.48,0.3528,110.7,603.6,0.9
+6237,2026-04-16T19:05:16Z,UpATree,Terran,4628,EU,UpATree EU,IIIIIIIIIIII,Terran,4861,Tourmaline LE,798,L,0,4605,C+,47.9,311.2,80,22.4,87,0.89,0.2099,105.3,422,0.45
+6238,2026-04-16T19:23:38Z,UpATree,Terran,4605,EU,UpATree EU,CementEater,Zerg,4638,Tourmaline LE,883,W,0,4627,B,65.6,417.5,130,11.7,78,1.48,0.2805,93.9,675.2,1.02
+6239,2026-04-16T19:31:36Z,UpATree,Terran,4627,EU,UpATree EU,DasDied,Protoss,4582,Taito Citadel LE,374,L,0,4604,C+,49.6,94.2,20,12.7,32,1.11,0.3554,82.7,457.5,0.96
+6240,2026-04-16T19:42:29Z,UpATree,Terran,4604,EU,UpATree EU,CaitUltedJFK,Terran,4888,Tourmaline LE,564,L,0,4585,C+,50.5,268.1,40,21.9,69,0.7,0.2075,88.7,414.5,0.85
+6241,2026-04-16T19:53:16Z,UpATree,Terran,4585,EU,UpATree EU,Tokibokiloki,Protoss,5075,Ruby Rock LE,583,L,0,4576,C-,31.2,72.6,60,18.2,50,1.34,0.5081,67.8,632.3,0.82
+6242,2026-04-16T20:26:33Z,UpATree,Terran,4576,EU,UpATree EU,whynot,Zerg,4690,Taito Citadel LE,1945,L,0,4557,C,39.2,352,130,11.4,91,1.31,0.2475,74.6,531,0.68
+6243,2026-04-16T20:44:20Z,UpATree,Terran,4557,EU,UpATree EU,KoriKori,Terran,4559,Old Republic LE,493,W,0,4571,B+,69.6,211.6,50,11.5,59,1.96,0.2003,110.9,347.8,1.1
+6244,2026-04-16T20:47:16Z,UpATree,Terran,4571,EU,UpATree EU,whynot,Zerg,4707,Ruby Rock LE,1,W,0,4596,,,,,,,,,,,
+6245,2026-04-16T20:54:42Z,UpATree,Terran,4596,EU,UpATree EU,Kutoflondra,Protoss,4797,Tourmaline LE,364,L,0,4573,C,42,79,40,8.2,32,1.11,0.3409,78.1,412.1,0.66
+6246,2026-04-16T21:01:38Z,UpATree,Terran,4573,EU,UpATree EU,Kutoflondra,Protoss,4797,Tourmaline LE,360,W,0,4594,D,27.9,25.7,50,4,26,2.25,0.2831,67.4,260.2,0.33
+6247,2026-04-16T21:03:43Z,UpATree,Terran,4594,EU,UpATree EU,Scythe,Terran,4283,Celestial Enclave LE,1,W,0,4607,,,,,,,,,,,
+6248,2026-04-16T21:12:04Z,UpATree,Terran,4607,EU,UpATree EU,SWPro,Protoss,4791,10000 Feet LE,446,W,0,4634,C+,49,87.9,90,7.5,40,3,0.2322,71.7,275.5,0.54
+6249,2026-04-16T21:23:30Z,UpATree,Terran,4634,EU,UpATree EU,SoldierBoy,Terran,4274,10000 Feet LE,535,L,0,4601,C+,47.6,248.7,110,12,65,0.62,0.2779,99.3,543.8,1.01
+6250,2026-04-16T21:36:13Z,UpATree,Terran,4601,EU,UpATree EU,Cluster,Terran,4610,10000 Feet LE,548,W,0,4623,B+,71,253.1,40,12.2,67,2.75,0.2106,104.7,407.1,0.88
+6251,2026-04-17T18:23:53Z,UpATree,Terran,4623,EU,UpATree EU,MalMerDev,Zerg,4849,Ruby Rock LE,351,L,0,4607,B,65.4,143,30,8.1,47,0.89,0.1949,103.2,276.2,1.03
+6252,2026-04-17T18:36:41Z,UpATree,Terran,4607,EU,UpATree EU,Remonitions,Zerg,4578,10000 Feet LE,673,L,0,4591,C+,48.4,235.2,50,14.2,79,1.03,0.2829,89.6,518,1.16
+6253,2026-04-17T18:53:16Z,UpATree,Terran,4591,EU,UpATree EU,Miu,Zerg,4721,Old Republic LE,976,L,0,4573,B,62.3,345.9,50,12.8,131,1.46,0.2092,67.9,458,0.74
+6254,2026-04-17T19:02:54Z,UpATree,Terran,4573,EU,UpATree EU,Ragnar,Protoss,4744,Celestial Enclave LE,534,L,0,4556,F,9.1,5.9,70,13,27,0.72,0.4702,61.4,427.3,0.45
+6255,2026-04-17T19:15:16Z,UpATree,Terran,4556,EU,UpATree EU,TcUltimate,Protoss,5307,Celestial Enclave LE,429,L,0,4548,C,40.5,43,60,9.7,34,1.15,0.283,62.6,284.1,0.84
+6256,2026-04-17T19:24:44Z,UpATree,Terran,4548,EU,UpATree EU,Pupu,Zerg,4737,10000 Feet LE,522,L,0,4531,B-,58.6,214.7,30,13.7,65,1.06,0.2047,105.4,359.1,1.15
+6257,2026-04-17T19:33:01Z,UpATree,Terran,4531,EU,UpATree EU,Ragnar,Protoss,4732,Tourmaline LE,480,W,0,4559,D,26.5,33.3,90,13.7,33,1.61,0.282,62.4,269.6,0.75
+6258,2026-04-17T19:41:12Z,UpATree,Terran,4559,EU,UpATree EU,Ragnar,Protoss,4704,Celestial Enclave LE,430,W,0,4585,C-,36.3,37.9,60,6.2,27,3.12,0.3171,73.3,316.7,0.56
+6259,2026-04-17T19:48:30Z,UpATree,Terran,4585,EU,UpATree EU,Nerzoti,Protoss,4161,Tourmaline LE,387,W,0,4596,C,42,41,20,5.9,27,4.53,0.2313,72.6,221.9,0.31
+6260,2026-04-17T20:07:07Z,UpATree,Terran,4596,EU,UpATree EU,FallinInFall,Zerg,5001,Ruby Rock LE,1006,L,0,4584,C,41.6,330.9,80,27.8,81,1.13,0.2918,83.9,618.6,0.83
+6261,2026-04-17T20:21:00Z,UpATree,Terran,4584,EU,UpATree EU,DarkStorm,Terran,4513,Celestial Enclave LE,413,L,0,4561,B,60.5,156.9,40,14.6,49,0.65,0.2771,128.2,426.3,1.02
+6262,2026-04-17T20:27:48Z,UpATree,Terran,4561,EU,UpATree EU,JustPractice,Protoss,4823,Taito Citadel LE,373,L,0,4546,D,27.7,20.7,20,10.2,26,1.23,0.3274,67.5,301,0.64
+6263,2026-04-17T20:32:20Z,UpATree,Terran,4546,EU,UpATree EU,llllllllllll,Protoss,4480,Taito Citadel LE,224,L,0,4523,C+,48.3,25,80,4.6,23,0,0.2501,82.6,223.6,0.54
+6264,2026-04-17T20:45:42Z,UpATree,Terran,4523,EU,UpATree EU,bebe,Terran,4206,Old Republic LE,673,W,0,4536,B+,68.2,326.3,50,16.2,71,2.16,0.2243,100.9,496.2,0.98
+6265,2026-04-17T21:18:13Z,UpATree,Terran,4536,EU,UpATree EU,Zad,Zerg,4383,Tourmaline LE,1745,L,0,4510,B-,52.8,297.7,70,40.1,163,1.74,0.3178,70.1,598.9,1.03
+6266,2026-04-17T21:23:31Z,UpATree,Terran,4510,EU,UpATree EU,MeNoS,Protoss,4757,Old Republic LE,266,L,0,4495,F,17.6,-0.3,30,4.6,24,0,0.3165,63,255.8,0.45
+6267,2026-04-17T21:35:29Z,UpATree,Terran,4495,EU,UpATree EU,llllllllllll,Terran,-36400,Ruby Rock LE,357,L,0,4478,C+,50.8,118.8,30,8.9,41,0.98,0.2857,90.7,390.5,0.84
+6268,2026-04-17T21:39:02Z,UpATree,Terran,4478,EU,UpATree EU,Inzane,Zerg,4750,10000 Feet LE,2,W,0,4508,,,,,,,,,,,
+6269,2026-04-17T21:47:24Z,UpATree,Terran,4508,EU,UpATree EU,llllllllllll,Protoss,4561,Tourmaline LE,443,W,0,4531,B-,57.7,73.1,40,21.9,35,1.95,0.2481,89.9,279.7,1.08
+6270,2026-04-17T22:00:39Z,UpATree,Terran,4531,EU,UpATree EU,Gumbi,Terran,4840,Tourmaline LE,702,L,0,4518,B-,53,333.5,50,12.2,85,0.58,0.2378,90.3,535.3,0.85
+6271,2026-04-17T22:21:02Z,UpATree,Terran,4518,EU,UpATree EU,LemonLyman,Zerg,4480,Tourmaline LE,1108,L,0,4495,B-,56.4,256.6,140,16.8,106,1.47,0.2992,89.8,465.4,1.08
+6272,2026-04-17T22:50:58Z,UpATree,Terran,4495,EU,UpATree EU,Zangief,Zerg,4471,Celestial Enclave LE,1793,W,0,4516,B+,71.4,427.9,40,9.4,74,2.77,0.2445,95.3,589.8,1
+6273,2026-04-19T03:25:15Z,UpATree,Terran,4703,NA,UpATree EU,gtCheticus,Zerg,4592,10000 Feet LE,743,W,0,4722,B-,55.7,321.9,40,13.9,68,1.03,0.2053,115.8,437.8,0.81
+6274,2026-04-19T03:34:51Z,UpATree,Terran,4722,NA,UpATree EU,JetLi,Protoss,4414,Tourmaline LE,534,L,0,4691,C,39.4,165.3,70,20,47,1.22,0.2132,89.9,327.1,0.67
+6275,2026-04-19T03:50:04Z,UpATree,Terran,4691,NA,UpATree EU,Ali,Zerg,4906,Tourmaline LE,884,L,0,4675,B,66.3,382.7,40,24,90,1.3,0.2025,85.5,464.3,0.88
+6276,2026-04-20T03:17:59Z,UpATree,Terran,4675,NA,UpATree EU,sAviTar,Terran,4859,Celestial Enclave LE,994,L,0,4658,C+,46.2,282,70,18.8,99,0.78,0.2435,96,441.1,0.72
+6277,2026-04-20T03:35:29Z,UpATree,Terran,4658,NA,UpATree EU,CatZ,Zerg,4772,Ruby Rock LE,905,W,0,4683,B-,53.4,220.9,240,7.8,87,1.39,0.2209,109.4,332.2,0.73
+6278,2026-04-20T04:01:07Z,UpATree,Terran,4683,NA,UpATree EU,JustChadding,Terran,4935,Ruby Rock LE,1522,L,0,4668,C+,47.4,239.3,120,16.6,142,0.75,0.257,116.2,400.5,0.79
+6279,2026-04-20T23:09:24Z,UpATree,Terran,4516,EU,UpATree EU,Wallace,Zerg,4190,Tourmaline LE,934,L,0,4484,C+,49.8,404.6,60,12.8,79,0.93,0.2585,88.6,603.1,0.77
+6280,2026-04-20T23:20:20Z,UpATree,Terran,4484,EU,UpATree EU,PizzaBoy,Zerg,4256,Taito Citadel LE,628,W,0,4500,B+,70.5,310.2,110,9.2,78,1.79,0.2301,97,507,1.05
+6281,2026-04-20T23:34:25Z,UpATree,Terran,4500,EU,UpATree EU,PizzaBoy,Zerg,4241,Ruby Rock LE,787,W,0,4514,B-,52.6,321.8,110,27,85,1.43,0.23,85.7,495.6,0.84
+6282,2026-04-20T23:42:14Z,UpATree,Terran,4514,EU,UpATree EU,KillerBeCast,Terran,4316,Taito Citadel LE,406,W,0,4531,B-,59.7,119.2,50,10.5,45,2.34,0.2189,113.5,289.9,0.59
+6283,2026-04-20T23:57:15Z,UpATree,Terran,4531,EU,UpATree EU,Intendant,Zerg,4498,10000 Feet LE,775,L,0,4508,B-,52.4,363,70,11.5,74,0.93,0.2102,82.2,468.7,0.85
+6284,2026-04-21T00:10:48Z,UpATree,Terran,4508,EU,UpATree EU,KillerBeCast,Terran,4340,Old Republic LE,503,W,0,4525,B,67.1,219.3,50,14.1,60,2.24,0.194,99.7,342.7,1.07
+6285,2026-04-21T00:25:42Z,UpATree,Terran,4525,EU,UpATree EU,KillerBeCast,Terran,4323,10000 Feet LE,743,W,0,4541,C+,48.4,334.7,130,16.5,75,0.97,0.2784,109.1,592.4,0.65
+6286,2026-04-21T00:34:00Z,UpATree,Terran,4541,EU,UpATree EU,KillerBeCast,Terran,4307,Ruby Rock LE,424,W,0,4556,B-,59.4,98.1,50,7.6,41,1.74,0.2674,100.6,336.5,0.99
+6287,2026-04-21T00:48:11Z,UpATree,Terran,4668,NA,UpATree EU,YesTvT,Terran,4507,Tourmaline LE,525,W,0,4686,C-,35,134.4,20,10.4,47,2.42,0.3866,88.2,575.4,0.69
+6288,2026-04-21T00:58:09Z,UpATree,Terran,4686,NA,UpATree EU,JetLi,Protoss,4592,Ruby Rock LE,528,W,0,4704,D,22.6,20.9,70,5.5,27,1.28,0.3777,82.3,357,0.45
+6289,2026-04-21T01:09:41Z,UpATree,Terran,4704,NA,UpATree EU,grubhub,Protoss,4921,Old Republic LE,588,L,0,4689,C-,33.8,120.1,60,17.6,54,0.61,0.2142,72.4,283.9,0.82
+6290,2026-04-21T16:25:28Z,UpATree,Terran,4556,EU,UpATree EU,TomBombadill,Protoss,4351,Tourmaline LE,365,W,0,4572,F,14,-34.1,120,4.3,28,0,0.4391,78.7,303.9,0.33
+6291,2026-04-21T16:33:53Z,UpATree,Terran,4572,EU,UpATree EU,BaldBrazzer,Terran,4678,Taito Citadel LE,453,L,0,4554,B-,54.4,191.3,80,8.3,53,0.54,0.297,104.8,507,0.79
+6292,2026-04-21T16:57:43Z,UpATree,Terran,4554,EU,UpATree EU,IIIIIIIIIIII,Terran,4293,Celestial Enclave LE,1392,L,0,4524,B-,52.7,392.1,50,12.1,115,0.8,0.2351,88.8,497.9,0.78
+6293,2026-04-21T17:11:08Z,UpATree,Terran,4524,EU,UpATree EU,FreeZ,Terran,4442,Ruby Rock LE,743,L,0,4500,B-,59.1,273.9,60,19,90,0.95,0.2457,91.6,460.4,1.05
+6294,2026-04-21T17:23:11Z,UpATree,Terran,4500,EU,UpATree EU,IIIIIIIIIIII,Terran,4720,Ruby Rock LE,563,W,0,4528,C+,48.7,231,110,17.7,66,2.09,0.318,94.1,603.5,0.85
+6295,2026-04-21T17:32:43Z,UpATree,Terran,4528,EU,UpATree EU,collage,Protoss,4254,Old Republic LE,320,L,0,4498,D,21.3,-3.4,20,13.1,26,0.94,0.2566,74.2,193.6,0.38
+6296,2026-04-21T17:39:07Z,UpATree,Terran,4498,EU,UpATree EU,JeanSi,Terran,4313,10000 Feet LE,311,L,0,4471,C,38,42.3,20,12.8,28,1,0.3003,95.4,303.5,0.77
+6297,2026-04-21T17:54:44Z,UpATree,Terran,4471,EU,UpATree EU,Virse,Zerg,4666,Tourmaline LE,872,L,0,4455,C,43.9,227.6,50,21.7,72,1.09,0.2076,75.8,438.3,1.1
+6298,2026-04-21T18:09:48Z,UpATree,Terran,4455,EU,UpATree EU,IIIIIIIIII,Zerg,4372,Ruby Rock LE,807,L,0,4431,C-,31.7,333.4,90,19.7,65,0.83,0.2754,79.8,622.3,0.82
+6299,2026-04-21T18:16:32Z,UpATree,Terran,4431,EU,UpATree EU,Sweetzy,Terran,4320,Ruby Rock LE,363,L,0,4407,C,39.4,89.8,50,7.8,39,0.79,0.2894,88.8,356.7,0.66
+6300,2026-04-21T18:29:19Z,UpATree,Terran,4407,EU,UpATree EU,lIlIlIlIlIlI,Zerg,4864,Tourmaline LE,755,W,0,4429,B-,58.8,335.4,120,8.4,71,1.45,0.2907,84.6,658.6,1.11
+6301,2026-04-21T18:42:47Z,UpATree,Terran,4429,EU,UpATree EU,Magicwit,Protoss,4296,Old Republic LE,568,W,0,4447,A-,80.2,220,40,11.6,58,5.44,0.2528,105.2,458.2,0.95
+6302,2026-04-21T19:04:15Z,UpATree,Terran,4447,EU,UpATree EU,MekTypro,Terran,4429,Old Republic LE,1202,W,0,4468,B-,54.1,391.8,80,17.2,84,1.12,0.2233,103,487.8,0.65
+6303,2026-04-21T19:14:26Z,UpATree,Terran,4468,EU,UpATree EU,Mixapotato,Zerg,4129,Tourmaline LE,328,L,0,4436,F,13.7,24,30,14.2,28,0.86,0.353,80.1,334.9,0.37
+6304,2026-04-21T19:22:55Z,UpATree,Terran,4436,EU,UpATree EU,OeZeBiuS,Protoss,4476,Taito Citadel LE,451,W,0,4460,A-,76.4,143,20,10.9,42,2.31,0.2221,111,319.5,0.8
+6305,2026-04-21T19:45:47Z,UpATree,Terran,4460,EU,UpATree EU,MegaTossBY,Terran,5010,Taito Citadel LE,872,L,0,4451,C+,47.2,386.9,170,21.2,86,0.64,0.2135,91,450.4,0.69
+6306,2026-04-21T20:02:07Z,UpATree,Terran,4451,EU,UpATree EU,Swarm,Zerg,4767,Old Republic LE,923,L,0,4438,B,63.3,391.7,20,17.6,96,1.2,0.2252,76.1,490.5,0.91
+6307,2026-04-21T20:11:43Z,UpATree,Terran,4438,EU,UpATree EU,llllllllllll,Protoss,4478,Ruby Rock LE,559,W,0,4455,C+,48,151,40,21.1,43,1.49,0.2451,87.2,365.5,0.97
+6308,2026-04-22T16:27:37Z,UpATree,Terran,4455,EU,UpATree EU,MrBlonde,Protoss,4287,Tourmaline LE,409,W,0,4471,B,65.9,119.8,60,5.9,40,5.07,0.239,85.3,320.8,0.59
+6309,2026-04-22T16:43:49Z,UpATree,Terran,4471,EU,UpATree EU,ProtossOTP,Zerg,4350,Old Republic LE,605,W,0,4490,B-,58,320.7,90,12.2,65,1.39,0.205,94.2,457.4,0.89
+6310,2026-04-22T17:08:47Z,UpATree,Terran,4490,EU,UpATree EU,birdy,Zerg,4494,Ruby Rock LE,266,L,0,4468,C-,34.8,63.4,20,9.8,31,0.29,0.2091,94,219.9,0.68
+6311,2026-04-22T17:30:28Z,UpATree,Terran,4468,EU,UpATree EU,birdy,Zerg,4515,Old Republic LE,1288,L,0,4448,B-,59.5,394.6,130,17.3,141,1.22,0.2345,80.2,527.9,1.02
+6312,2026-04-22T17:37:41Z,UpATree,Terran,4448,EU,UpATree EU,birdy,Zerg,4535,Old Republic LE,413,L,0,4429,B,63.2,200.1,40,13.3,51,0.46,0.1935,94.9,324.8,1.31
+6313,2026-04-22T17:43:03Z,UpATree,Terran,4429,EU,UpATree EU,DexterGexter,Zerg,4292,Old Republic LE,280,L,0,4403,B-,59.1,105.6,30,9.5,37,0.75,0.1806,101.5,222,1.07
+6314,2026-04-22T17:54:17Z,UpATree,Terran,4403,EU,UpATree EU,Losecontrol,Zerg,4628,Tourmaline LE,634,W,0,4432,C+,46.6,284.8,150,8.9,66,1.55,0.2287,90.7,477.7,0.76
+6315,2026-04-22T18:09:00Z,UpATree,Terran,4432,EU,UpATree EU,Teilob,Zerg,4266,Ruby Rock LE,583,W,0,4449,B,67.7,308.9,120,10.5,70,2.18,0.2637,93.7,584.9,1.13
+6316,2026-04-22T18:22:00Z,UpATree,Terran,4449,EU,UpATree EU,IIIIIIIIIIII,Terran,4364,10000 Feet LE,612,W,0,4468,B-,59.9,245.6,60,13.1,78,1.39,0.3337,140.9,657.9,0.69
+6317,2026-04-22T18:50:46Z,UpATree,Terran,4468,EU,UpATree EU,IIIIIIIIII,Zerg,4473,Ruby Rock LE,1295,L,0,4447,B+,69.1,425.7,150,10.3,127,1.6,0.2391,77.5,577.7,0.93
+6318,2026-04-22T19:06:03Z,UpATree,Terran,4447,EU,UpATree EU,IIIIIIIIII,Zerg,4733,Ruby Rock LE,894,W,0,4477,B-,57,312.2,70,14.8,79,1.48,0.2745,98.9,570.3,0.81
+6319,2026-04-22T19:16:02Z,UpATree,Terran,4477,EU,UpATree EU,DekaPasCinqK,Protoss,4654,Tourmaline LE,525,L,0,4460,F,18.5,-10.7,130,7.2,26,0.83,0.3129,68.9,235.6,0.69
+6320,2026-04-22T20:00:04Z,UpATree,Terran,4460,EU,UpATree EU,Unitarmeduza,Zerg,4305,Old Republic LE,2634,L,0,4442,C+,47.2,394,30,26.5,94,1.17,0.2059,77,489.4,0.62
+6321,2026-04-22T20:07:36Z,UpATree,Terran,4442,EU,UpATree EU,Killa,Protoss,4753,Tourmaline LE,407,W,0,4474,C+,48.5,62.4,90,4.9,30,6.54,0.234,77.7,249.5,0.44
+6322,2026-04-22T20:19:13Z,UpATree,Terran,4474,EU,UpATree EU,Elias,Zerg,4220,Taito Citadel LE,412,L,0,4444,B,64.2,162.3,30,12.2,54,0.55,0.2166,95.7,329.9,1.17
+6323,2026-04-22T20:33:22Z,UpATree,Terran,4444,EU,UpATree EU,Riegel,Terran,4928,10000 Feet LE,822,L,0,4434,C-,37.7,256.8,170,14.6,84,0.89,0.3484,83.9,598.9,0.8
+6324,2026-04-23T16:22:05Z,UpATree,Terran,4434,EU,UpATree EU,JoebobJoe,Protoss,4639,Old Republic LE,524,W,0,4462,C-,30.3,-3.1,50,7.2,30,3.75,0.4595,69.8,395.2,0.46
+6325,2026-04-23T16:29:40Z,UpATree,Terran,4462,EU,UpATree EU,JoebobJoe,Protoss,4611,Tourmaline LE,404,W,0,4488,C+,50.3,28.4,50,5.2,29,2.83,0.2764,106.7,256.6,0.45
+6326,2026-04-23T16:37:00Z,UpATree,Terran,4488,EU,UpATree EU,Elinar,Protoss,4194,Ruby Rock LE,278,W,0,4502,C,40.3,-0.1,20,7.4,25,5.75,0.229,78.9,172,0.43
+6327,2026-04-23T16:50:30Z,UpATree,Terran,4502,EU,UpATree EU,Nishihi,Zerg,4837,Celestial Enclave LE,735,L,0,4489,C,39.2,330.4,90,18.1,69,1.05,0.1917,72.7,414,0.73
+6328,2026-04-23T17:12:07Z,UpATree,Terran,4489,EU,UpATree EU,Unitarmeduza,Zerg,4305,Taito Citadel LE,1229,W,0,4513,B+,74.1,382.4,140,12.6,129,1.63,0.1777,87.3,403.9,1.17
+6329,2026-04-23T17:21:15Z,UpATree,Terran,4513,EU,UpATree EU,Kutoflondra,Protoss,4792,Ruby Rock LE,292,W,0,4538,C-,36.4,40.4,100,3.3,26,6,0.3105,77.8,312.8,0.41
+6330,2026-04-23T17:30:00Z,UpATree,Terran,4538,EU,UpATree EU,AlexCool,Terran,4406,Ruby Rock LE,463,W,0,4554,B,67.7,196.5,90,16.2,57,2.8,0.2284,101.2,385.7,0.78
+6331,2026-04-23T17:37:30Z,UpATree,Terran,4554,EU,UpATree EU,NaniKawaii,Protoss,4849,Old Republic LE,304,L,0,4541,C-,30.6,43.5,20,7.5,29,0.33,0.286,76.4,288.3,0.59
+6332,2026-04-23T17:58:32Z,UpATree,Terran,4541,EU,UpATree EU,llllllllllll,Protoss,4660,Tourmaline LE,800,W,0,4566,C-,30.9,89.9,160,11.6,62,1.37,0.5444,98.9,712.7,0.45
+6333,2026-04-23T18:13:22Z,UpATree,Terran,4566,EU,UpATree EU,Pilbas,Terran,4371,Tourmaline LE,544,W,0,4582,B-,59.4,237.1,60,16.9,64,2.74,0.2302,99.1,431.6,0.88
+6334,2026-04-23T18:27:01Z,UpATree,Terran,4582,EU,UpATree EU,Dystopia,Protoss,4371,10000 Feet LE,610,W,0,4598,B-,57.1,186,30,12.4,50,2.22,0.3415,97.6,582.4,0.79
+6335,2026-04-23T18:40:24Z,UpATree,Terran,4598,EU,UpATree EU,MacNCheese,Protoss,4493,Taito Citadel LE,421,W,0,4616,A,87.5,180.1,40,10.2,50,4.14,0.1428,96.6,219.6,1.14
+6336,2026-04-23T18:50:11Z,UpATree,Terran,4616,EU,UpATree EU,llllllllllll,Terran,5089,Taito Citadel LE,406,L,0,4606,C+,48.6,159.1,70,11.1,42,0.6,0.2024,89.9,303.2,0.89
+6337,2026-04-23T19:02:37Z,UpATree,Terran,4606,EU,UpATree EU,MukolaUA,Protoss,4686,Taito Citadel LE,491,W,0,4630,C,44.7,156.2,30,8.2,45,0.54,0.2412,114.6,364.8,0.73
+6338,2026-04-23T19:11:35Z,UpATree,Terran,4630,EU,UpATree EU,MukolaUA,Protoss,4639,Old Republic LE,335,L,0,4609,D,23.3,45.2,30,8.6,25,0.34,0.2487,85.6,246.9,0.36
+6339,2026-04-23T19:19:36Z,UpATree,Terran,4609,EU,UpATree EU,Geehous,Protoss,4133,Tourmaline LE,418,W,0,4631,B,67.8,113.4,40,12.4,41,4.41,0.218,92.5,282.7,0.72
+6340,2026-04-23T19:43:12Z,UpATree,Terran,4631,EU,UpATree EU,Planetary,Terran,4733,Ruby Rock LE,773,L,0,4613,B,61.5,361.8,30,31.6,83,0.75,0.192,90.9,423.5,0.93
+6341,2026-04-23T20:24:10Z,UpATree,Terran,4613,EU,UpATree EU,EndOfLine,Zerg,4828,Tourmaline LE,2457,W,0,4641,C-,32.7,181.4,100,26.8,66,1.95,0.2241,79.4,367.7,0.46
+6342,2026-04-24T16:34:08Z,UpATree,Terran,4641,EU,UpATree EU,smith,Protoss,4273,10000 Feet LE,617,W,0,4653,B,61.1,232,110,12.5,62,1.42,0.2525,105.1,471.2,0.68
+6343,2026-04-24T16:42:10Z,UpATree,Terran,4653,EU,UpATree EU,EyeWater,Protoss,4520,Celestial Enclave LE,401,L,0,4627,D,25.3,34.3,70,12.9,28,1.05,0.3667,77.3,368.9,0.6
+6344,2026-04-24T16:49:27Z,UpATree,Terran,4627,EU,UpATree EU,LocaLHosT,Protoss,4508,Tourmaline LE,363,L,0,4602,B-,56.2,86.6,30,11.3,38,1.13,0.2656,82.9,319.6,0.99
+6345,2026-04-24T17:00:51Z,UpATree,Terran,4602,EU,UpATree EU,WannaBeJeros,Terran,4325,10000 Feet LE,658,W,0,4617,B-,53.6,207.5,100,14.3,67,1.62,0.2968,102.4,537.2,1
+6346,2026-04-24T17:24:53Z,UpATree,Terran,4617,EU,UpATree EU,Torkel,Terran,4575,Ruby Rock LE,481,L,0,4594,C+,47.8,235.1,50,17.6,61,0.29,0.1746,91.6,318.1,1.25
+6347,2026-04-24T17:40:10Z,UpATree,Terran,4594,EU,UpATree EU,KampfHeld,Terran,4514,Old Republic LE,711,L,0,4570,C,41.7,303.2,80,21,82,0.75,0.2088,84,430,0.68
+6348,2026-04-24T18:14:16Z,UpATree,Terran,4570,EU,UpATree EU,Казантипщик,Zerg,4188,Ruby Rock LE,1695,W,0,4582,B+,68.7,437.9,80,10.4,74,2.43,0.2008,105.9,486.8,0.71
+6349,2026-04-24T18:28:27Z,UpATree,Terran,4582,EU,UpATree EU,TheAxe,Zerg,5398,Celestial Enclave LE,269,L,0,4577,C+,47.7,80.1,40,8.6,31,0.75,0.2014,109.8,226.8,0.89
+6350,2026-04-24T18:47:22Z,UpATree,Terran,4577,EU,UpATree EU,Daloze,Zerg,4237,Taito Citadel LE,1121,L,0,4547,C-,36.8,309.6,150,8.1,68,0.89,0.1896,80.1,407.5,0.75
+6351,2026-04-24T19:06:32Z,UpATree,Terran,4547,EU,UpATree EU,Miu,Zerg,4558,Old Republic LE,943,L,0,4526,C-,35,338.4,60,16.1,71,1.07,0.2167,76.6,473.1,0.57
+6352,2026-04-25T18:38:14Z,UpATree,Terran,4689,NA,UpATree EU,eGGz,Zerg,5677,Ruby Rock LE,592,W,0,4744,B+,69.2,258.1,80,11.4,81,2.92,0.2338,87.2,461,1.11
+6353,2026-04-25T18:59:54Z,UpATree,Terran,4744,NA,UpATree EU,universe,Terran,5049,Ruby Rock LE,710,W,0,4777,B,62.3,352.3,100,10,70,1.16,0.198,107,443.2,0.76
+6354,2026-04-25T19:20:25Z,UpATree,Terran,4777,NA,UpATree EU,RiPGreP,Terran,4698,Tourmaline LE,1031,W,0,4797,B,61.3,383.8,120,16.7,90,1.08,0.1926,102.7,434.7,0.64
+6355,2026-04-25T19:48:50Z,UpATree,Terran,4797,NA,UpATree EU,CatZ,Zerg,4921,Ruby Rock LE,1027,L,0,4778,C-,31.9,299.3,50,22,88,1.03,0.2673,85.9,537.3,0.47
+6356,2026-04-26T03:05:32Z,UpATree,Terran,4526,EU,UpATree EU,StormGame,Protoss,5265,Ruby Rock LE,12,L,0,4516,,,,,,,,,,,
+6357,2026-04-26T20:22:09Z,UpATree,Terran,4516,EU,UpATree EU,Søpplenissen,Terran,,Old Republic LE,10,W,0,4532,,,,,,,,,,,
+6358,2026-04-26T20:36:08Z,UpATree,Terran,4532,EU,UpATree EU,Mustitier,Terran,4913,Ruby Rock LE,805,L,0,4520,C,39.5,333.4,110,18,74,0.79,0.2261,95.6,490.9,0.52
+6359,2026-04-26T20:46:55Z,UpATree,Terran,4520,EU,UpATree EU,GooberTwo,Zerg,4708,10000 Feet LE,270,L,0,4504,C-,32.5,13.6,30,9.8,26,1.75,0.2686,96.3,228.2,0.67
+6360,2026-04-26T20:57:00Z,UpATree,Terran,4504,EU,UpATree EU,Negod,Terran,4772,Celestial Enclave LE,548,W,0,4533,C,42.2,217.6,100,7.9,56,1.52,0.2061,94,364.5,0.55
+6361,2026-04-26T21:11:26Z,UpATree,Terran,4533,EU,UpATree EU,Sisyphos,Zerg,4750,Ruby Rock LE,485,L,0,4518,F,15.3,88.7,60,11.9,41,0.74,0.2512,71.6,302.3,0.74
+6362,2026-04-26T21:24:47Z,UpATree,Terran,4518,EU,UpATree EU,Pichu,Protoss,4605,Old Republic LE,476,W,0,4542,B,61,122.8,120,6.1,42,3.48,0.2408,78.4,326.9,0.63
+6363,2026-04-27T16:34:09Z,UpATree,Terran,4542,EU,UpATree EU,Brocoli,Terran,4392,Taito Citadel LE,840,L,0,4516,C-,35.8,291.4,230,8.3,74,0.8,0.2197,76.1,424,0.57
+6364,2026-04-27T16:44:45Z,UpATree,Terran,4516,EU,UpATree EU,Archaleon,Protoss,4312,Ruby Rock LE,322,W,0,4532,C+,46.2,52.9,30,6.6,28,5.85,0.2586,79.4,268.1,0.37
+6365,2026-04-27T16:55:42Z,UpATree,Terran,4532,EU,UpATree EU,ГОСТ,Zerg,4236,Celestial Enclave LE,363,W,0,4546,C+,50.3,55.4,80,7.5,35,1175,0.3624,143.9,400.8,0.83
+6366,2026-04-27T17:10:50Z,UpATree,Terran,4546,EU,UpATree EU,Miszu,Zerg,4542,Ruby Rock LE,698,L,0,4524,B,61.8,363.7,150,12.2,93,1.42,0.2714,85.3,640.6,0.95
+6367,2026-04-27T17:16:16Z,UpATree,Terran,4524,EU,UpATree EU,ГОСТ,Zerg,4209,Old Republic LE,227,L,0,4493,B-,55.2,-18.9,20,5.9,24,1.3,0.3438,118.2,250.1,0.26
+6368,2026-04-27T17:30:06Z,UpATree,Terran,4493,EU,UpATree EU,ГОСТ,Zerg,4240,Tourmaline LE,797,W,0,4507,C+,51.3,214.8,60,30.1,85,2.94,0.3631,110.1,592.5,0.68
+6369,2026-04-27T17:42:01Z,UpATree,Terran,4507,EU,UpATree EU,Land,Protoss,4580,Tourmaline LE,463,L,0,4488,C+,49.1,118,60,12.8,44,0.55,0.3274,81.6,453.5,0.91
+6370,2026-04-27T17:56:58Z,UpATree,Terran,4488,EU,UpATree EU,IlPrincipino,Terran,4513,Ruby Rock LE,766,L,0,4467,C-,35.1,174.3,260,8.4,71,0.68,0.2667,107.2,453.2,0.78
+6371,2026-04-27T18:17:12Z,UpATree,Terran,4467,EU,UpATree EU,llllllllllll,Zerg,4188,Ruby Rock LE,781,W,0,4481,B,62.7,357,60,8.4,72,2.73,0.2101,82.9,483.5,0.61
+6372,2026-04-27T18:26:51Z,UpATree,Terran,4481,EU,UpATree EU,Countess,Protoss,4460,Tourmaline LE,301,L,0,4459,C-,32.9,43.8,20,10.8,28,0.19,0.2438,84.6,239.5,0.6
+6373,2026-04-27T18:36:29Z,UpATree,Terran,4459,EU,UpATree EU,chrnoshif,Protoss,4611,Ruby Rock LE,519,W,0,4485,B+,69.6,187.9,50,18.4,54,4.21,0.218,110.7,357.9,0.81
+6374,2026-04-27T18:55:12Z,UpATree,Terran,4485,EU,UpATree EU,Remonitions,Zerg,4578,10000 Feet LE,781,L,0,4474,C+,46.7,350.9,30,13.6,71,1.27,0.2238,80.6,491.1,0.46
+6375,2026-04-27T19:07:25Z,UpATree,Terran,4474,EU,UpATree EU,IIIIIIIIIIII,Zerg,4579,10000 Feet LE,672,L,0,4455,C-,36.1,243.7,80,12.3,73,1.04,0.3041,80.8,597,0.89
+6376,2026-04-27T19:32:24Z,UpATree,Terran,4455,EU,UpATree EU,Yyo,Zerg,5100,Old Republic LE,1068,W,0,4489,A-,79.5,450.8,50,9.3,88,2.31,0.2763,93.3,690.6,0.9
+6377,2026-04-27T19:34:58Z,UpATree,Terran,4489,EU,UpATree EU,AngryOrange,Zerg,4293,Ruby Rock LE,2,W,0,4505,,,,,,,,,,,
+6378,2026-04-27T19:54:43Z,UpATree,Terran,4505,EU,UpATree EU,SWPro,Protoss,4787,Taito Citadel LE,902,W,0,4535,D,29.3,76.9,170,8.1,55,1.53,0.3346,80,431.1,0.53
+6379,2026-04-27T20:10:51Z,UpATree,Terran,4535,EU,UpATree EU,DasDied,Protoss,4778,10000 Feet LE,666,W,0,4564,C-,32.3,117.4,80,16.4,53,1.4,0.4265,84.5,608.1,0.72
+6380,2026-04-28T17:46:32Z,UpATree,Terran,4564,EU,UpATree EU,FallinInFall,Zerg,5256,Taito Citadel LE,523,L,0,4558,C,40.4,196.8,80,11.8,60,1.25,0.2298,82.7,388.6,1.15
+6381,2026-04-28T18:05:09Z,UpATree,Terran,4558,EU,UpATree EU,DhcShawN,Zerg,4335,10000 Feet LE,739,L,0,4529,C-,31.2,242.7,160,17.5,68,1.65,0.2755,73.1,581.8,0.81
+6382,2026-04-28T18:45:53Z,UpATree,Terran,4529,EU,UpATree EU,Joachimus,Zerg,4658,Tourmaline LE,2345,L,0,4511,B,63.6,411.4,50,11.3,125,1.66,0.1586,69.2,379.8,0.51
+6383,2026-04-28T18:57:33Z,UpATree,Terran,4511,EU,UpATree EU,BulletTrain,Zerg,4467,Ruby Rock LE,1,W,0,4532,,,,,,,,,,,
+6384,2026-04-28T19:00:46Z,UpATree,Terran,4532,EU,UpATree EU,llllllllllll,Protoss,4950,Old Republic LE,125,L,0,4517,F,9.6,-88.1,20,5.7,17,0,0.3623,50,120.2,0
+6385,2026-04-28T19:12:51Z,UpATree,Terran,4517,EU,UpATree EU,Unitarmeduza,Zerg,4305,Tourmaline LE,684,W,0,4535,B,62.2,313.5,50,11.6,65,2.03,0.2598,84.6,584,1.23
+6386,2026-04-28T19:34:14Z,UpATree,Terran,4535,EU,UpATree EU,Malvorio,Zerg,4350,Taito Citadel LE,652,W,0,4552,A-,77.9,312.5,80,10,86,2.48,0.2728,99.4,602.8,1.1
+6387,2026-04-28T19:42:54Z,UpATree,Terran,4552,EU,UpATree EU,TinyCheetah,Protoss,4104,10000 Feet LE,353,W,0,4567,C,38.1,7.9,40,6.6,27,4.21,0.4091,79.7,366,0.51
+6388,2026-04-28T20:05:46Z,UpATree,Terran,4567,EU,UpATree EU,DiSmiSSaL,Protoss,4758,Ruby Rock LE,1236,W,0,4594,C,40.1,289.9,110,19.7,57,1.56,0.186,86.6,340.6,0.44
+6389,2026-04-28T20:19:54Z,UpATree,Terran,4594,EU,UpATree EU,Peynius,Protoss,4301,Old Republic LE,750,L,0,4564,C,38.5,275.2,40,20.7,59,0.87,0.3042,89.9,597.5,0.72
+6390,2026-04-28T20:29:58Z,UpATree,Terran,4564,EU,UpATree EU,HeckinHecker,Protoss,5261,Taito Citadel LE,478,W,0,4609,C,41.3,31.6,40,8.9,31,1.93,0.2627,63.8,245.7,0.75
+6391,2026-04-29T16:25:35Z,UpATree,Terran,4609,EU,UpATree EU,IIIIIIIIIIII,Terran,4608,Old Republic LE,520,W,0,4631,C+,47.6,228.6,80,15.9,67,1.54,0.2848,95.4,532.6,0.81
+6392,2026-04-29T16:43:03Z,UpATree,Terran,4631,EU,UpATree EU,forzen,Zerg,4159,Tourmaline LE,766,W,0,4641,A-,78.9,370.8,20,14.8,84,1.7,0.1734,107.2,374.7,0.86
+6393,2026-04-29T17:00:17Z,UpATree,Terran,4641,EU,UpATree EU,IIIIIIIIII,Zerg,4638,10000 Feet LE,589,L,0,4619,F,16,103.6,50,12.5,48,1.39,0.4644,71.1,638.5,0.61
+6394,2026-04-29T17:14:06Z,UpATree,Terran,4619,EU,UpATree EU,Miu,Zerg,4629,10000 Feet LE,758,W,0,4641,C+,49.8,302.9,100,16,76,2.32,0.2223,73.8,456.7,0.71
+6395,2026-04-29T17:27:50Z,UpATree,Terran,4641,EU,UpATree EU,IIIIIIIIII,Terran,4874,Ruby Rock LE,385,L,0,4626,C+,49.7,154.3,70,10.4,50,0.4,0.2422,94.7,364.4,1.09
+6396,2026-04-29T17:38:18Z,UpATree,Terran,4626,EU,UpATree EU,NorthBrute,Terran,4588,Celestial Enclave LE,382,W,0,4647,B-,59,111.4,60,6.7,39,6.06,0.2438,95.9,318.4,0.79
+6397,2026-04-29T18:05:04Z,UpATree,Terran,4647,EU,UpATree EU,Zangief,Zerg,4362,Old Republic LE,858,W,0,4661,B+,71.4,418.5,40,15.4,78,1.28,0.2216,104.6,492.9,0.91
+6398,2026-04-29T18:21:01Z,UpATree,Terran,4661,EU,UpATree EU,IIIIIIIIII,Zerg,4810,Old Republic LE,761,L,0,4643,C-,36.7,308,130,17.9,71,0.76,0.2864,78.3,631.6,1.1
+6399,2026-04-29T18:38:29Z,UpATree,Terran,4643,EU,UpATree EU,Miszu,Zerg,4651,Taito Citadel LE,669,W,0,4665,B-,53.6,330.1,80,12.5,71,1.2,0.2427,85.6,558.6,0.99
+6400,2026-04-29T18:50:26Z,UpATree,Terran,4665,EU,UpATree EU,ulissesss,Terran,4965,Old Republic LE,482,L,0,4651,D,26.1,204.1,60,14.2,55,0.45,0.2222,97.3,382,0.62
+6401,2026-04-29T19:00:10Z,UpATree,Terran,4651,EU,UpATree EU,JustMonika,Zerg,4497,Ruby Rock LE,492,W,0,4668,C,39,115.4,30,8.7,37,3.33,0.2957,73.6,401.1,0.85
+6402,2026-04-29T19:10:16Z,UpATree,Terran,4668,EU,UpATree EU,Блютмілан,Protoss,4843,Ruby Rock LE,316,W,0,4695,C,43.2,35.2,40,4.3,25,8.5,0.2446,73.6,230.1,0.57
+6403,2026-04-29T19:18:58Z,UpATree,Terran,4695,EU,UpATree EU,VeeRust,Protoss,4427,Taito Citadel LE,419,W,0,4709,B+,70.7,120.7,60,7.1,43,4.85,0.1923,83.5,252,0.72
+6404,2026-04-29T19:38:36Z,UpATree,Terran,4709,EU,UpATree EU,Dephy,Terran,5002,Taito Citadel LE,858,L,0,4696,B-,59.8,282.2,40,19.8,99,0.75,0.2299,97.6,427.2,1.05
+6405,2026-04-29T19:52:13Z,UpATree,Terran,4696,EU,UpATree EU,Zezuane,Zerg,4506,10000 Feet LE,683,W,0,4710,B-,52.4,296.1,110,5.8,69,1.69,0.2239,86.9,482.5,0.79
+6406,2026-04-29T20:04:51Z,UpATree,Terran,4710,EU,UpATree EU,Sareth,Zerg,4297,Taito Citadel LE,626,W,0,4722,B,66.3,294.9,80,11.2,69,2.54,0.2076,82.9,439.7,1.05
+6407,2026-04-30T16:23:45Z,UpATree,Terran,4722,EU,UpATree EU,Lapharos,Terran,4861,10000 Feet LE,445,L,0,4704,C+,46.5,169.3,60,11.6,47,0.48,0.2136,89.9,331.9,0.81
+6408,2026-04-30T16:35:02Z,UpATree,Terran,4704,EU,UpATree EU,Блютмілан,Protoss,4839,Ruby Rock LE,492,L,0,4686,F,13.2,60.3,110,7.8,42,0.67,0.3545,74.3,399.1,0.61
+6409,2026-04-30T16:44:25Z,UpATree,Terran,4686,EU,UpATree EU,Блютмілан,Protoss,4857,10000 Feet LE,454,W,0,4713,A-,76.9,210,40,10.8,50,1.83,0.2628,104.8,465.8,1.06
+6410,2026-04-30T16:55:49Z,UpATree,Terran,4713,EU,UpATree EU,IIIIIIIIIIII,Protoss,4314,Old Republic LE,320,L,0,4679,D,23.4,33.6,50,7.1,25,0.93,0.229,71.3,211,0.38
+6411,2026-04-30T17:04:45Z,UpATree,Terran,4679,EU,UpATree EU,Well,Terran,4704,Taito Citadel LE,465,W,0,4701,B,61.9,165.9,90,10.2,48,3.03,0.2959,101.6,470.6,0.9
+6412,2026-04-30T17:15:07Z,UpATree,Terran,4701,EU,UpATree EU,Lunita,Protoss,4698,Tourmaline LE,253,L,0,4679,C-,32.6,32.2,60,3.8,26,1.17,0.2634,92.4,247.3,0.24
+6413,2026-04-30T17:26:12Z,UpATree,Terran,4679,EU,UpATree EU,Pupu,Zerg,4904,Celestial Enclave LE,626,W,0,4708,C+,50.2,259.5,40,13.2,64,1.93,0.2542,85.9,506.2,0.96
+6414,2026-04-30T17:39:10Z,UpATree,Terran,4708,EU,UpATree EU,Adnap,Terran,4661,Ruby Rock LE,501,L,0,4685,C,44,244.8,20,12.9,66,0.46,0.2303,97.2,439.8,0.72
+6415,2026-04-30T17:50:46Z,UpATree,Terran,4685,EU,UpATree EU,patriarX,Protoss,4623,Old Republic LE,379,L,0,4661,C-,32,43.1,50,7.4,28,0.11,0.2987,93,302.8,0.63
+6416,2026-04-30T17:58:04Z,UpATree,Terran,4661,EU,UpATree EU,patriarX,Protoss,4646,Old Republic LE,397,W,0,4682,D,23,-1.3,30,11,27,1.45,0.2629,63.6,202.4,0.3
+6417,2026-04-30T18:11:13Z,UpATree,Terran,4682,EU,UpATree EU,birdy,Zerg,4450,Taito Citadel LE,658,L,0,4654,C,42.3,246.5,140,16.7,81,1.23,0.3081,80,592,1.19
+6418,2026-04-30T19:05:20Z,UpATree,Terran,4654,EU,UpATree EU,Unitarmeduza,Zerg,4305,Tourmaline LE,2772,L,0,4629,F,18,347.6,190,10.9,76,1.14,0.2768,77.1,620.2,0.32
+6419,2026-04-30T19:14:30Z,UpATree,Terran,4629,EU,UpATree EU,sodaluv,Protoss,4418,10000 Feet LE,390,W,0,4645,B,63.7,111.8,30,8.1,42,2.62,0.2811,84.6,374.2,0.77
+6420,2026-04-30T19:31:50Z,UpATree,Terran,4645,EU,UpATree EU,llllllllllll,Protoss,4950,10000 Feet LE,457,W,0,4670,C,43.2,60.3,20,8.6,33,0.98,0.3312,107,369.1,0.39
+6421,2026-04-30T19:44:33Z,UpATree,Terran,4670,EU,UpATree EU,MrMaphacker,Zerg,4506,Ruby Rock LE,705,W,0,4687,C+,47.6,285.7,110,17.8,66,1.75,0.2992,88.7,628.2,1.02
+6422,2026-04-30T19:57:55Z,UpATree,Terran,4687,EU,UpATree EU,Ausamiqo,Protoss,4647,10000 Feet LE,666,W,0,4707,D,26.3,162.2,90,15.3,45,0.96,0.2966,93.1,466.5,0.63
