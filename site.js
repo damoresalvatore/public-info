@@ -15,6 +15,7 @@
 
     // Home page groups, in display order.
     const GROUPS = [
+        { id: 'stats',  label: 'Stats',        blurb: 'Leaderboards, records and charts.' },
         { id: 'chat',   label: 'In chat',      blurb: 'Things you type or cheer.' },
         { id: 'sc2',    label: 'StarCraft II', blurb: 'The ladder, in numbers.' },
         { id: 'screen', label: 'On screen',    blurb: 'How the stream looks.' },
@@ -24,6 +25,7 @@
     // Top bar order. To add a section: make a folder with an index.html like
     // the others, then add one entry here.
     const SECTIONS = [
+        { id: 'stats',    group: 'stats',  nav: 'Stats',    title: 'Stream stats',      path: 'stats/',    blurb: 'SC2, Break Time, predictions, timeouts and Pokemon.' },
         { id: 'commands', group: 'chat',   nav: 'Commands', title: 'Chat commands',     path: 'commands/', blurb: 'Every trigger the bot answers, searchable.' },
         { id: 'sc2',      group: 'sc2',    nav: 'SC2',      title: 'SC2 games',         path: 'sc2/',      blurb: 'Every 1v1 ladder game with MMR, grade and replay stats.' },
         { id: 'timeout',  group: 'chat',   nav: 'Timeouts', title: 'Timeout with bits', path: 'timeout/',  blurb: 'Cheer to time someone out. Rules and a calculator.', meta: '100 bits = 2 min' },
@@ -123,7 +125,6 @@
             set('[data-fact="games"]', games);
             set('[data-fact="winrate"]', `${((i.wins / i.games) * 100).toFixed(1)}%`);
             set('[data-fact="last"]', i.last_game.slice(0, 10));
-            $('#home-facts').hidden = false;
         }).catch((err) => console.error('[home] sc2/index.json:', err));
 
         getJson('themes.json').then((t) => {
