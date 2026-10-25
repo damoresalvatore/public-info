@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Link preview images (og/*.jpg). Open card.html?p=<page> at 1200x630 and screenshot it;
+     the page ids and their text are in P below. See README "Link previews". -->
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{position:relative;background:#0c0815;color:#f0e8e2;font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+.bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 80% at 95% -10%, rgba(206,122,255,.30), transparent 60%),
+  radial-gradient(ellipse 60% 60% at 0% 110%, rgba(255,119,224,.12), transparent 60%),
+  linear-gradient(160deg,#18102b 0%,#11091c 45%,#0c0815 100%)}
+.grain{position:absolute;inset:0;opacity:.22;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.frame{position:absolute;inset:28px;border:1px solid #261b46;border-radius:22px}
+.wrap{position:absolute;left:80px;right:80px;top:72px;bottom:64px;display:flex;flex-direction:column}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase;color:#ce7aff;display:flex;align-items:center;gap:16px}
+.eyebrow .dot{width:12px;height:12px;border-radius:50%;background:#ff77e0;box-shadow:0 0 18px #ff77e0}
+.eyebrow .sep{color:#5b3784}
+.eyebrow .sub{color:#9a8fae}
+h1{margin-top:58px;font-family:'Fraunces',serif;font-weight:600;font-size:104px;line-height:1.0;letter-spacing:-.02em;color:#f0e8e2;max-width:900px}
+h1 em{font-style:italic;font-weight:400;color:#e8c8ff}
+.lede{margin-top:30px;font-size:31px;line-height:1.35;color:#d6c9d4;max-width:860px}
+.foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.chips{display:flex;gap:12px;flex-wrap:wrap}
+.chip{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:20px;color:#c8a8e8;border:1px solid #5b3784;background:rgba(29,21,53,.7);padding:9px 16px;border-radius:999px}
+.chip.on{color:#0c0815;background:#ce7aff;border-color:#ce7aff;font-weight:700}
+.url{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:26px;color:#f0e8e2}
+.url b{color:#ce7aff}
+.deco{position:absolute;right:72px;top:58px;width:260px;height:96px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%)}
+</style></head>
+<body>
+<div class="bg"></div><div class="grain"></div><div class="frame"></div>
+<svg class="deco" viewBox="0 0 260 96" id="deco"></svg>
+<div class="wrap">
+  <div class="eyebrow"><span class="dot"></span>UpATree<span class="sep">/</span><span class="sub" id="eb"></span></div>
+  <h1 id="h"></h1>
+  <p class="lede" id="l"></p>
+  <div class="foot"><div class="chips" id="c"></div><div class="url">upatree<b>.ca</b></div></div>
+</div>
+<script>
+const P = {
+  home:     {eb:'Stream info', h:"The stream's <em>public record.</em>", l:'Stats, chat commands, timeouts, themes and every SC2 ladder game. Rebuilt every night.'},
+  stats:    {eb:'Stats', h:'Stream <em>stats</em>', l:'Leaderboards, records and charts: SC2, Break Time, predictions, timeouts and Pokemon.'},
+  commands: {eb:'In chat', h:'Chat <em>commands</em>', l:'Every trigger the bot answers, searchable.'},
+  sc2:      {eb:'StarCraft II', h:'SC2 <em>games</em>', l:'Every 1v1 ladder game with MMR, grade and replay stats. CSV and JSON.'},
+  timeout:  {eb:'In chat', h:'Timeout with <em>bits</em>', l:'Cheer bits in chat to time someone out. 100 bits buys 2 minutes.'},
+  themes:   {eb:'On screen', h:'Stream <em>themes</em>', l:'Every color theme the overlay can wear, drawn in its own colors.'},
+  data:     {eb:'More', h:'Open <em>data</em>', l:'Every downloadable file on the site in one list. CSV and JSON.'}
+};
+const NAV = [['stats','Stats'],['commands','Commands'],['sc2','SC2'],['timeout','Timeouts'],['themes','Themes'],['data','Data']];
+const id = new URLSearchParams(location.search).get('p') || 'home';
+const p = P[id];
+document.getElementById('eb').textContent = p.eb;
+document.getElementById('h').innerHTML = p.h;
+document.getElementById('l').textContent = p.l;
+document.getElementById('c').innerHTML = NAV.map(([k,v]) => `<span class="chip${k===id?' on':''}">${v}</span>`).join('');
+// A rising MMR-ish sparkline as a quiet brand mark, top right
+const pts = [88,80,84,66,71,55,60,44,50,32,37,20,25,10];
+const step = 250/(pts.length-1);
+const d = pts.map((y,i)=>`${i?'L':'M'}${(i*step).toFixed(1)},${y}`).join(' ');
+document.getElementById('deco').innerHTML = `
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ce7aff" stop-opacity=".35"/><stop offset="1" stop-color="#ce7aff" stop-opacity="0"/></linearGradient></defs>
+  <path d="${d} L250,96 L0,96 Z" fill="url(#g)"/>
+  <path d="${d}" fill="none" stroke="#ce7aff" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="250" cy="10" r="7" fill="#ff77e0"/>`;
+</script>
+</body></html>
