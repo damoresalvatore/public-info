@@ -8,8 +8,8 @@
 (function () {
     'use strict';
 
-    // Site root, from this script's own URL. Works under /public-info/ on
-    // github.io today and at the root of a custom domain later.
+    // Site root, from this script's own URL. Works at the root of upatree.ca
+    // and under /public-info/ on github.io.
     const ROOT = new URL('.', document.currentScript.src);
     const url = (path) => new URL(path, ROOT).href;
 

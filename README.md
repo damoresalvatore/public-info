@@ -2,7 +2,7 @@
 
 Public info site for the UpATree Twitch channel: stream stats, the bot's chat commands, the timeout-with-bits rules, the stream themes, every SC2 ladder game, and the files behind them.
 
-Live at: **https://damoresalvatore.github.io/public-info/**
+Live at: **https://upatree.ca/** (the old https://damoresalvatore.github.io/public-info/ address redirects there)
 
 ## What's here
 
@@ -29,7 +29,7 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit the data files by hand. `sc2/index.html` is the page and is safe to edit. |
 | `stats/stats.json` | The summarized stats behind the Stats page and the home page facts. Rebuilt and pushed nightly by `scripts/export-stats.js` (run from `export-sc2.sh`) on the Overlay box; don't edit it by hand. |
 
-The scripts find the data files relative to their own location, and `site.js` builds every link from its own location, so the site works under `/public-info/` today and at the root of a custom domain later.
+The scripts find the data files relative to their own location, and `site.js` builds every link from its own location, so the site works at the root of upatree.ca and under `/public-info/` on github.io alike.
 
 ## Adding a section
 
@@ -70,6 +70,10 @@ PAID_TIMEOUT_MAX_TARGETS: 3
 5. Save. Wait a minute. Open the URL GitHub shows you.
 
 That's it.
+
+## Custom domain
+
+`CNAME` holds `upatree.ca`, which tells GitHub Pages to serve the site there. Keep it in the repo: deleting it drops the custom domain. DNS is on Cloudflare: four A records on the apex (`185.199.108.153` to `185.199.111.153`) and a `www` CNAME to `damoresalvatore.github.io`, all DNS only (grey cloud). GitHub redirects `www.upatree.ca` to `upatree.ca` on its own.
 
 ## Local preview
 
