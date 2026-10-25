@@ -78,7 +78,7 @@ That's it.
 
 ## Link previews
 
-When a page is linked in Discord, Twitter or iMessage, the `og:*` and `twitter:card` tags in its `<head>` decide the card: the page's title and description, the small `og/mark.png` thumbnail (`twitter:card` is `summary`, not the full-width `summary_large_image`), and the purple accent bar (`theme-color`). Image and page URLs must be absolute (`https://upatree.ca/...`). A new section copies the same block of tags with its own `og:url` and `canonical`.
+When a page is linked in Discord, Twitter or iMessage, the `og:*` and `twitter:card` tags in its `<head>` decide the card: the page's title and description, the small `og/mark.png` thumbnail (a 24×24 pixel tree drawn at 512px) (`twitter:card` is `summary`, not the full-width `summary_large_image`), and the purple accent bar (`theme-color`). Image and page URLs must be absolute (`https://upatree.ca/...`). A new section copies the same block of tags with its own `og:url` and `canonical`.
 
 Discord caches a link's card for a while, so a change can take time to show on links already posted. It also ignores the `#tab` part of a link, so a Stats tab such as `#pokemon` shares the Stats card.
 
