@@ -27,6 +27,7 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `commands.json` | Source of truth for the command list. Shape: `{ "commands": [ { "title": "!cmd", "response": "...", "type": "text", "interval": false }, ... ] }`. |
 | `themes.json` | Every theme and its colors. |
 | `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit the data files by hand. `sc2/index.html` is the page and is safe to edit. |
+| `og/mark.png` | The small square image link apps show beside a link to the site. See [Link previews](#link-previews). |
 | `stats/stats.json` | The summarized stats behind the Stats page and the home page facts. Rebuilt and pushed nightly by `scripts/export-stats.js` (run from `export-sc2.sh`) on the Overlay box; don't edit it by hand. |
 
 The scripts find the data files relative to their own location, and `site.js` builds every link from its own location, so the site works at the root of upatree.ca and under `/public-info/` on github.io alike.
@@ -74,6 +75,12 @@ That's it.
 ## Custom domain
 
 `CNAME` holds `upatree.ca`, which tells GitHub Pages to serve the site there. Keep it in the repo: deleting it drops the custom domain. DNS is on Cloudflare: four A records on the apex (`185.199.108.153` to `185.199.111.153`) and a `www` CNAME to `damoresalvatore.github.io`, all DNS only (grey cloud). GitHub redirects `www.upatree.ca` to `upatree.ca` on its own.
+
+## Link previews
+
+When a page is linked in Discord, Twitter or iMessage, the `og:*` and `twitter:card` tags in its `<head>` decide the card: the page's title and description, the small `og/mark.png` thumbnail (a 24×24 pixel tree drawn at 512px) (`twitter:card` is `summary`, not the full-width `summary_large_image`), and the purple accent bar (`theme-color`). Image and page URLs must be absolute (`https://upatree.ca/...`). A new section copies the same block of tags with its own `og:url` and `canonical`.
+
+Discord caches a link's card for a while, so a change can take time to show on links already posted. It also ignores the `#tab` part of a link, so a Stats tab such as `#pokemon` shares the Stats card.
 
 ## Local preview
 
