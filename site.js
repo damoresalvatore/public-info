@@ -29,6 +29,7 @@
         { id: 'commands', group: 'chat',   nav: 'Commands', title: 'Chat commands',     path: 'commands/', blurb: 'Every trigger the bot answers, searchable.' },
         { id: 'sc2',      group: 'sc2',    nav: 'SC2',      title: 'SC2 games',         path: 'sc2/',      blurb: 'Every 1v1 ladder game with MMR, grade and replay stats.' },
         { id: 'timeout',  group: 'chat',   nav: 'Timeouts', title: 'Timeout with bits', path: 'timeout/',  blurb: 'Cheer to time someone out. Rules and a calculator.', meta: '100 bits = 2 min' },
+        { id: 'pokemon',  group: 'chat',   nav: 'Pokemon',  title: 'Pokemon',           path: 'pokemon/',  blurb: 'How to play the chat nuzlocke, the game it runs on, and the current team.', meta: 'Rules · Pure Red · Team · Stats' },
         { id: 'themes',   group: 'screen', nav: 'Themes',   title: 'Stream themes',     path: 'themes/',   blurb: 'Every color theme the overlay can wear.' },
         { id: 'data',     group: 'more',   nav: 'Data',     title: 'Open data',         path: 'data/',     blurb: 'Every downloadable file on the site in one list.', meta: 'CSV · JSON' }
     ];
