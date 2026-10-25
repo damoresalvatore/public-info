@@ -27,7 +27,7 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `commands.json` | Source of truth for the command list. Shape: `{ "commands": [ { "title": "!cmd", "response": "...", "type": "text", "interval": false }, ... ] }`. |
 | `themes.json` | Every theme and its colors. |
 | `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit the data files by hand. `sc2/index.html` is the page and is safe to edit. |
-| `og/` | Link preview images (`home.jpg`, `stats.jpg`, ...), one per page, and `card.html`, the template they are drawn from. See [Link previews](#link-previews). |
+| `og/mark.png` | The small square image link apps show beside a link to the site. See [Link previews](#link-previews). |
 | `stats/stats.json` | The summarized stats behind the Stats page and the home page facts. Rebuilt and pushed nightly by `scripts/export-stats.js` (run from `export-sc2.sh`) on the Overlay box; don't edit it by hand. |
 
 The scripts find the data files relative to their own location, and `site.js` builds every link from its own location, so the site works at the root of upatree.ca and under `/public-info/` on github.io alike.
@@ -78,17 +78,9 @@ That's it.
 
 ## Link previews
 
-When a page is linked in Discord, Twitter or iMessage, the `og:*` and `twitter:card` tags in its `<head>` decide the card: title, description, the `og/<page>.jpg` image, and the purple accent bar (`theme-color`). Image and page URLs must be absolute (`https://upatree.ca/...`); link apps don't resolve relative ones.
+When a page is linked in Discord, Twitter or iMessage, the `og:*` and `twitter:card` tags in its `<head>` decide the card: the page's title and description, the small `og/mark.png` thumbnail (`twitter:card` is `summary`, not the full-width `summary_large_image`), and the purple accent bar (`theme-color`). Image and page URLs must be absolute (`https://upatree.ca/...`). A new section copies the same block of tags with its own `og:url` and `canonical`.
 
-To redraw an image after changing a page's wording, edit its entry in `P` in `og/card.html`, then screenshot it at 1200x630. With Playwright:
-
-```bash
-node -e "require('playwright').chromium.launch().then(async b=>{const p=await b.newPage({viewport:{width:1200,height:630}});for(const id of ['home','stats','commands','sc2','timeout','themes','data']){await p.goto('file://'+process.cwd()+'/og/card.html?p='+id,{waitUntil:'networkidle'});await p.screenshot({path:'og/'+id+'.jpg',type:'jpeg',quality:90})}await b.close()})"
-```
-
-A new section needs its own entry in `P`, an image, and the same block of tags in its `<head>`. Discord caches a link's card for a while, so a change can take time to show on links already posted.
-
-Discord ignores the `#tab` part of a link, so a Stats tab such as `#pokemon` shares the Stats card. A tab only gets its own card if it becomes its own page.
+Discord caches a link's card for a while, so a change can take time to show on links already posted. It also ignores the `#tab` part of a link, so a Stats tab such as `#pokemon` shares the Stats card.
 
 ## Local preview
 
