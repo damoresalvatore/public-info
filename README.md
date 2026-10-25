@@ -1,6 +1,6 @@
 # public-info
 
-Public info site for the UpATree Twitch channel: stream stats, the bot's chat commands, the timeout-with-bits rules, the stream themes, every SC2 ladder game, and the files behind them.
+Public info site for the UpATree Twitch channel: stream stats, the bot's chat commands, the timeout-with-bits rules, the stream themes, every SC2 ladder game, the files behind them, and where to find the channel elsewhere.
 
 Live at: **https://upatree.ca/** (the old https://damoresalvatore.github.io/public-info/ address redirects there)
 
@@ -16,6 +16,7 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `sc2/index.html` | SC2 games: stats, MMR chart, games by month, downloads. |
 | `timeout/index.html` | Timeout with bits: rules, calculator, examples. |
 | `pokemon/index.html` | Pokemon: Rules (animated examples of each way to play), Pure Red (how it differs from Red), Team (the current run, from `pk.team` in `stats/stats.json`) and Stats tabs (`#rules`, `#purered`, `#team`, `#stats`). Sprites, trainer pictures and the Route 3 screen live beside it. |
+| `contact/index.html` | Contact: Twitch, YouTube, Discord, Instagram and email, one card each in the platform's color. Static, no script. |
 | `themes/index.html` | Every stream theme, drawn in its own colors. |
 | `data/index.html` | Open data: every downloadable file in one list. |
 | `site.js` | The list of sections. Draws the top bar, breadcrumbs, footer sitemap and the home page cards from it. |

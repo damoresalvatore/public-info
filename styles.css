@@ -1369,6 +1369,141 @@ input[type="range"]:active::-webkit-slider-thumb {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   CONTACT — one card per place, each tinted with its platform's color.
+   Hover changes color only, never size, so nothing moves.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.contact-card--twitch    { --brand: #9146ff; }
+.contact-card--youtube   { --brand: #ff0033; }
+.contact-card--discord   { --brand: #5865f2; }
+.contact-card--instagram { --brand: #e1306c; }
+.contact-mail            { --brand: var(--pp-1); }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+
+.contact-card,
+.contact-mail {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr auto;
+    padding: 1.3rem 1.3rem 1.2rem;
+}
+
+/* Brand glow in the top corner */
+.contact-card::before,
+.contact-mail::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 0% 0%, var(--brand), transparent 55%);
+    opacity: 0.12;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible,
+.contact-mail:hover,
+.contact-mail:focus-visible {
+    border-color: var(--brand);
+    background: var(--bg-card-hi);
+}
+
+.contact-card:hover::before,
+.contact-card:focus-visible::before,
+.contact-mail:hover::before,
+.contact-mail:focus-visible::before { opacity: 0.22; }
+
+.contact-icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 8px;
+    background: var(--brand);
+    margin-bottom: 1.1rem;
+}
+
+.contact-card--instagram .contact-icon {
+    background: linear-gradient(45deg, #f9a03f, #e1306c 50%, #833ab4);
+}
+
+.contact-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: #fff;
+}
+
+.contact-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pp-2);
+    margin-bottom: 0.2rem;
+}
+
+.contact-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-cream);
+    line-height: 1.2;
+}
+
+.contact-handle {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--pp-4);
+    overflow-wrap: anywhere;
+    margin: 0.15rem 0 0.6rem;
+}
+
+.contact-blurb {
+    font-size: 0.92rem;
+    color: var(--text-mute);
+}
+
+.contact-go {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--pp-3);
+    margin-top: 1rem;
+}
+
+.contact-mail {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 1.3rem;
+}
+
+.contact-mail .contact-icon { margin-bottom: 0; flex: none; }
+.contact-mail .contact-icon svg { fill: var(--bg-deep); }
+.contact-mail-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.contact-mail .contact-handle { margin: 0 0 0.2rem; color: var(--text-cream); }
+.contact-mail .contact-go { margin-top: 0; }
+
+@media (max-width: 560px) {
+    .contact-mail { flex-wrap: wrap; }
+    .contact-mail .contact-go { flex-basis: 100%; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
    SC2 GAMES — data from sc2/, rebuilt nightly by the Overlay box
    ───────────────────────────────────────────────────────────────────────── */
 
