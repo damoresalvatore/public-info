@@ -19,7 +19,8 @@
         { id: 'chat',   label: 'In chat',      blurb: 'Things you type or cheer.' },
         { id: 'sc2',    label: 'StarCraft II', blurb: 'The ladder, in numbers.' },
         { id: 'screen', label: 'On screen',    blurb: 'How the stream looks.' },
-        { id: 'more',   label: 'More',         blurb: 'The files behind the site.' }
+        { id: 'more',   label: 'More',         blurb: 'The files behind the site.' },
+        { id: 'find',   label: 'Find us',      blurb: 'Everywhere else UpATree lives.' }
     ];
 
     // Top bar order. To add a section: make a folder with an index.html like
@@ -31,7 +32,8 @@
         { id: 'timeout',  group: 'chat',   nav: 'Timeouts', title: 'Timeout with bits', path: 'timeout/',  blurb: 'Cheer to time someone out. Rules and a calculator.', meta: '100 bits = 2 min' },
         { id: 'pokemon',  group: 'chat',   nav: 'Pokemon',  title: 'Pokemon',           path: 'pokemon/',  blurb: 'How to play the chat nuzlocke, the game it runs on, and the current team.', meta: 'Rules · Pure Red · Team · Stats' },
         { id: 'themes',   group: 'screen', nav: 'Themes',   title: 'Stream themes',     path: 'themes/',   blurb: 'Every color theme the overlay can wear.' },
-        { id: 'data',     group: 'more',   nav: 'Data',     title: 'Open data',         path: 'data/',     blurb: 'Every downloadable file on the site in one list.', meta: 'CSV · JSON' }
+        { id: 'data',     group: 'more',   nav: 'Data',     title: 'Open data',         path: 'data/',     blurb: 'Every downloadable file on the site in one list.', meta: 'CSV · JSON' },
+        { id: 'contact',  group: 'find',   nav: 'Contact',  title: 'Contact',           path: 'contact/',  blurb: 'Twitch, YouTube, Discord, Instagram and email.', meta: '5 places' }
     ];
 
     const page = document.body.dataset.page || 'home';
