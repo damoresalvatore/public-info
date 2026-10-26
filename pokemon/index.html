@@ -51,7 +51,8 @@ body {
 /* ── Rules: a day counter card, then three groups (the classic rules, chat's twists, what ends a run) ── */
 .pk-rules { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 1.4rem; align-items: start; }
 .run-days { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .2rem; }
-.run-days .label { color: var(--pp-1); }
+/* the card's titles match the rule-group headings beside it */
+.pk-rules .run-days .label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--pp-1); line-height: 1.2; letter-spacing: normal; text-transform: none; }
 /* the goal sits under the counter as a second section of the same card */
 .run-days .goal { margin-top: .9rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
 .run-days .nw { white-space: nowrap; font-size: inherit; color: inherit; }
