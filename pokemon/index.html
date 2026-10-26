@@ -178,18 +178,19 @@ body {
 .tw-msg.event .sys { display: block; font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .02em; color: var(--text-cream); margin-bottom: .1rem; }
 /* paid votes: purple everywhere, with a sweep in chat and a burst on the overlay */
 .tw-msg.paid { border-left: 3px solid var(--paid); border-radius: 0 4px 4px 0; background: linear-gradient(100deg, color-mix(in srgb, var(--paid) 16%, transparent) 0%, color-mix(in srgb, var(--paid) 8%, transparent) 100%); flex-wrap: wrap; }
-.tw-msg.paid .plus { color: var(--paid); font-size: var(--fs-s); transform-origin: right center; }
+.tw-msg.paid .plus { color: var(--paid); font-size: var(--fs-s); }
 .tw-msg.paid.counted { background: linear-gradient(100deg, color-mix(in srgb, var(--paid) 22%, transparent), color-mix(in srgb, var(--paid) 8%, transparent)); box-shadow: 0 0 14px color-mix(in srgb, var(--paid) 25%, transparent); }
 @media (prefers-reduced-motion: no-preference) {
   .tw-msg.paid.new { background-size: 250% 100%; animation: twIn .32s cubic-bezier(.2,.8,.25,1), sweep 1.1s ease-out; background-image: linear-gradient(100deg, color-mix(in srgb, var(--paid) 10%, transparent) 30%, color-mix(in srgb, var(--paid) 45%, transparent) 50%, color-mix(in srgb, var(--paid) 10%, transparent) 70%); }
-  .tw-msg.paid.counted .plus { animation: plusPop .5s ease; }
+  .tw-msg.paid.counted .plus { animation: plusPop .8s ease; }
   .vr.boost { animation: boostRow 1.1s ease; }
   .vr.boost .vc { animation: boostNum .7s cubic-bezier(.2,1.6,.4,1); }
   .vr.boost .fl { animation: floatBig 1.3s ease-out; }
   .vr .gemp { animation: gemOut .8s ease-out forwards; }
 }
 @keyframes sweep { from { background-position: 100% 0; } to { background-position: 0 0; } }
-@keyframes plusPop { 0% { transform: scale(.6); } 50% { transform: scale(1.35); } 100% { transform: scale(1); } }
+/* a glow that swells and fades, so the label never grows past its message */
+@keyframes plusPop { 0% { text-shadow: 0 0 0 transparent; } 40% { text-shadow: 0 0 6px currentColor, 0 0 14px currentColor; } 100% { text-shadow: 0 0 0 transparent; } }
 @keyframes boostRow { 0% { box-shadow: 0 0 0 rgba(206,122,255,0); border-color: var(--paid); } 30% { box-shadow: 0 0 22px rgba(206,122,255,.75), inset 0 0 18px rgba(206,122,255,.35); border-color: var(--paid); } 100% { box-shadow: 0 0 0 rgba(206,122,255,0); } }
 @keyframes boostNum { 0% { transform: scale(1); color: var(--paid); } 40% { transform: scale(2); color: var(--paid); text-shadow: 0 0 10px var(--paid); } 100% { transform: scale(1); } }
 @keyframes floatBig { 0% { opacity: 0; transform: translateY(8px) scale(.8); } 20% { opacity: 1; transform: translateY(0) scale(1.3); } 100% { opacity: 0; transform: translateY(-26px) scale(1.3); } }
