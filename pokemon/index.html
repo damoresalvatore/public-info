@@ -331,9 +331,6 @@ body {
 .gb-text { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; background: #f8f8f8; border: 1.6cqw double #181818; padding: 3cqw 4cqw; font-size: var(--fs-m); line-height: 1.6; }
 .gb-flash { display: none; position: absolute; inset: 0; pointer-events: none; z-index: 5; opacity: 0; background: repeating-linear-gradient(0deg, #181818 0 6%, transparent 6% 12%); }
 @keyframes gbFlash { 0%, 33%, 66% { opacity: 1; } 16%, 50%, 83% { opacity: 0; } 100% { opacity: 0; } }
-.gb-cap { grid-column: 1 / -1; margin: 0; text-align: center; font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); height: 2.8em; overflow: hidden; line-height: 1.4; }
-@media (max-width: 760px) { .gb-cap { height: 4.2em; } }
-.gb-cap b { color: var(--text-cream); font-weight: 500; }
 
 /* ── Team ──────────────────────────────────────────────── */
 .party { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; }
@@ -951,10 +948,9 @@ main code { font-family: var(--font-mono); }
           <div class="bt-card me"><img src="sprites/8.gif" alt=""><span class="nm">Wartortle</span><span class="lv">LV<br>15</span><span class="hpb"><i style="width:82%"></i></span></div>
         </div>
         <div class="q" hidden><span class="q-label">UP NEXT</span><span class="q-user"></span><div class="q-row"></div></div>
-      </div></div>
-      <p class="gb-cap"></p>`;
+      </div></div>`;
     const $r = (sel) => root.querySelector(sel);
-    const feed = $r('.tw-feed'), ov = $r('.ov'), bt = $r('.bt'), q = $r('.q'), cap = $r('.gb-cap');
+    const feed = $r('.tw-feed'), ov = $r('.ov'), bt = $r('.bt'), q = $r('.q');
     const battle = $r('.gb-battle'), text = $r('.gb-text'), flash = $r('.gb-flash');
     const foeImg = $r('.gb-mon.foe'), meImg = $r('.gb-mon.me'), foeHp = $r('.gb-hp.foe'), meHp = $r('.gb-hp.me');
     let queue = [], gen = 0;
@@ -987,7 +983,6 @@ main code { font-family: var(--font-mono); }
       foeImg.className = 'gb-mon foe'; foeImg.src = 'trainers/youngster.png'; meImg.className = 'gb-mon me'; meImg.hidden = true;
       foeHp.hidden = true; meHp.hidden = true; text.textContent = ''; setGameHp(100); setOverlayHp(100);
       bt.querySelector('.foe').classList.remove('ko');
-      cap.innerHTML = 'Walking <b>Route 3</b>.';
     }
     async function play() {
       reset();
@@ -998,10 +993,8 @@ main code { font-family: var(--font-mono); }
           await sleep(450);
           el.classList.add('counted');
           queue.push(m); paintQueue(true);
-          if (queue.length === 1) cap.innerHTML = 'A trainer is queued. It waits until the streamer is free: no menu, no talking, no battle.';
           await sleep(1500);
         }
-        cap.innerHTML = 'Free now. <b>Controls lock for 2 seconds</b> so the streamer can\'t dodge it.';
         await sleep(2000);
         // the battle starts in the game; only then does the overlay switch and the queue move up
         restart(flash, 'on'); await sleep(900); flash.classList.remove('on');
@@ -1009,7 +1002,6 @@ main code { font-family: var(--font-mono); }
         battle.hidden = false; foeImg.src = `trainers/${first[4]}.png`; restart(foeImg, 'in');
         bt.querySelector('[data-k="foe-name"]').textContent = first[0];
         bt.hidden = false; restart(bt, 'in'); paintQueue();
-        cap.innerHTML = 'The battle starts, and the overlay switches to <b>Chat Battle</b>.';
         await say(`${first[0]} wants to fight!`); await sleep(1300);
         await say(`${first[0]} sent out RATTATA!`);
         foeImg.src = 'sprites/19.gif'; restart(foeImg, 'in'); foeHp.hidden = false; await sleep(1100);
@@ -1024,7 +1016,6 @@ main code { font-family: var(--font-mono); }
         restart(foeImg, 'faint'); bt.querySelector('.foe').classList.add('ko'); await sleep(1300);
         await say(`${first[0]} was defeated!`); await sleep(1600);
         battle.hidden = true; bt.hidden = true;
-        cap.innerHTML = `Back to the route. <b>${queue[0][0]}</b> is up next.`;
         await sleep(3500);
         play();
       } catch (_e) { /* a newer playthrough took over */ }
@@ -1037,7 +1028,6 @@ main code { font-family: var(--font-mono); }
       battle.hidden = false; foeHp.hidden = false; meHp.hidden = false; meImg.hidden = false; foeImg.src = 'sprites/19.gif';
       text.textContent = 'WARTORTLE used WATER GUN!'; setGameHp(55); setOverlayHp(55);
       bt.hidden = false; bt.querySelector('[data-k="foe-name"]').textContent = first[0];
-      cap.innerHTML = 'The battle starts, and the overlay switches to <b>Chat Battle</b>.';
     }
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
     finished();
