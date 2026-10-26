@@ -93,7 +93,6 @@ body {
   .play-body { grid-template-columns: minmax(0, 1fr); }
   .arrow { justify-self: center; transform: rotate(90deg); line-height: 1; }
 }
-.panel-label { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); margin-bottom: .45rem; display: block; }
 .play-rule { font-size: var(--fs-m); margin-top: -.4rem; color: var(--text-soft); max-width: 62ch; }
 .play-rule strong { color: var(--text-cream); font-weight: 500; }
 
@@ -877,10 +876,10 @@ main code { font-family: var(--font-mono); }
     const cfg = SCENES[root.dataset.scene];
     root.setAttribute('aria-label', `Animated example: chat voting on ${cfg.route}`);
     root.innerHTML = `
-      <div class="stage-col"><span class="panel-label">You type</span><div class="tw">
+      <div class="stage-col"><div class="tw">
         <div class="tw-head"><span>Stream chat</span><span class="live">● Live</span></div>
         <div class="tw-feed"></div></div></div>
-      <div class="stage-col"><span class="panel-label">On stream</span><div class="ov">
+      <div class="stage-col"><div class="ov">
         <div class="ov-route"><span>▸</span>${cfg.route}<span>◂</span></div>
         <div class="ov-catch none"></div>
         <div class="gb"><span class="gb-label">VOTE</span><div class="ov-votes${cfg.mons.length === 2 ? ' two' : ''}"></div></div>
@@ -990,10 +989,10 @@ main code { font-family: var(--font-mono); }
   ];
   function trainerScene(root) {
     root.innerHTML = `
-      <div class="stage-col"><span class="panel-label">1 · You type</span><div class="tw">
+      <div class="stage-col"><div class="tw">
         <div class="tw-head"><span>Stream chat</span><span class="live">● Live</span></div>
         <div class="tw-feed"></div></div></div>
-      <div class="stage-col"><span class="panel-label">2 · The game</span><div class="gbs-wrap">
+      <div class="stage-col"><div class="gbs-wrap">
         <div class="gbs">
           <img class="gb-world" src="route3.png" alt="Pokemon Red, Route 3">
           <div class="gb-battle" hidden>
@@ -1006,7 +1005,7 @@ main code { font-family: var(--font-mono); }
           <div class="gb-flash"></div>
         </div>
       </div></div>
-      <div class="stage-col"><span class="panel-label">3 · The overlay</span><div class="ov">
+      <div class="stage-col"><div class="ov">
         <div class="ov-view">
           <div class="ov-route"><span>▸</span>Route 3<span>◂</span></div>
           <div class="gb ov-spawnbox"><span class="gb-label">TRAINER SPAWN</span><span>Cheer, tip or sub to send a trainer at the streamer</span></div>
