@@ -93,7 +93,7 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   SHELL — top bar and breadcrumbs, drawn by site.js on every page
+   SHELL — top bar, drawn by site.js on every page
    ───────────────────────────────────────────────────────────────────────── */
 
 .topbar {
@@ -163,24 +163,6 @@ body {
     color: var(--text-cream);
     border-color: var(--pp-deep);
 }
-
-.crumbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    color: var(--text-faint);
-}
-
-.crumbs a {
-    color: var(--pp-1);
-    text-decoration: none;
-}
-
-.crumbs a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ─────────────────────────────────────────────────────────────────────────
    HOME — a directory of sections, grouped

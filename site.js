@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────────────────────────────────
    UPATREE — Site shell
-   The one list of sections. Draws the top bar, breadcrumbs, footer sitemap,
-   and the home page's section cards from it. Load it at the end of <body>
+   The one list of sections. Draws the top bar, footer sitemap, and the
+   home page's section cards from it. Load it at the end of <body>
    (not deferred) so the nav is there on first paint.
    ───────────────────────────────────────────────────────────────────────── */
 
@@ -49,7 +49,7 @@
     }
 
     function renderTopbar(el) {
-        const links = SECTIONS.map((s) => {
+        const links = [{ id: 'home', nav: 'Home', path: '' }, ...SECTIONS].map((s) => {
             const cur = s.id === page ? ' aria-current="page"' : '';
             return `<a href="${url(s.path)}"${cur}>${s.nav}</a>`;
         }).join('');
@@ -59,13 +59,6 @@
                 <a class="watch" href="https://twitch.tv/upatree" rel="noopener">Watch on Twitch</a>
             </div>
         `;
-    }
-
-    function renderCrumbs(el) {
-        const s = SECTIONS.find((x) => x.id === page);
-        if (!s) return;
-        const g = GROUPS.find((x) => x.id === s.group);
-        el.innerHTML = `<a href="${url('')}">Home</a><span>/</span><span>${g.label}</span>`;
     }
 
     function renderFooter(el) {
@@ -136,11 +129,9 @@
     }
 
     const topbar = $('#topbar');
-    const crumbs = $('#crumbs');
     const footer = $('#footer');
     const home = $('#home-groups');
     if (topbar) renderTopbar(topbar);
-    if (crumbs) renderCrumbs(crumbs);
     if (footer) renderFooter(footer);
     if (home) renderHome(home);
 })();
