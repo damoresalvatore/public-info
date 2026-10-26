@@ -373,20 +373,19 @@ body {
 .pr-mon .types { display: flex; gap: .25rem; flex-wrap: wrap; align-items: center; }
 .ty { font-style: normal; font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ty); border: 1px solid color-mix(in srgb, var(--ty) 60%, transparent); background: color-mix(in srgb, var(--ty) 12%, transparent); border-radius: 4px; padding: .05rem .35rem; }
 .pr-moves { display: grid; gap: .4rem; }
-.pr-move { display: grid; grid-template-columns: minmax(0, 9rem) auto minmax(0, 10rem) auto minmax(0, 1fr); gap: .4rem .7rem; align-items: center; background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .55rem .8rem; }
-.pr-move s { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); }
+.pr-move { display: grid; grid-template-columns: minmax(0, 10rem) 5.5rem minmax(0, 1fr); gap: .4rem .7rem; align-items: center; background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .55rem .8rem; }
+/* fixed type column so every description starts on the same line */
+.pr-move .ty { justify-self: start; }
 .pr-move b { font-family: var(--font-mono); font-size: var(--fs-m); color: var(--text-cream); }
-.pr-move .arr { color: var(--pp-2); font-family: var(--font-mono); font-size: var(--fs-m); }
 .pr-move .what { font-size: var(--fs-m); color: var(--text-soft); }
-@media (max-width: 760px) { .pr-move { grid-template-columns: auto auto minmax(0, 1fr); } .pr-move .ty { justify-self: start; } .pr-move .what { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .pr-move { grid-template-columns: auto minmax(0, 1fr); } .pr-move .ty { justify-self: start; } .pr-move .what { grid-column: 1 / -1; } }
 .pr-stack { display: grid; gap: 1.1rem; }
 .pr-mon img.tp { background: #f8f8f8; border-radius: 6px; image-rendering: pixelated; width: 56px; height: 56px; }
 .pr-tms { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .4rem .6rem; }
 .pr-tm { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .3rem .55rem; align-items: center; justify-items: start; background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .5rem .75rem; min-width: 0; }
 .pr-tm b { font-family: var(--font-mono); font-size: var(--fs-m); color: var(--text-cream); white-space: nowrap; }
 .pr-tm span { grid-column: 1 / -1; font-size: var(--fs-s); color: var(--text-mute); }
-.pr-foot { font-size: var(--fs-m); color: var(--text-soft); margin-top: .8rem; }
-.dhead a.src { color: var(--pp-1); }
+.dhead a.src, .pr-stack a.src { color: var(--pp-1); }
 
 /* shared site classes (styles.css, stats.css) snapped to the page's three sizes */
 main :is(h1.section-title, .dhead h2, .sumhead h2, .rec b) { font-size: var(--fs-l); }
@@ -515,40 +514,38 @@ main code { font-family: var(--font-mono); }
   <!-- ═══════════════ PURE RED ═══════════════ -->
   <section class="panel" id="p-purered" role="tabpanel" hidden>
     <div class="dhead">
-      <span class="label" style="color:var(--loss)">The game</span>
       <h2>Pokemon Pure Red</h2>
       <p>This is a rom-hack of the original Pokemon games. Same Kanto, same 151 Pokemon, now with running shoes, new moves and more Pokemon on each route. Made by Vortyne: <a class="src" href="https://github.com/Vortyne/pureRGB" rel="noopener">PureRGB on GitHub</a>, <a class="src" href="https://github.com/Vortyne/pureRGB/wiki" rel="noopener">the PureRGB wiki</a>.</p>
     </div>
     <div class="pr-stack">
+      <div class="boxhead"><h3>Here are some examples of Pure Red's changes, for an exhaustive list check <a class="src" href="https://github.com/Vortyne/pureRGB/wiki" rel="noopener">the wiki</a>, or watch streamer suffer.</h3></div>
       <div class="pr-facts">
         <div><b>All 151 in one game</b><span>Alakazam, Machamp, Golem and Gengar evolve by level. No trading needed.</span></div>
-        <div><b>Starters in the wild</b><span>Squirtle, Bulbasaur and Charmander can be caught on routes. Eevee shows up on Route 1.</span></div>
-        <div><b>New types</b><span>17 Pokemon lines get a new type, like Ninetales as Fire/Ghost.</span></div>
+        <div><b>New Wild Pokemon</b><span>Find the starters, and a vast variety of the original 151 on routes they were never on before! Eevee is right there on Route 1 waiting for you.</span></div>
+        <div><b>Reworked types</b><span>Several Pokemon have reworked typing in this rom-hack, making certain mons more interesting, or playable.</span></div>
         <div><b>Rebalanced moves</b><span>Useless moves were made useful. Seven were renamed into new ones.</span></div>
         <div><b>Stronger healing</b><span>Potion heals 50 HP, Super Potion 100. Vitamins are about 3x as strong.</span></div>
         <div><b>Mew under the truck</b><span>The old rumor is real. Missingno is still there too, and won't wreck the save.</span></div>
       </div>
       <div class="box">
-        <div class="boxhead"><h3>Wild Pokemon you won't find in Red</h3><span class="label">Where · levels · encounter rate</span></div>
+        <div class="boxhead"><h3>New wild Pokemon</h3><span class="label">Where · levels · encounter rate</span></div>
         <div class="pr-grid" id="pr-wild"></div>
       </div>
       <div class="box">
-        <div class="boxhead"><h3>New types</h3></div>
+        <div class="boxhead"><h3>Reworked typing</h3></div>
         <div class="pr-grid" id="pr-types"></div>
       </div>
       <div class="box">
-        <div class="boxhead"><h3>Moves with new jobs</h3><span class="label">Renamed and remade</span></div>
+        <div class="boxhead"><h3>New moves</h3></div>
         <div class="pr-moves" id="pr-moves"></div>
       </div>
       <div class="box">
-        <div class="boxhead"><h3>New trainers</h3><span class="label">From 1997 beta sprites</span></div>
+        <div class="boxhead"><h3>New trainers</h3></div>
         <div class="pr-grid" id="pr-trainers"></div>
-        <p class="pr-foot">The new classes are in the summon pool too, so chat can send them at the streamer.</p>
       </div>
       <div class="box">
-        <div class="boxhead"><h3>New TM spots</h3><span class="label">Not in the original game</span></div>
+        <div class="boxhead"><h3>New TM spots</h3></div>
         <div class="pr-tms" id="pr-tms"></div>
-        <p class="pr-foot">A TM Pirate kid sells TMs in most Poke Marts, and after you're Champion someone sells every TM.</p>
       </div>
     </div>
   </section>
@@ -556,7 +553,6 @@ main code { font-family: var(--font-mono); }
   <!-- ═══════════════ TEAM ═══════════════ -->
   <section class="panel" id="p-team" role="tabpanel" hidden>
     <div class="dhead">
-      <span class="label" style="color:var(--c-pk)">Current run</span>
       <h2 id="team-title">The current run</h2>
       <p id="team-sub">Every Pokemon carries the name of the viewer who won its nickname. Updated once a day.</p>
     </div>
@@ -1020,7 +1016,7 @@ main code { font-family: var(--font-mono); }
   $('pr-types').innerHTML = PR_TYPES.map(([id, n, t, was]) => `<div class="pr-mon"><img class="sprite" src="sprites/${id}.gif" alt=""><b>${n}</b><span class="types">${t.map(ty).join('')}<span class="was">was ${was}</span></span></div>`).join('');
   const PR_MOVES = [['Constrict', 'Static Snag', 'electric', '75 power, 30% paralysis'], ['Take Down', 'Heat Rush', 'fire', '75 power, 30% burn'], ['Kinesis', 'Firewall', 'fire', 'Burns the foe, then hits harder on a burned foe'],
     ['Counter', 'Drain Punch', 'fighting', '75 power, drains HP'], ['Razor Wind', 'Roost', 'flying', 'Heals half your HP'], ['Slam', 'Filthy Slam', 'poison', '80 power'], ['Fury Swipes', 'Dust Claw', 'ground', '40 power, an early Ground move']];
-  $('pr-moves').innerHTML = PR_MOVES.map(([was, now, t, what]) => `<div class="pr-move"><s>${was}</s><span class="arr" aria-hidden="true">→</span><b>${now}</b>${ty(t)}<span class="what">${what}</span></div>`).join('');
+  $('pr-moves').innerHTML = PR_MOVES.map(([, now, t, what]) => `<div class="pr-move"><b>${now}</b>${ty(t)}<span class="what">${what}</span></div>`).join('');
 
   const PR_TRAINERS = [['rookie', 'Rookie', 'Routes that used to be empty'], ['ranger', 'Ranger', 'Routes, and the Safari Zone Ranger Hunt'], ['firefighter', 'Firefighter', 'Routes that used to be empty'],
     ['cool_kid', 'Cool Kid', 'Routes that used to be empty'], ['soldier', 'Soldier', 'Routes that used to be empty'], ['chief', 'Chief', 'Routes that used to be empty'], ['prof_oak', 'Prof. Oak', 'Cerulean Cave after the Elite Four. Rematch anytime']];
