@@ -128,6 +128,12 @@ body {
 .battle .call { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-cream); letter-spacing: .02em; line-height: 1.35; }
 .battle .call em { font-style: normal; color: var(--paid); }
 .t1 { --t: #4ad06a; } .t2 { --t: #64b5f6; } .t3 { --t: #ffb74d; } .t4 { --t: #e84a3a; }
+/* what each trainer tier costs, under the trainer scene; tints match the combo list's trainer chips */
+.tier-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
+.tier-row > div { display: grid; gap: .2rem; align-content: start; border: 1px solid color-mix(in srgb, var(--t) 60%, transparent); background: color-mix(in srgb, var(--t) 12%, transparent); border-radius: 8px; padding: .6rem .75rem; }
+.tier-row b { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--t); }
+.tier-row span { font-size: var(--fs-s); color: var(--text-soft); }
+@media (max-width: 760px) { .tier-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .namecard { display: flex; align-items: center; gap: .7rem; border: 1px dashed var(--pp-deep); border-radius: 8px; padding: .45rem .7rem; }
 .namecard div { min-width: 0; }
@@ -496,7 +502,12 @@ main code { font-family: var(--font-mono); }
         <div class="play-head"><h3>Summon a trainer with bits, a tip or a sub!</h3></div>
         <p class="play-rule"><strong>300 bits, a $3 tip, or any sub</strong> sends a trainer named after you. Spend more for a tougher one.</p>
         <div class="stage" id="stage-trainer" aria-label="Animated example: chat summons trainers, they queue up, then the battle starts"></div>
-        <p class="stage-note"><span>Trainers wait in line and fight one at a time. The game decides when, so the streamer can't skip one.</span></p>
+        <div class="tier-row">
+          <div class="t1"><b>Easy</b><span>300 bits · $3 tip · a sub or resub</span></div>
+          <div class="t2"><b>Medium</b><span>500 bits · $5 tip · 2 gifted subs</span></div>
+          <div class="t3"><b>Hard</b><span>1,000 bits · $10 tip · 3 gifted subs</span></div>
+          <div class="t4"><b>Insane</b><span>2,500 bits · $25 tip · 5 gifted subs</span></div>
+        </div>
       </article>
 
       </div>
