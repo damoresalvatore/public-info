@@ -73,6 +73,17 @@ body {
 /* ── One card per way to play ──────────────────────────── */
 .plays { display: grid; gap: 1.4rem; }
 .play { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.4rem 1.2rem; display: grid; gap: 1rem; min-width: 0; }
+/* the four ways share one tabbed card; panels stack in one cell so the card keeps the tallest one's height and never resizes on a switch */
+.play-tabs { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.play-tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--rule); padding: 0 .5rem; }
+.play-tablist button { flex: 0 0 auto; display: flex; gap: .45rem; align-items: center; font: inherit; font-size: var(--fs-m); color: var(--text-mute); background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: .8rem .9rem; cursor: pointer; }
+.play-tablist button i { width: 7px; height: 7px; border-radius: 2px; background: var(--c); }
+.play-tablist button:hover { color: var(--text-cream); }
+.play-tablist button[aria-selected="true"] { color: var(--text-cream); border-bottom-color: var(--pp-1); }
+.play-tablist button:focus-visible { outline: 2px solid var(--pp-1); outline-offset: -2px; border-radius: 6px; }
+.play-panels { display: grid; }
+.play-panels > .play { grid-area: 1 / 1; align-content: start; background: none; border: 0; border-radius: 0; }
+.play-panels > .play[inert] { visibility: hidden; }
 .play-head { display: flex; align-items: center; gap: .7rem 1rem; flex-wrap: wrap; }
 .play-head h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-l); color: var(--text-cream); letter-spacing: -.015em; line-height: 1.05; text-wrap: balance; }
 .cost { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 99px; padding: .3rem .75rem; border: 1px solid; white-space: nowrap; }
@@ -491,8 +502,17 @@ main code { font-family: var(--font-mono); }
 
     <div class="plays">
 
+      <div class="play-tabs">
+      <div class="play-tablist" role="tablist" aria-label="Ways to play">
+        <button type="button" role="tab" id="tab-starter" aria-controls="play-starter" aria-selected="true" style="--c:var(--free)"><i></i>Pick the starter</button>
+        <button type="button" role="tab" id="tab-vote" aria-controls="play-vote" aria-selected="false" tabindex="-1" style="--c:var(--free)"><i></i>Vote on the catch</button>
+        <button type="button" role="tab" id="tab-boost" aria-controls="play-boost" aria-selected="false" tabindex="-1" style="--c:var(--paid)"><i></i>Boost your vote</button>
+        <button type="button" role="tab" id="tab-trainer" aria-controls="play-trainer" aria-selected="false" tabindex="-1" style="--c:var(--paid)"><i></i>Summon a trainer</button>
+      </div>
+      <div class="play-panels">
+
       <!-- Pick the starter -->
-      <article class="play" id="play-starter">
+      <article class="play" id="play-starter" role="tabpanel" aria-labelledby="tab-starter">
         <div class="play-head"><h3>Pick the starter</h3><span class="cost free">Free</span></div>
         <p class="play-rule">At the start of every run, <strong>type a starter's name</strong>. Most votes wins, and the streamer <strong>has to</strong> pick that one.</p>
         <div class="stage" data-scene="starter" id="stage-starter"></div>
@@ -500,7 +520,7 @@ main code { font-family: var(--font-mono); }
       </article>
 
       <!-- Vote on the catch -->
-      <article class="play" id="play-vote">
+      <article class="play" id="play-vote" role="tabpanel" aria-labelledby="tab-vote" inert>
         <div class="play-head"><h3>Vote on the catch</h3><span class="cost free">Free</span></div>
         <p class="play-rule"><strong>Type a Pokemon's name</strong> from the route the streamer is on. One vote per route. The streamer <strong>can only catch the one in CATCH ALLOWED</strong>.</p>
         <div class="stage" data-scene="vote" id="stage-vote"></div>
@@ -514,7 +534,7 @@ main code { font-family: var(--font-mono); }
       </article>
 
       <!-- Boost your vote -->
-      <article class="play" id="play-boost">
+      <article class="play" id="play-boost" role="tabpanel" aria-labelledby="tab-boost" inert>
         <div class="play-head"><h3>Boost your vote</h3><span class="cost paid">Bits · Tip · Resub</span></div>
         <p class="play-rule">Put the name <strong>right after your cheer</strong>, or first in a tip or resub message. <strong>100 bits or $1 = 1 vote.</strong> A resub counts as 5.</p>
         <div class="stage" data-scene="boost" id="stage-boost"></div>
@@ -522,7 +542,7 @@ main code { font-family: var(--font-mono); }
       </article>
 
       <!-- Summon a trainer -->
-      <article class="play" id="play-trainer">
+      <article class="play" id="play-trainer" role="tabpanel" aria-labelledby="tab-trainer" inert>
         <div class="play-head"><h3>Summon a trainer!</h3><span class="cost paid">Bits · Tip · Sub</span></div>
         <p class="play-rule"><strong>300 bits, a $3 tip, or any sub</strong> sends a trainer named after you. Spend more for a tougher one.</p>
         <div class="stage" id="stage-trainer" aria-label="Animated example: chat summons trainers, they queue up, then the battle starts"></div>
@@ -534,6 +554,9 @@ main code { font-family: var(--font-mono); }
         </div>
         <p class="stage-note"><span>Trainers wait in line and fight one at a time. The game decides when, so the streamer can't skip one.</span><button class="replay" type="button" data-replay="stage-trainer">↻ Replay</button></p>
       </article>
+
+      </div>
+      </div>
 
       <div class="combo">
         <h2>Or do some multitrack drifting!</h2>
@@ -936,10 +959,14 @@ main code { font-family: var(--font-mono); }
     finished(); // complete at rest; playback starts once it scrolls into view
     let playing = false;
     if (!still) {
-      new IntersectionObserver(([e]) => {
-        if (e.isIntersecting && !playing) { playing = true; reset(); timer = setTimeout(tick, 500); }
-        else if (!e.isIntersecting && playing) { playing = false; clearTimeout(timer); finished(); }
-      }, { threshold: 0.45 }).observe(root);
+      let seen = false;
+      const sync = () => {
+        const on = seen && !root.closest('[inert]');
+        if (on && !playing) { playing = true; reset(); timer = setTimeout(tick, 500); }
+        else if (!on && playing) { playing = false; clearTimeout(timer); finished(); }
+      };
+      new IntersectionObserver(([e]) => { seen = e.isIntersecting; sync(); }, { threshold: 0.45 }).observe(root);
+      root.addEventListener('playtab', sync);
     }
     document.querySelector(`[data-replay="${root.id}"]`)?.addEventListener('click', () => {
       if (still) return;
@@ -1088,10 +1115,14 @@ main code { font-family: var(--font-mono); }
     finished();
     let playing = false;
     if (!still) {
-      new IntersectionObserver(([e]) => {
-        if (e.isIntersecting && !playing) { playing = true; play(); }
-        else if (!e.isIntersecting && playing) { playing = false; finished(); }
-      }, { threshold: 0.35 }).observe(root);
+      let seen = false;
+      const sync = () => {
+        const on = seen && !root.closest('[inert]');
+        if (on && !playing) { playing = true; play(); }
+        else if (!on && playing) { playing = false; finished(); }
+      };
+      new IntersectionObserver(([e]) => { seen = e.isIntersecting; sync(); }, { threshold: 0.35 }).observe(root);
+      root.addEventListener('playtab', sync);
     }
     document.querySelector('[data-replay="stage-trainer"]')?.addEventListener('click', () => { if (!still) { playing = true; play(); } });
   }
@@ -1122,6 +1153,27 @@ main code { font-family: var(--font-mono); }
     ['Light Screen', 'psychic', 'Route 11, southeast'], ['Rolling Kick', 'fighting', 'Rock Tunnel B1F, southwest corner'], ['Thunderbolt', 'electric', 'Route 10, near the Power Plant'],
     ['Razor Leaf', 'grass', 'Route 21, grass near Pallet'], ['Ice Beam', 'ice', 'Seafoam Islands B4F'], ['Hi Jump Kick', 'fighting', 'Route 23, after Victory Road']];
   $('pr-tms').innerHTML = PR_TMS.map(([m, t, where]) => `<div class="pr-tm">${ty(t)}<b>${m}</b><span>${where}</span></div>`).join('');
+
+  // ways-to-play tabs: one panel open at a time; each scene re-checks whether it should run
+  const playTabs = [...document.querySelectorAll('.play-tablist [role="tab"]')];
+  function openPlay(tab) {
+    playTabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      $(t.getAttribute('aria-controls')).inert = !on;
+    });
+    document.querySelectorAll('.play-panels .stage').forEach((st) => st.dispatchEvent(new Event('playtab')));
+  }
+  playTabs.forEach((t, i) => {
+    t.addEventListener('click', () => openPlay(t));
+    t.addEventListener('keydown', (e) => {
+      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (!step) return;
+      const next = playTabs[(i + step + playTabs.length) % playTabs.length];
+      next.focus(); openPlay(next);
+    });
+  });
 
   // sub-tab router: #rules, #purered, #team, #stats
   const TABS = ['rules', 'purered', 'team', 'stats'];
