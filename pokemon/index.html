@@ -52,6 +52,8 @@ body {
 .pk-rules { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 1.4rem; align-items: start; }
 .run-days { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .2rem; }
 .run-days .label { color: var(--pp-1); }
+/* the goal sits under the counter as a second section of the same card */
+.run-days .goal { margin-top: .9rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
 .run-days .nw { white-space: nowrap; font-size: inherit; color: inherit; }
 .run-days span { font-size: var(--fs-s); color: var(--text-mute); }
 .run-days strong { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-l); line-height: 1; color: var(--text-cream); font-variant-numeric: tabular-nums; }
@@ -442,6 +444,8 @@ main code { font-family: var(--font-mono); }
         <span>It has been</span>
         <strong><span id="days-n">–</span> days</strong>
         <span>since we first left Pallet Town</span>
+        <span class="label goal">The goal?</span>
+        <span>Beat the Elite Four, catch all 151 Pokemon.</span>
       </div>
       <div class="rule-groups">
         <section class="rule-group">
