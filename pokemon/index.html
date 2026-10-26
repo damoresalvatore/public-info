@@ -152,19 +152,6 @@ body {
 .combo-list .got.tr { color: var(--t); background: color-mix(in srgb, var(--t) 12%, transparent); border-color: color-mix(in srgb, var(--t) 60%, transparent); }
 @media (max-width: 640px) { .combo-list { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .combo-list .say { grid-column: 1 / -1; margin-top: .4rem; } .combo-list .to { display: none; } }
 
-.fine { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; }
-.fine summary { cursor: pointer; padding: 1rem 1.2rem; font-family: var(--font-display); font-size: var(--fs-m); font-weight: 600; color: var(--text-cream); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
-.fine summary::-webkit-details-marker { display: none; }
-.fine summary::after { content: '+'; font-family: var(--font-mono); color: var(--pp-1); }
-.fine[open] summary::after { content: '–'; }
-.fine summary:focus-visible { outline: 2px solid var(--pp-1); outline-offset: 2px; border-radius: 10px; }
-.fine ul { padding: 0 1.2rem 1.2rem 2.4rem; display: grid; gap: .55rem; color: var(--text-soft); font-size: var(--fs-m); max-width: 72ch; }
-.fine li strong { color: var(--text-cream); font-weight: 500; }
-.tiers-t { width: 100%; border-collapse: collapse; font-size: var(--fs-s); min-width: 30rem; }
-.tiers-t th, .tiers-t td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--rule-soft); }
-.tiers-t th { font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .1em; text-transform: uppercase; color: var(--text-mute); font-weight: 500; }
-.tiers-t td { font-family: var(--font-mono); color: var(--text-soft); }
-.tiers-wrap { overflow-x: auto; margin: 0 1.2rem 1rem; border: 1px solid var(--rule); border-radius: 8px; }
 
 /* Animated example: Twitch chat on the left, the real stream overlay on the right.
    Overlay styles copy ChatGames' overlay.html (gold GB boxes, Press Start 2P, scanlines), scaled down. */
@@ -523,31 +510,6 @@ main code { font-family: var(--font-mono); }
           <code class="say"><span class="bits">cheer2500</span> Pidgey</code><span class="to" aria-hidden="true">→</span><span class="got v">+25 votes Pidgey</span><span class="got tr t4">Insane trainer</span>
         </div>
       </div>
-
-      <details class="fine">
-        <summary>The fine print</summary>
-        <div class="tiers-wrap">
-          <table class="tiers-t">
-            <thead><tr><th>Trainer</th><th>Bits</th><th>Tip</th><th>Subs</th><th>Their level</th></tr></thead>
-            <tbody>
-              <tr><td>Easy</td><td>300+</td><td>$3+</td><td>sub, resub, 1 gift</td><td>1–2 below our best</td></tr>
-              <tr><td>Medium</td><td>500+</td><td>$5+</td><td>2 gifted at once</td><td>about even</td></tr>
-              <tr><td>Hard</td><td>1,000+</td><td>$10+</td><td>3–4 gifted at once</td><td>1–3 above</td></tr>
-              <tr><td>Insane</td><td>2,500+</td><td>$25+</td><td>5+ gifted at once</td><td>4–6 above (8–12 after level 30)</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <ul>
-          <li><strong>Spell it like the game.</strong> A free vote is the name and nothing else: <code>Nidoran F</code>, <code>Mr. Mime</code>.</li>
-          <li><strong>Under 300 bits</strong> or under $3 buys votes but no trainer.</li>
-          <li><strong>New subs and gifted subs can't vote</strong>, since there's no message. They still send a trainer, named after the gifter.</li>
-          <li><strong>Naming a Pokemon that isn't on this route</strong> does nothing for votes. Your bits still count toward a trainer.</li>
-          <li><strong>No timer.</strong> The leader can change right up until the throw. A tie lets the streamer catch any of the tied Pokemon.</li>
-          <li><strong>Timeout with bits</strong> of 300 or more sends a trainer too, at the same tiers.</li>
-          <li><strong>Outleveled everyone?</strong> An insane trainer becomes the Champion.</li>
-          <li><strong>After Mewtwo falls,</strong> chat votes from a ballot of 10 Pokemon we haven't caught yet, and gifted subs add votes there instead of sending trainers.</li>
-        </ul>
-      </details>
     </div>
   </section>
 
