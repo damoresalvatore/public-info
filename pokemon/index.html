@@ -953,7 +953,7 @@ main code { font-family: var(--font-mono); }
   // running bets: [if, then, footnote]; add a row here to add a bet
   // running bets: [what happens, footnote]; each one ends the run, so it joins the Back to Pallet Town list
   const BETS = [
-    ['The bit leader\'s namesake faints', 'Running bet. Bit leader: this week\'s top cheerer, <code>!bitleader</code>'],
+    ['The feardragon special', 'Feardragon paid $500 big ones for the following rule: if a Pokemon faints, and it is named after the current bit leader (use <code>!bitleader</code> to check), then the run must be restarted, even if all the other Pokemon are A-OK.'],
   ];
   $('run-ends').insertAdjacentHTML('beforeend', BETS.map(([when, note]) => `<li><b>${when}</b><span>${note}</span></li>`).join(''));
   document.querySelectorAll('.stage[data-scene]').forEach(scene);
