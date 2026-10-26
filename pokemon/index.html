@@ -379,8 +379,6 @@ body {
 .pr-move .arr { color: var(--pp-2); font-family: var(--font-mono); font-size: var(--fs-m); }
 .pr-move .what { font-size: var(--fs-m); color: var(--text-soft); }
 @media (max-width: 760px) { .pr-move { grid-template-columns: auto auto minmax(0, 1fr); } .pr-move .ty { justify-self: start; } .pr-move .what { grid-column: 1 / -1; } }
-.pr-same { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem 1.4rem; font-size: var(--fs-m); color: var(--text-soft); padding-left: 1.1rem; }
-@media (max-width: 760px) { .pr-same { grid-template-columns: minmax(0, 1fr); } }
 .pr-stack { display: grid; gap: 1.1rem; }
 .pr-mon img.tp { background: #f8f8f8; border-radius: 6px; image-rendering: pixelated; width: 56px; height: 56px; }
 .pr-tms { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .4rem .6rem; }
@@ -551,15 +549,6 @@ main code { font-family: var(--font-mono); }
         <div class="boxhead"><h3>New TM spots</h3><span class="label">Not in the original game</span></div>
         <div class="pr-tms" id="pr-tms"></div>
         <p class="pr-foot">A TM Pirate kid sells TMs in most Poke Marts, and after you're Champion someone sells every TM.</p>
-      </div>
-      <div class="box">
-        <div class="boxhead"><h3>Still Gen 1</h3></div>
-        <ul class="pr-same">
-          <li>No Dark, Steel or Fairy types.</li>
-          <li>No physical/special split. Special is still one stat.</li>
-          <li>No Exp. Share and no move relearner.</li>
-          <li>Gen 1 battle quirks still work, like the Hyper Beam faint skip.</li>
-        </ul>
       </div>
     </div>
   </section>
