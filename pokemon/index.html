@@ -87,9 +87,6 @@ body {
 .play-panels > .play[inert] { visibility: hidden; }
 .play-head { display: flex; align-items: center; gap: .7rem 1rem; flex-wrap: wrap; }
 .play-head h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-l); color: var(--text-cream); letter-spacing: -.015em; line-height: 1.05; text-wrap: balance; }
-.cost { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 99px; padding: .3rem .75rem; border: 1px solid; white-space: nowrap; }
-.cost.free { color: var(--free); background: color-mix(in srgb, var(--free) 14%, transparent); border-color: color-mix(in srgb, var(--free) 60%, transparent); }
-.cost.paid { color: var(--pp-4); background: color-mix(in srgb, var(--paid) 22%, transparent); border-color: color-mix(in srgb, var(--paid) 70%, transparent); }
 .play-body { display: grid; grid-template-columns: minmax(0, 5fr) auto minmax(0, 7fr); gap: 1rem; align-items: stretch; }
 .arrow { align-self: center; color: var(--pp-2); font-family: var(--font-mono); font-size: var(--fs-l); }
 @media (max-width: 760px) {
@@ -515,7 +512,7 @@ main code { font-family: var(--font-mono); }
 
       <!-- Pick the starter -->
       <article class="play" id="play-starter" role="tabpanel" aria-labelledby="tab-starter">
-        <div class="play-head"><h3>Pick the starter</h3><span class="cost free">Free</span></div>
+        <div class="play-head"><h3>Pick my starter, it's free!</h3></div>
         <p class="play-rule">At the start of every run, <strong>type a starter's name</strong>. Most votes wins, and the streamer <strong>has to</strong> pick that one.</p>
         <div class="stage" data-scene="starter" id="stage-starter"></div>
         <p class="stage-note"><span>Only a message that is just the name counts. Picking any other starter ends the run.</span><button class="replay" type="button" data-replay="stage-starter">↻ Replay</button></p>
@@ -523,7 +520,7 @@ main code { font-family: var(--font-mono); }
 
       <!-- Vote on the catch -->
       <article class="play" id="play-vote" role="tabpanel" aria-labelledby="tab-vote" inert>
-        <div class="play-head"><h3>Vote on the catch</h3><span class="cost free">Free</span></div>
+        <div class="play-head"><h3>Vote on my catch, it's free!</h3></div>
         <p class="play-rule"><strong>Type a Pokemon's name</strong> from the route the streamer is on. One vote per route. The streamer <strong>can only catch the one in CATCH ALLOWED</strong>.</p>
         <div class="stage" data-scene="vote" id="stage-vote"></div>
         <p class="stage-note"><span>Throw a ball at anything else and the Poke Balls vanish from the bag.</span><button class="replay" type="button" data-replay="stage-vote">↻ Replay</button></p>
@@ -537,7 +534,7 @@ main code { font-family: var(--font-mono); }
 
       <!-- Boost your vote -->
       <article class="play" id="play-boost" role="tabpanel" aria-labelledby="tab-boost" inert>
-        <div class="play-head"><h3>Boost your vote</h3><span class="cost paid">Bits · Tip · Resub</span></div>
+        <div class="play-head"><h3>Boost your vote with bits, a tip or a resub</h3></div>
         <p class="play-rule">Put the name <strong>right after your cheer</strong>, or first in a tip or resub message. <strong>100 bits or $1 = 1 vote.</strong> A resub counts as 5.</p>
         <div class="stage" data-scene="boost" id="stage-boost"></div>
         <p class="stage-note"><span>When it's caught, one voter's name becomes its nickname. More votes, better odds.</span><button class="replay" type="button" data-replay="stage-boost">↻ Replay</button></p>
@@ -545,7 +542,7 @@ main code { font-family: var(--font-mono); }
 
       <!-- Summon a trainer -->
       <article class="play" id="play-trainer" role="tabpanel" aria-labelledby="tab-trainer" inert>
-        <div class="play-head"><h3>Summon a trainer!</h3><span class="cost paid">Bits · Tip · Sub</span></div>
+        <div class="play-head"><h3>Summon a trainer with bits, a tip or a sub!</h3></div>
         <p class="play-rule"><strong>300 bits, a $3 tip, or any sub</strong> sends a trainer named after you. Spend more for a tougher one.</p>
         <div class="stage" id="stage-trainer" aria-label="Animated example: chat summons trainers, they queue up, then the battle starts"></div>
         <div class="ladder" aria-label="Trainer strength by amount">
