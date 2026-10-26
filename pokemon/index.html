@@ -373,12 +373,12 @@ body {
 .pr-mon .types { display: flex; gap: .25rem; flex-wrap: wrap; align-items: center; }
 .ty { font-style: normal; font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ty); border: 1px solid color-mix(in srgb, var(--ty) 60%, transparent); background: color-mix(in srgb, var(--ty) 12%, transparent); border-radius: 4px; padding: .05rem .35rem; }
 .pr-moves { display: grid; gap: .4rem; }
-.pr-move { display: grid; grid-template-columns: minmax(0, 9rem) auto minmax(0, 10rem) auto minmax(0, 1fr); gap: .4rem .7rem; align-items: center; background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .55rem .8rem; }
-.pr-move s { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); }
+.pr-move { display: grid; grid-template-columns: minmax(0, 10rem) 5.5rem minmax(0, 1fr); gap: .4rem .7rem; align-items: center; background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .55rem .8rem; }
+/* fixed type column so every description starts on the same line */
+.pr-move .ty { justify-self: start; }
 .pr-move b { font-family: var(--font-mono); font-size: var(--fs-m); color: var(--text-cream); }
-.pr-move .arr { color: var(--pp-2); font-family: var(--font-mono); font-size: var(--fs-m); }
 .pr-move .what { font-size: var(--fs-m); color: var(--text-soft); }
-@media (max-width: 760px) { .pr-move { grid-template-columns: auto auto minmax(0, 1fr); } .pr-move .ty { justify-self: start; } .pr-move .what { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .pr-move { grid-template-columns: auto minmax(0, 1fr); } .pr-move .ty { justify-self: start; } .pr-move .what { grid-column: 1 / -1; } }
 .pr-stack { display: grid; gap: 1.1rem; }
 .pr-mon img.tp { background: #f8f8f8; border-radius: 6px; image-rendering: pixelated; width: 56px; height: 56px; }
 .pr-tms { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .4rem .6rem; }
@@ -537,7 +537,7 @@ main code { font-family: var(--font-mono); }
         <div class="pr-grid" id="pr-types"></div>
       </div>
       <div class="box">
-        <div class="boxhead"><h3>Moves with new jobs</h3><span class="label">Renamed and remade</span></div>
+        <div class="boxhead"><h3>New moves</h3></div>
         <div class="pr-moves" id="pr-moves"></div>
       </div>
       <div class="box">
@@ -1020,7 +1020,7 @@ main code { font-family: var(--font-mono); }
   $('pr-types').innerHTML = PR_TYPES.map(([id, n, t, was]) => `<div class="pr-mon"><img class="sprite" src="sprites/${id}.gif" alt=""><b>${n}</b><span class="types">${t.map(ty).join('')}<span class="was">was ${was}</span></span></div>`).join('');
   const PR_MOVES = [['Constrict', 'Static Snag', 'electric', '75 power, 30% paralysis'], ['Take Down', 'Heat Rush', 'fire', '75 power, 30% burn'], ['Kinesis', 'Firewall', 'fire', 'Burns the foe, then hits harder on a burned foe'],
     ['Counter', 'Drain Punch', 'fighting', '75 power, drains HP'], ['Razor Wind', 'Roost', 'flying', 'Heals half your HP'], ['Slam', 'Filthy Slam', 'poison', '80 power'], ['Fury Swipes', 'Dust Claw', 'ground', '40 power, an early Ground move']];
-  $('pr-moves').innerHTML = PR_MOVES.map(([was, now, t, what]) => `<div class="pr-move"><s>${was}</s><span class="arr" aria-hidden="true">→</span><b>${now}</b>${ty(t)}<span class="what">${what}</span></div>`).join('');
+  $('pr-moves').innerHTML = PR_MOVES.map(([, now, t, what]) => `<div class="pr-move"><b>${now}</b>${ty(t)}<span class="what">${what}</span></div>`).join('');
 
   const PR_TRAINERS = [['rookie', 'Rookie', 'Routes that used to be empty'], ['ranger', 'Ranger', 'Routes, and the Safari Zone Ranger Hunt'], ['firefighter', 'Firefighter', 'Routes that used to be empty'],
     ['cool_kid', 'Cool Kid', 'Routes that used to be empty'], ['soldier', 'Soldier', 'Routes that used to be empty'], ['chief', 'Chief', 'Routes that used to be empty'], ['prof_oak', 'Prof. Oak', 'Cerulean Cave after the Elite Four. Rematch anytime']];
