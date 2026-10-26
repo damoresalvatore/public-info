@@ -246,6 +246,8 @@ body {
 @keyframes floatUp { 0% { opacity: 0; transform: translateY(6px); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(-16px); } }
 .you-em { font-style: italic; color: var(--pp-1); }
 .stage-note { font-family: var(--font-body); font-size: var(--fs-m); color: var(--text-soft); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+/* a long note wraps beside Replay instead of pushing it onto its own line */
+.stage-note > span { flex: 1 1 20rem; min-width: 0; }
 .replay { background: none; border: 0; color: var(--pp-1); font: inherit; cursor: pointer; padding: 0; }
 .replay:focus-visible { outline: 2px solid var(--pp-1); outline-offset: 2px; }
 
@@ -370,14 +372,6 @@ body {
 .legend { display: flex; gap: 1rem; flex-wrap: wrap; font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); }
 .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c); margin-right: .35rem; }
 .datalink:hover { border-color: var(--c-pk) !important; }
-.namesake { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; }
-.namesake > div { background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .7rem .85rem; display: grid; gap: .25rem; align-content: start; }
-.namesake b { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-pk); }
-.namesake span { font-size: var(--fs-m); color: var(--text-soft); }
-.namesake strong { color: var(--text-cream); font-weight: 500; }
-.namesake code { font-family: var(--font-mono); color: var(--text-cream); }
-.namesake-head { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--text-cream); }
-@media (max-width: 760px) { .namesake { grid-template-columns: minmax(0, 1fr); } }
 /* Pure Red tab */
 .pr-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-bottom: 1.4rem; }
 .pr-facts > div { background: var(--bg-elevated); padding: 1rem 1.15rem; display: grid; gap: .25rem; align-content: start; }
@@ -494,13 +488,7 @@ main code { font-family: var(--font-mono); }
         <div class="play-head"><h3>One free vote per route, it's on the house!</h3></div>
         <p class="play-rule">Simply <strong>type the name of the Pokemon you want me to catch</strong> in chat, from the list of Pokemon on the screen. The game will block me from catching anything else!</p>
         <div class="stage" data-scene="vote" id="stage-vote"></div>
-        <p class="stage-note"><span>Throw a ball at anything else and the Poke Balls vanish from the bag.</span><button class="replay" type="button" data-replay="stage-vote">↻ Replay</button></p>
-        <p class="namesake-head">Become one of the Pokemon</p>
-        <div class="namesake">
-          <div><b>1 · Vote</b><span>Vote for the one that <strong>gets caught</strong>. Votes for anything else don't enter the draw.</span></div>
-          <div><b>2 · The draw</b><span>One voter is picked at random. <strong>Every vote is a ticket</strong>, so boosting raises your odds.</span></div>
-          <div><b>3 · Your name</b><span>It takes your handle in caps, letters and numbers only, up to 10: <code>feardragon64</code> becomes <code>FEARDRAGON</code>. If it faints, your name goes to the graveyard.</span></div>
-        </div>
+        <p class="stage-note"><span>If you vote for a Pokemon, you have a chance to become that Pokemon! Each vote is a ticket, and if that Pokemon is caught the game does a draw, and the winning ticket becomes the Pokemon.</span><button class="replay" type="button" data-replay="stage-vote">↻ Replay</button></p>
       </article>
 
       <!-- Boost your vote -->
