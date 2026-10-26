@@ -1014,7 +1014,7 @@ main code { font-family: var(--font-mono); }
     [22, 'Fearow', ['flying', 'fighting'], 'Normal/Flying'], [99, 'Kingler', ['water', 'ground'], 'Water'], [127, 'Pinsir', ['bug', 'fighting'], 'Bug'], [125, 'Electabuzz', ['electric', 'fighting'], 'Electric'],
     [122, 'Mr. Mime', ['psychic', 'ghost'], 'Psychic'], [28, 'Sandslash', ['ground', 'normal'], 'Ground'], [78, 'Rapidash', ['fire', 'normal'], 'Fire'], [119, 'Seaking', ['water', 'normal'], 'Water'], [71, 'Victreebel', ['grass', 'dragon'], 'Grass/Poison']];
   $('pr-types').innerHTML = PR_TYPES.map(([id, n, t, was]) => `<div class="pr-mon"><img class="sprite" src="sprites/${id}.gif" alt=""><b>${n}</b><span class="types">${t.map(ty).join('')}<span class="was">was ${was}</span></span></div>`).join('');
-  const PR_MOVES = [['Constrict', 'Static Snag', 'electric', '75 power, 30% paralysis'], ['Take Down', 'Heat Rush', 'fire', '75 power, 30% burn'], ['Kinesis', 'Firewall', 'fire', 'Burns the foe, then hits harder on a burned foe'],
+  const PR_MOVES = [['Constrict', 'Static Snag', 'electric', '75 power, 30% paralysis'], ['Take Down', 'Heat Rush', 'fire', '75 power, 30% burn'], ['Kinesis', 'Firewall', 'fire', '20 power, burns the foe, hits harder each use on a burned foe'],
     ['Counter', 'Drain Punch', 'fighting', '75 power, drains HP'], ['Razor Wind', 'Roost', 'flying', 'Heals half your HP'], ['Slam', 'Filthy Slam', 'poison', '80 power'], ['Fury Swipes', 'Dust Claw', 'ground', '40 power, an early Ground move']];
   $('pr-moves').innerHTML = PR_MOVES.map(([, now, t, what]) => `<div class="pr-move"><b>${now}</b>${ty(t)}<span class="what">${what}</span></div>`).join('');
 
