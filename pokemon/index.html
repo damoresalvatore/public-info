@@ -48,44 +48,48 @@ body {
 .sprite { image-rendering: pixelated; width: 56px; height: 56px; flex: none; }
 .sprite.sm { width: 40px; height: 40px; }
 
-/* ── The run, in three rules ───────────────────────────── */
-/* the run at a glance: a day counter on the left, six rule tiles beside it */
-.pk-laws { display: grid; grid-template-columns: minmax(0, 13rem) repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-bottom: 2.4rem; }
-.pk-laws > div { background: var(--bg-elevated); padding: 1rem 1.15rem; display: flex; gap: .8rem; align-items: center; min-width: 0; }
-.pk-laws > div:not(.days) { align-items: flex-start; }
-.pk-laws svg { width: 30px; height: 30px; flex: none; margin-top: .05rem; }
-.pk-laws b { display: block; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--text-cream); line-height: 1.2; }
-.pk-laws span { font-size: var(--fs-s); color: var(--text-mute); }
-.pk-laws .days { grid-row: span 2; flex-direction: column; align-items: flex-start; justify-content: center; gap: .2rem; background: linear-gradient(180deg, color-mix(in srgb, var(--c-pk) 10%, var(--bg-elevated)), var(--bg-elevated)); }
-.pk-laws .days .label { color: var(--c-pk); }
-.pk-laws .days .nw { white-space: nowrap; font-size: inherit; color: inherit; }
-.pk-laws .days strong { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-l); line-height: 1; color: var(--text-cream); font-variant-numeric: tabular-nums; }
-.pk-laws .tiers { display: flex; gap: .25rem; flex-wrap: wrap; margin-top: .3rem; }
-.pk-laws .tiers i { font-style: normal; font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .08em; text-transform: uppercase; padding: .1rem .35rem; border-radius: 3px; border: 1px solid currentColor; }
-.pk-laws .bet-tile { grid-column: span 2; background: linear-gradient(180deg, color-mix(in srgb, var(--loss) 10%, var(--bg-elevated)), var(--bg-elevated)); }
-.pk-laws .bet-tile b { color: var(--loss); }
-.pk-laws .bet-row { display: block; font-size: var(--fs-m); color: var(--text-cream); margin-top: .2rem; }
-.pk-laws .bet-row strong { color: var(--loss); font-weight: 700; }
-.pk-laws .bet-note code { font-family: var(--font-mono); color: var(--text-soft); }
-@media (max-width: 980px) { .pk-laws { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pk-laws .days { grid-row: auto; grid-column: 1 / -1; flex-direction: row; align-items: baseline; justify-content: flex-start; flex-wrap: wrap; column-gap: .8rem; } }
-@media (max-width: 560px) { .pk-laws { grid-template-columns: minmax(0, 1fr); } .pk-laws .bet-tile { grid-column: auto; } }
+/* ── Rules: a day counter card, then three groups (the classic rules, chat's twists, what ends a run) ── */
+.pk-rules { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 1.4rem; }
+.run-days { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .2rem; }
+/* the card's titles match the rule-group headings beside it */
+.pk-rules .run-days .label { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--pp-1); line-height: 1.2; letter-spacing: normal; text-transform: none; }
+/* the goal sits under the counter as a second section of the same card */
+.run-days .goal { margin-top: .9rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
+.run-days .nw { white-space: nowrap; font-size: inherit; color: inherit; }
+.run-days span { font-size: var(--fs-s); color: var(--text-mute); }
+.run-days strong { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-l); line-height: 1; color: var(--text-cream); font-variant-numeric: tabular-nums; }
+.run-days strong span { font-size: inherit; color: inherit; }
+.rule-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.rule-group { background: var(--bg-elevated); padding: 1.1rem 1.15rem; min-width: 0; display: grid; gap: .8rem; align-content: start; }
+.rule-group h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--pp-1); line-height: 1.2; }
+.rule-group.ends h2 { color: var(--loss); }
+.rule-group ul { list-style: none; display: grid; gap: .8rem; }
+.rule-group li b { display: block; font-weight: 500; font-size: var(--fs-m); color: var(--text-cream); line-height: 1.3; }
+.rule-group li span { display: block; font-size: var(--fs-s); color: var(--text-mute); margin-top: .15rem; }
+.rule-group code { font-family: var(--font-mono); color: var(--text-soft); }
+@media (max-width: 980px) { .pk-rules { grid-template-columns: minmax(0, 1fr); } .rule-groups { grid-template-columns: minmax(0, 1fr); } }
 
 /* ── One card per way to play ──────────────────────────── */
 .plays { display: grid; gap: 1.4rem; }
-.play { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.4rem 1.2rem; display: grid; gap: 1rem; min-width: 0; }
+.play { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.4rem; display: grid; gap: 1rem; min-width: 0; }
+/* the three ways share one tabbed card; only the open panel is laid out, so the card fits its content */
+.play-tabs { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.play-tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--rule); padding: 0 .5rem; }
+.play-tablist button { flex: 0 0 auto; display: flex; gap: .45rem; align-items: center; font: inherit; font-size: var(--fs-m); color: var(--text-mute); background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: .8rem .9rem; cursor: pointer; }
+.play-tablist button:hover { color: var(--text-cream); }
+.play-tablist button[aria-selected="true"] { color: var(--text-cream); border-bottom-color: var(--pp-1); }
+.play-tablist button:focus-visible { outline: 2px solid var(--pp-1); outline-offset: -2px; border-radius: 6px; }
+.play-panels > .play { align-content: start; background: none; border: 0; border-radius: 0; }
+.play-panels > .play[inert] { display: none; }
 .play-head { display: flex; align-items: center; gap: .7rem 1rem; flex-wrap: wrap; }
 .play-head h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-l); color: var(--text-cream); letter-spacing: -.015em; line-height: 1.05; text-wrap: balance; }
-.cost { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 99px; padding: .3rem .75rem; border: 1px solid; white-space: nowrap; }
-.cost.free { color: var(--free); background: color-mix(in srgb, var(--free) 14%, transparent); border-color: color-mix(in srgb, var(--free) 60%, transparent); }
-.cost.paid { color: var(--pp-4); background: color-mix(in srgb, var(--paid) 22%, transparent); border-color: color-mix(in srgb, var(--paid) 70%, transparent); }
 .play-body { display: grid; grid-template-columns: minmax(0, 5fr) auto minmax(0, 7fr); gap: 1rem; align-items: stretch; }
 .arrow { align-self: center; color: var(--pp-2); font-family: var(--font-mono); font-size: var(--fs-l); }
 @media (max-width: 760px) {
   .play-body { grid-template-columns: minmax(0, 1fr); }
   .arrow { justify-self: center; transform: rotate(90deg); line-height: 1; }
 }
-.panel-label { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); margin-bottom: .45rem; display: block; }
-.play-rule { font-size: var(--fs-m); margin-top: -.4rem; color: var(--text-soft); max-width: 62ch; }
+.play-rule { font-size: var(--fs-m); margin-top: -.4rem; color: var(--text-soft); }
 .play-rule strong { color: var(--text-cream); font-weight: 500; }
 
 /* chat mock, like the Twitch chat column */
@@ -117,28 +121,18 @@ body {
 .screen-foot { font-size: var(--fs-s); color: var(--text-mute); border-top: 1px dashed var(--rule); padding-top: .5rem; margin-top: auto; }
 .screen-foot b { color: var(--text-cream); font-weight: 500; }
 
-.starters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
-.starter { border: 1px solid var(--rule); border-radius: 8px; padding: .5rem .3rem .45rem; display: flex; flex-direction: column; align-items: center; gap: .15rem; min-width: 0; }
-.starter b { font-size: var(--fs-s); color: var(--text-cream); font-weight: 500; }
-.starter span { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); }
-.starter.win { border-color: var(--free); background: color-mix(in srgb, var(--free) 8%, transparent); }
-.starter.win span { color: var(--free); }
 
 .battle { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; align-items: center; background: linear-gradient(180deg, color-mix(in srgb, var(--paid) 14%, transparent), transparent); border: 1px solid var(--pp-deep); border-radius: 8px; padding: .75rem .85rem; }
 .battle svg { width: 52px; height: 64px; }
 .battle .call { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-cream); letter-spacing: .02em; line-height: 1.35; }
 .battle .call em { font-style: normal; color: var(--paid); }
-.ladder { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .35rem; }
-.rung { border: 1px solid var(--rule); border-radius: 6px; padding: .4rem .45rem; display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
-.rung b { font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .1em; text-transform: uppercase; }
-.rung span { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-soft); white-space: nowrap; }
-.rung small { font-size: var(--fs-s); color: var(--text-mute); }
-.rung.on { border-color: var(--paid); background: color-mix(in srgb, var(--paid) 10%, transparent); }
 .t1 { --t: #4ad06a; } .t2 { --t: #64b5f6; } .t3 { --t: #ffb74d; } .t4 { --t: #e84a3a; }
-.rung b { color: var(--t); }
-.rung { transition: border-color .3s, background .3s, box-shadow .3s; }
-.rung.lit { border-color: var(--t); background: color-mix(in srgb, var(--t) 12%, transparent); box-shadow: 0 0 12px color-mix(in srgb, var(--t) 35%, transparent); }
-@media (max-width: 460px) { .ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* what each trainer tier costs, under the trainer scene; tints match the combo list's trainer chips */
+.tier-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; }
+.tier-row > div { display: grid; gap: .2rem; align-content: start; border: 1px solid color-mix(in srgb, var(--t) 60%, transparent); background: color-mix(in srgb, var(--t) 12%, transparent); border-radius: 8px; padding: .6rem .75rem; }
+.tier-row b { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--t); }
+.tier-row span { font-size: var(--fs-s); color: var(--text-soft); }
+@media (max-width: 760px) { .tier-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .namecard { display: flex; align-items: center; gap: .7rem; border: 1px dashed var(--pp-deep); border-radius: 8px; padding: .45rem .7rem; }
 .namecard div { min-width: 0; }
@@ -158,19 +152,6 @@ body {
 .combo-list .got.tr { color: var(--t); background: color-mix(in srgb, var(--t) 12%, transparent); border-color: color-mix(in srgb, var(--t) 60%, transparent); }
 @media (max-width: 640px) { .combo-list { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .combo-list .say { grid-column: 1 / -1; margin-top: .4rem; } .combo-list .to { display: none; } }
 
-.fine { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; }
-.fine summary { cursor: pointer; padding: 1rem 1.2rem; font-family: var(--font-display); font-size: var(--fs-m); font-weight: 600; color: var(--text-cream); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
-.fine summary::-webkit-details-marker { display: none; }
-.fine summary::after { content: '+'; font-family: var(--font-mono); color: var(--pp-1); }
-.fine[open] summary::after { content: '–'; }
-.fine summary:focus-visible { outline: 2px solid var(--pp-1); outline-offset: 2px; border-radius: 10px; }
-.fine ul { padding: 0 1.2rem 1.2rem 2.4rem; display: grid; gap: .55rem; color: var(--text-soft); font-size: var(--fs-m); max-width: 72ch; }
-.fine li strong { color: var(--text-cream); font-weight: 500; }
-.tiers-t { width: 100%; border-collapse: collapse; font-size: var(--fs-s); min-width: 30rem; }
-.tiers-t th, .tiers-t td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--rule-soft); }
-.tiers-t th { font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .1em; text-transform: uppercase; color: var(--text-mute); font-weight: 500; }
-.tiers-t td { font-family: var(--font-mono); color: var(--text-soft); }
-.tiers-wrap { overflow-x: auto; margin: 0 1.2rem 1rem; border: 1px solid var(--rule); border-radius: 8px; }
 
 /* Animated example: Twitch chat on the left, the real stream overlay on the right.
    Overlay styles copy ChatGames' overlay.html (gold GB boxes, Press Start 2P, scanlines), scaled down. */
@@ -181,7 +162,6 @@ body {
 @media (max-width: 760px) { .stage { grid-template-columns: minmax(0, 1fr); } }
 .tw { background: var(--tw-bg); border: 1px solid var(--rule); border-radius: 8px; display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
 .tw-head { font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); padding: .6rem .85rem; border-bottom: 1px dashed var(--rule); background: var(--bg-card); display: flex; justify-content: space-between; }
-.tw-head .live { color: var(--loss); }
 .stage-col { display: flex; flex-direction: column; min-width: 0; }
 .stage-col > .tw, .stage-col > .ov { flex: 1; }
 /* feed never sizes to its messages: it fills the column on desktop, fixed height when stacked */
@@ -198,18 +178,19 @@ body {
 .tw-msg.event .sys { display: block; font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .02em; color: var(--text-cream); margin-bottom: .1rem; }
 /* paid votes: purple everywhere, with a sweep in chat and a burst on the overlay */
 .tw-msg.paid { border-left: 3px solid var(--paid); border-radius: 0 4px 4px 0; background: linear-gradient(100deg, color-mix(in srgb, var(--paid) 16%, transparent) 0%, color-mix(in srgb, var(--paid) 8%, transparent) 100%); flex-wrap: wrap; }
-.tw-msg.paid .plus { color: var(--paid); font-size: var(--fs-s); transform-origin: right center; }
+.tw-msg.paid .plus { color: var(--paid); font-size: var(--fs-s); }
 .tw-msg.paid.counted { background: linear-gradient(100deg, color-mix(in srgb, var(--paid) 22%, transparent), color-mix(in srgb, var(--paid) 8%, transparent)); box-shadow: 0 0 14px color-mix(in srgb, var(--paid) 25%, transparent); }
 @media (prefers-reduced-motion: no-preference) {
   .tw-msg.paid.new { background-size: 250% 100%; animation: twIn .32s cubic-bezier(.2,.8,.25,1), sweep 1.1s ease-out; background-image: linear-gradient(100deg, color-mix(in srgb, var(--paid) 10%, transparent) 30%, color-mix(in srgb, var(--paid) 45%, transparent) 50%, color-mix(in srgb, var(--paid) 10%, transparent) 70%); }
-  .tw-msg.paid.counted .plus { animation: plusPop .5s ease; }
+  .tw-msg.paid.counted .plus { animation: plusPop .8s ease; }
   .vr.boost { animation: boostRow 1.1s ease; }
   .vr.boost .vc { animation: boostNum .7s cubic-bezier(.2,1.6,.4,1); }
   .vr.boost .fl { animation: floatBig 1.3s ease-out; }
   .vr .gemp { animation: gemOut .8s ease-out forwards; }
 }
 @keyframes sweep { from { background-position: 100% 0; } to { background-position: 0 0; } }
-@keyframes plusPop { 0% { transform: scale(.6); } 50% { transform: scale(1.35); } 100% { transform: scale(1); } }
+/* a glow that swells and fades, so the label never grows past its message */
+@keyframes plusPop { 0% { text-shadow: 0 0 0 transparent; } 40% { text-shadow: 0 0 6px currentColor, 0 0 14px currentColor; } 100% { text-shadow: 0 0 0 transparent; } }
 @keyframes boostRow { 0% { box-shadow: 0 0 0 rgba(206,122,255,0); border-color: var(--paid); } 30% { box-shadow: 0 0 22px rgba(206,122,255,.75), inset 0 0 18px rgba(206,122,255,.35); border-color: var(--paid); } 100% { box-shadow: 0 0 0 rgba(206,122,255,0); } }
 @keyframes boostNum { 0% { transform: scale(1); color: var(--paid); } 40% { transform: scale(2); color: var(--paid); text-shadow: 0 0 10px var(--paid); } 100% { transform: scale(1); } }
 @keyframes floatBig { 0% { opacity: 0; transform: translateY(8px) scale(.8); } 20% { opacity: 1; transform: translateY(0) scale(1.3); } 100% { opacity: 0; transform: translateY(-26px) scale(1.3); } }
@@ -257,9 +238,7 @@ body {
 @keyframes bump { 0% { transform: scale(1); } 35% { transform: scale(1.45); } 100% { transform: scale(1); } }
 @keyframes floatUp { 0% { opacity: 0; transform: translateY(6px); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(-16px); } }
 .you-em { font-style: italic; color: var(--pp-1); }
-.stage-note { font-family: var(--font-body); font-size: var(--fs-m); color: var(--text-soft); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-.replay { background: none; border: 0; color: var(--pp-1); font: inherit; cursor: pointer; padding: 0; }
-.replay:focus-visible { outline: 2px solid var(--pp-1); outline-offset: 2px; }
+.stage-note { font-family: var(--font-body); font-size: var(--fs-m); color: var(--text-soft); }
 
 /* trainer scene: route view, then the Chat Battle takeover; the queue stays pinned below both, as on stream */
 #stage-trainer { --panel-h: 25rem; }
@@ -345,9 +324,6 @@ body {
 .gb-text { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; background: #f8f8f8; border: 1.6cqw double #181818; padding: 3cqw 4cqw; font-size: var(--fs-m); line-height: 1.6; }
 .gb-flash { display: none; position: absolute; inset: 0; pointer-events: none; z-index: 5; opacity: 0; background: repeating-linear-gradient(0deg, #181818 0 6%, transparent 6% 12%); }
 @keyframes gbFlash { 0%, 33%, 66% { opacity: 1; } 16%, 50%, 83% { opacity: 0; } 100% { opacity: 0; } }
-.gb-cap { grid-column: 1 / -1; margin: 0; text-align: center; font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); height: 2.8em; overflow: hidden; line-height: 1.4; }
-@media (max-width: 760px) { .gb-cap { height: 4.2em; } }
-.gb-cap b { color: var(--text-cream); font-weight: 500; }
 
 /* ── Team ──────────────────────────────────────────────── */
 .party { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; }
@@ -382,14 +358,6 @@ body {
 .legend { display: flex; gap: 1rem; flex-wrap: wrap; font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); }
 .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c); margin-right: .35rem; }
 .datalink:hover { border-color: var(--c-pk) !important; }
-.namesake { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; }
-.namesake > div { background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .7rem .85rem; display: grid; gap: .25rem; align-content: start; }
-.namesake b { font-family: var(--font-mono); font-size: var(--fs-s); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-pk); }
-.namesake span { font-size: var(--fs-m); color: var(--text-soft); }
-.namesake strong { color: var(--text-cream); font-weight: 500; }
-.namesake code { font-family: var(--font-mono); color: var(--text-cream); }
-.namesake-head { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--text-cream); }
-@media (max-width: 760px) { .namesake { grid-template-columns: minmax(0, 1fr); } }
 /* Pure Red tab */
 .pr-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-bottom: 1.4rem; }
 .pr-facts > div { background: var(--bg-elevated); padding: 1rem 1.15rem; display: grid; gap: .25rem; align-content: start; }
@@ -411,8 +379,6 @@ body {
 .pr-move .arr { color: var(--pp-2); font-family: var(--font-mono); font-size: var(--fs-m); }
 .pr-move .what { font-size: var(--fs-m); color: var(--text-soft); }
 @media (max-width: 760px) { .pr-move { grid-template-columns: auto auto minmax(0, 1fr); } .pr-move .ty { justify-self: start; } .pr-move .what { grid-column: 1 / -1; } }
-.pr-same { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem 1.4rem; font-size: var(--fs-m); color: var(--text-soft); padding-left: 1.1rem; }
-@media (max-width: 760px) { .pr-same { grid-template-columns: minmax(0, 1fr); } }
 .pr-stack { display: grid; gap: 1.1rem; }
 .pr-mon img.tp { background: #f8f8f8; border-radius: 6px; image-rendering: pixelated; width: 56px; height: 56px; }
 .pr-tms { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: .4rem .6rem; }
@@ -425,7 +391,7 @@ body {
 /* shared site classes (styles.css, stats.css) snapped to the page's three sizes */
 main :is(h1.section-title, .dhead h2, .sumhead h2, .rec b) { font-size: var(--fs-l); }
 main :is(.section-lede, .subtabs a, .boxhead h3, .rec span, .note, .board .nm) { font-size: var(--fs-m); }
-main :is(.board .hd, .label, .board .rk, .board .v, .boxhead .btn, .crumbs a, .crumbs span, .tomb span) { font-size: var(--fs-s); }
+main :is(.board .hd, .label, .board .rk, .board .v, .boxhead .btn, .tomb span) { font-size: var(--fs-s); }
 main code { font-family: var(--font-mono); }
 </style>
 </head>
@@ -437,103 +403,100 @@ main code { font-family: var(--font-mono); }
 <main>
 <section class="section section--page st">
   <header class="section-head">
-    <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
     <h1 class="section-title">Pokemon</h1>
-    <p class="section-lede">A Pokemon Pure Red nuzlocke that chat plays along with. You choose what gets caught, every catch is named after a viewer, and bits send trainers to fight the streamer.</p>
+    <p class="section-lede">What began as a simple task, to catch them all and defeat the Elite Four, has become a journey. A mission, if you will. To escape the hell that is known as Pallet Town. I yearn to leave, and yet, somehow, I remain. This is our Pokemon Nuzlocke, and below are the rules and how to play.</p>
   </header>
 
   <nav class="subtabs" aria-label="Pokemon sections">
-    <a href="#rules" style="--c:var(--pp-1)"><i></i>Rules</a>
-    <a href="#purered" style="--c:var(--loss)"><i></i>Pure Red</a>
-    <a href="#team" style="--c:var(--c-pk)"><i></i>Team</a>
-    <a href="#stats" style="--c:var(--c-pred)"><i></i>Stats</a>
+    <a href="#rules">Rules</a>
+    <a href="#play">How to play</a>
+    <a href="#purered">Pure Red</a>
+    <a href="#team">Current run</a>
+    <a href="#stats">Stats</a>
   </nav>
 
   <!-- ═══════════════ RULES ═══════════════ -->
   <section class="panel" id="p-rules" role="tabpanel" hidden>
-    <div class="pk-laws" aria-label="The rules of the run">
-      <div class="days">
+    <div class="pk-rules">
+      <div class="run-days">
         <span class="label" id="days-label">Game start</span>
-        <strong id="days-n">–</strong>
-        <span id="days-sub">days since we started</span>
+        <span>It has been</span>
+        <strong><span id="days-n">–</span> days</strong>
+        <span>since we first left Pallet Town</span>
+        <span class="label goal">The goal?</span>
+        <span>Beat the Elite Four, catch all 151 Pokemon, and become the very best.</span>
       </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M2 15h26" stroke="var(--pp-1)" stroke-width="2"/><circle cx="15" cy="15" r="4" fill="var(--bg-elevated)" stroke="var(--pp-1)" stroke-width="2"/></svg>
-        <p><b>One catch per route</b><span>Chat votes on which one.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M4 6h13l9 9-11 11-11-11z" fill="none" stroke="var(--c-pk)" stroke-width="2" stroke-linejoin="round"/><circle cx="10" cy="11" r="2" fill="var(--c-pk)"/></svg>
-        <p><b>Chat names every catch</b><span>One voter's name, drawn by votes.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3l10 4v7c0 7-4.5 11-10 13C9.5 25 5 21 5 14V7z" fill="none" stroke="var(--c-sc2)" stroke-width="2" stroke-linejoin="round"/><path d="M10.5 15l3 3 6-6.5" fill="none" stroke="var(--c-sc2)" stroke-width="2"/></svg>
-        <p><b>All automated</b><span>The game enforces it. No cheating.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M8 27V12a7 7 0 0 1 14 0v15z" fill="none" stroke="var(--loss)" stroke-width="2"/><path d="M15 10v8M11.5 13.5h7" stroke="var(--loss)" stroke-width="2"/><path d="M4 27h22" stroke="var(--loss)" stroke-width="2"/></svg>
-        <p><b>Faint means gone</b><span>No revives. It goes to the graveyard.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M5 15a10 10 0 1 0 3-7" fill="none" stroke="var(--c-pred)" stroke-width="2"/><path d="M4 4v6h6" fill="none" stroke="var(--c-pred)" stroke-width="2"/></svg>
-        <p><b>Whole team down?</b><span>Back to Pallet Town. New run.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M9 11c0-4 2.7-7 6-7s6 3 6 7z" fill="var(--paid)"/><circle cx="15" cy="15" r="4" fill="none" stroke="var(--paid)" stroke-width="2"/><path d="M7 28v-4c0-3 3.5-5 8-5s8 2 8 5v4" fill="none" stroke="var(--paid)" stroke-width="2"/></svg>
-        <p><b>Summon trainers</b><span class="tiers"><i style="color:#4ad06a">Easy</i><i style="color:#64b5f6">Medium</i><i style="color:#ffb74d">Hard</i><i style="color:#e84a3a">Insane</i></span></p>
-      </div>
-      <div class="bet-tile" id="bets">
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 4l12 21H3z" fill="none" stroke="var(--loss)" stroke-width="2" stroke-linejoin="round"/><path d="M15 12v6" stroke="var(--loss)" stroke-width="2"/><circle cx="15" cy="21.5" r="1.3" fill="var(--loss)"/></svg>
-        <p><b>Running bets</b><span id="bet-list"></span></p>
+      <div class="rule-groups">
+        <section class="rule-group">
+          <h2>The Nuzlocke rules</h2>
+          <ul>
+            <li><b>Only one Pokemon per route</b><span>In a traditional Nuzlocke you must catch the first Pokemon you find on a route.</span></li>
+            <li><b>If it faints, it's gone</b><span>Well, unless it faints outside of battle. Better get to a Pokemon Center!</span></li>
+            <li><b>If the whole team faints?</b><span>It's back to Pallet Town for streamer.</span></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h2>Our twists on Nuzlocke</h2>
+          <ul>
+            <li><b>Chat picks the mon!</b><span>That's right, you get to vote on which Pokemon we catch. This only applies to catches, I will be buying myself a Magikarp!</span></li>
+            <li><b>Chat can summon trainers</b><span>Sick of seeing streamer make progress? Nothing your wallet can't fix. Summon trainers with bits, tips and subs!</span></li>
+            <li><b>Voting lets you become a Pokemon!</b><span>Voting on Pokemon gives you a chance for them to be nicknamed after you! So get to voting.</span></li>
+            <li><b>Everything automated</b><span>That's right, which Pokemon I can catch, the naming, the forced restarting if my team dies, all automated! That means no cheating for streamer.</span></li>
+          </ul>
+        </section>
+        <section class="rule-group ends">
+          <h2>Additional rules, paid for by viewers</h2>
+          <ul id="paid-rules">
+          </ul>
+        </section>
       </div>
     </div>
+  </section>
 
-    <div class="sumhead" style="margin-top:0"><h2>Four ways for <em class="you-em">you</em> to play</h2></div>
+  <!-- ═══════════════ HOW TO PLAY ═══════════════ -->
+  <section class="panel" id="p-play" role="tabpanel" hidden>
+    <div class="sumhead" style="margin-top:0"><h2>Three ways for <em class="you-em">you</em> to play</h2></div>
 
     <div class="plays">
 
-      <!-- Pick the starter -->
-      <article class="play" id="play-starter">
-        <div class="play-head"><h3>Pick the starter</h3><span class="cost free">Free</span></div>
-        <p class="play-rule">At the start of every run, <strong>type a starter's name</strong>. Most votes wins, and the streamer <strong>has to</strong> pick that one.</p>
-        <div class="stage" data-scene="starter" id="stage-starter"></div>
-        <p class="stage-note"><span>Only a message that is just the name counts. Picking any other starter ends the run.</span><button class="replay" type="button" data-replay="stage-starter">↻ Replay</button></p>
-      </article>
+      <div class="play-tabs">
+      <div class="play-tablist" role="tablist" aria-label="Ways to play">
+        <button type="button" role="tab" id="tab-vote" aria-controls="play-vote" aria-selected="true">Vote on the catch</button>
+        <button type="button" role="tab" id="tab-boost" aria-controls="play-boost" aria-selected="false" tabindex="-1">Boost your vote</button>
+        <button type="button" role="tab" id="tab-trainer" aria-controls="play-trainer" aria-selected="false" tabindex="-1">Summon a trainer</button>
+      </div>
+      <div class="play-panels">
 
       <!-- Vote on the catch -->
-      <article class="play" id="play-vote">
-        <div class="play-head"><h3>Vote on the catch</h3><span class="cost free">Free</span></div>
-        <p class="play-rule"><strong>Type a Pokemon's name</strong> from the route the streamer is on. One vote per route. The streamer <strong>can only catch the one in CATCH ALLOWED</strong>.</p>
+      <article class="play" id="play-vote" role="tabpanel" aria-labelledby="tab-vote">
+        <div class="play-head"><h3>One free vote per route, it's on the house!</h3></div>
+        <p class="play-rule">Simply <strong>type the name of the Pokemon you want me to catch</strong> in chat, from the list of Pokemon on the screen. The game will block me from catching anything else!</p>
         <div class="stage" data-scene="vote" id="stage-vote"></div>
-        <p class="stage-note"><span>Throw a ball at anything else and the Poke Balls vanish from the bag.</span><button class="replay" type="button" data-replay="stage-vote">↻ Replay</button></p>
-        <p class="namesake-head">Become one of the Pokemon</p>
-        <div class="namesake">
-          <div><b>1 · Vote</b><span>Vote for the one that <strong>gets caught</strong>. Votes for anything else don't enter the draw.</span></div>
-          <div><b>2 · The draw</b><span>One voter is picked at random. <strong>Every vote is a ticket</strong>, so boosting raises your odds.</span></div>
-          <div><b>3 · Your name</b><span>It takes your handle in caps, letters and numbers only, up to 10: <code>feardragon64</code> becomes <code>FEARDRAGON</code>. If it faints, your name goes to the graveyard.</span></div>
-        </div>
+        <p class="stage-note"><span>If you vote for a Pokemon, you have a chance for that Pokemon to be named after you! Each vote is a ticket, and if that Pokemon is caught the game does a draw, and the winning ticket becomes the Pokemon.</span></p>
       </article>
 
       <!-- Boost your vote -->
-      <article class="play" id="play-boost">
-        <div class="play-head"><h3>Boost your vote</h3><span class="cost paid">Bits · Tip · Resub</span></div>
-        <p class="play-rule">Put the name <strong>right after your cheer</strong>, or first in a tip or resub message. <strong>100 bits or $1 = 1 vote.</strong> A resub counts as 5.</p>
+      <article class="play" id="play-boost" role="tabpanel" aria-labelledby="tab-boost" inert>
+        <div class="play-head"><h3>Vote even more with your money, just like democracy!</h3></div>
+        <p class="play-rule"><strong>Attach the name of your Pokemon</strong> with a cheer, tip, or resub message. <strong>100 bits per vote</strong>, subs and resubs are 5, and a buck will get you a vote too! This does increase your chances of becoming the Pokemon, remember each vote is a ticket that gets drawn by the game when we catch a Mon!</p>
         <div class="stage" data-scene="boost" id="stage-boost"></div>
-        <p class="stage-note"><span>When it's caught, one voter's name becomes its nickname. More votes, better odds.</span><button class="replay" type="button" data-replay="stage-boost">↻ Replay</button></p>
       </article>
 
       <!-- Summon a trainer -->
-      <article class="play" id="play-trainer">
-        <div class="play-head"><h3>Summon a trainer!</h3><span class="cost paid">Bits · Tip · Sub</span></div>
+      <article class="play" id="play-trainer" role="tabpanel" aria-labelledby="tab-trainer" inert>
+        <div class="play-head"><h3>Summon a trainer with bits, a tip or a sub!</h3></div>
         <p class="play-rule"><strong>300 bits, a $3 tip, or any sub</strong> sends a trainer named after you. Spend more for a tougher one.</p>
         <div class="stage" id="stage-trainer" aria-label="Animated example: chat summons trainers, they queue up, then the battle starts"></div>
-        <div class="ladder" aria-label="Trainer strength by amount">
-          <div class="rung t1" data-tier="easy"><b>Easy</b><span>300 bits</span><small>$3 · any sub</small></div>
-          <div class="rung t2" data-tier="medium"><b>Medium</b><span>500 bits</span><small>$5 · 2 gifts</small></div>
-          <div class="rung t3" data-tier="hard"><b>Hard</b><span>1,000 bits</span><small>$10 · 3 gifts</small></div>
-          <div class="rung t4" data-tier="insane"><b>Insane</b><span>2,500 bits</span><small>$25 · 5+ gifts</small></div>
+        <div class="tier-row">
+          <div class="t1"><b>Easy</b><span>300 bits · $3 tip · a sub or resub</span></div>
+          <div class="t2"><b>Medium</b><span>500 bits · $5 tip · 2 gifted subs</span></div>
+          <div class="t3"><b>Hard</b><span>1,000 bits · $10 tip · 3 gifted subs</span></div>
+          <div class="t4"><b>Insane</b><span>2,500 bits · $25 tip · 5 gifted subs</span></div>
         </div>
-        <p class="stage-note"><span>Trainers wait in line and fight one at a time. The game decides when, so the streamer can't skip one.</span><button class="replay" type="button" data-replay="stage-trainer">↻ Replay</button></p>
       </article>
+
+      </div>
+      </div>
 
       <div class="combo">
         <h2>Or do some multitrack drifting!</h2>
@@ -546,31 +509,6 @@ main code { font-family: var(--font-mono); }
           <code class="say"><span class="bits">cheer2500</span> Pidgey</code><span class="to" aria-hidden="true">→</span><span class="got v">+25 votes Pidgey</span><span class="got tr t4">Insane trainer</span>
         </div>
       </div>
-
-      <details class="fine">
-        <summary>The fine print</summary>
-        <div class="tiers-wrap">
-          <table class="tiers-t">
-            <thead><tr><th>Trainer</th><th>Bits</th><th>Tip</th><th>Subs</th><th>Their level</th></tr></thead>
-            <tbody>
-              <tr><td>Easy</td><td>300+</td><td>$3+</td><td>sub, resub, 1 gift</td><td>1–2 below our best</td></tr>
-              <tr><td>Medium</td><td>500+</td><td>$5+</td><td>2 gifted at once</td><td>about even</td></tr>
-              <tr><td>Hard</td><td>1,000+</td><td>$10+</td><td>3–4 gifted at once</td><td>1–3 above</td></tr>
-              <tr><td>Insane</td><td>2,500+</td><td>$25+</td><td>5+ gifted at once</td><td>4–6 above (8–12 after level 30)</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <ul>
-          <li><strong>Spell it like the game.</strong> A free vote is the name and nothing else: <code>Nidoran F</code>, <code>Mr. Mime</code>.</li>
-          <li><strong>Under 300 bits</strong> or under $3 buys votes but no trainer.</li>
-          <li><strong>New subs and gifted subs can't vote</strong>, since there's no message. They still send a trainer, named after the gifter.</li>
-          <li><strong>Naming a Pokemon that isn't on this route</strong> does nothing for votes. Your bits still count toward a trainer.</li>
-          <li><strong>No timer.</strong> The leader can change right up until the throw. A tie lets the streamer catch any of the tied Pokemon.</li>
-          <li><strong>Timeout with bits</strong> of 300 or more sends a trainer too, at the same tiers.</li>
-          <li><strong>Outleveled everyone?</strong> An insane trainer becomes the Champion.</li>
-          <li><strong>After Mewtwo falls,</strong> chat votes from a ballot of 10 Pokemon we haven't caught yet, and gifted subs add votes there instead of sending trainers.</li>
-        </ul>
-      </details>
     </div>
   </section>
 
@@ -579,7 +517,7 @@ main code { font-family: var(--font-mono); }
     <div class="dhead">
       <span class="label" style="color:var(--loss)">The game</span>
       <h2>Pokemon Pure Red</h2>
-      <p>A fan-made upgrade of Pokemon Red. Same Kanto, same 151, same Gen 1 feel, but with better moves, new types, and more Pokemon you can catch early. Nothing from Gen 2 or later. Made by Vortyne: <a class="src" href="https://github.com/Vortyne/pureRGB" rel="noopener">PureRGB</a> v2.6.3.</p>
+      <p>This is a rom-hack of the original Pokemon games. Same Kanto, same 151 Pokemon, now with running shoes, new moves and more Pokemon on each route. Made by Vortyne: <a class="src" href="https://github.com/Vortyne/pureRGB" rel="noopener">PureRGB on GitHub</a>, <a class="src" href="https://github.com/Vortyne/pureRGB/wiki" rel="noopener">the PureRGB wiki</a>.</p>
     </div>
     <div class="pr-stack">
       <div class="pr-facts">
@@ -595,7 +533,7 @@ main code { font-family: var(--font-mono); }
         <div class="pr-grid" id="pr-wild"></div>
       </div>
       <div class="box">
-        <div class="boxhead"><h3>New types</h3><span class="label">One per evolution line</span></div>
+        <div class="boxhead"><h3>New types</h3></div>
         <div class="pr-grid" id="pr-types"></div>
       </div>
       <div class="box">
@@ -612,15 +550,6 @@ main code { font-family: var(--font-mono); }
         <div class="pr-tms" id="pr-tms"></div>
         <p class="pr-foot">A TM Pirate kid sells TMs in most Poke Marts, and after you're Champion someone sells every TM.</p>
       </div>
-      <div class="box">
-        <div class="boxhead"><h3>Still Gen 1</h3></div>
-        <ul class="pr-same">
-          <li>No Dark, Steel or Fairy types.</li>
-          <li>No physical/special split. Special is still one stat.</li>
-          <li>No Exp. Share and no move relearner.</li>
-          <li>Gen 1 battle quirks still work, like the Hyper Beam faint skip.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -633,12 +562,12 @@ main code { font-family: var(--font-mono); }
     </div>
 
     <div class="box" id="party-box">
-      <div class="boxhead"><h3>The party</h3><span class="label" id="party-label"></span></div>
+      <div class="boxhead"><h3>The party</h3></div>
       <div class="party" id="party"></div>
     </div>
 
     <div class="box" id="trail-box" style="margin-top:1.1rem">
-      <div class="boxhead"><h3>Where each one was caught</h3><span class="label">route by route, in game order</span></div>
+      <div class="boxhead"><h3>Where each one was caught</h3></div>
       <div class="legend" style="margin:-.3rem 0 .8rem"><span style="--c:var(--c-pk)"><i></i>In the party</span><span style="--c:var(--c-sc2)"><i></i>In the box</span><span style="--c:var(--loss)"><i></i>Fallen</span></div>
       <div class="trail" id="trail"></div>
     </div>
@@ -709,8 +638,6 @@ main code { font-family: var(--font-mono); }
     }
     $('team-title').textContent = `Run ${T.run}: the ${T.starter || 'new'} run`;
     $('team-sub').textContent = `Started ${day(T.start)}. Every Pokemon carries the name of the viewer who won its nickname. Updated once a day.${T.over ? ' This run is over: next stop, Pallet Town.' : ''}`;
-    const best = Math.max(0, ...T.party.map((m) => m[2] || 0));
-    $('party-label').textContent = T.party.length ? `${T.party.length} of 6 · level ${best} best` : '';
     $('party').innerHTML = T.party.length ? T.party.map(([nick, sp, lv, hp, max, route, as]) => {
       const pct = max ? Math.max(0, Math.min(100, (hp / max) * 100)) : 0;
       const cls = pct < 20 ? 'low' : pct < 50 ? 'mid' : '';
@@ -772,11 +699,12 @@ main code { font-family: var(--font-mono); }
     new ResizeObserver(() => { const w = $('pkruns').clientWidth; if (w && w !== lastW) { lastW = w; drawRuns(); } }).observe($('pkruns'));
 
     // day counter on the Rules tab: season start from the nightly export, counted in the viewer's today
-    const days = Math.floor((Date.now() - Date.parse(`${K.start}T00:00:00`)) / 864e5) + 1;
+    // whole days between two local midnights; round absorbs a DST hour
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const days = Math.round((today - Date.parse(`${K.start}T00:00:00`)) / 864e5);
     $('days-n').textContent = fmt(days);
     // two no-wrap halves, so a narrow column breaks at the dot instead of inside the date
     $('days-label').innerHTML = `<span class="nw">Game start ·</span> <span class="nw">${day(K.start)}</span>`;
-    $('days-sub').textContent = 'days since we started';
     $('pk-title').textContent = `${fmt(K.attempts)} runs, ${fmt(K.deaths)} Pokemon lost`;
     $('pk-sub').textContent = `Chat picks the starter, names every catch after a viewer, and spends bits to send trainers. One wipe and it's back to Pallet Town. Everything here counts from ${day(K.start)}, when the game started.`;
     let pkN = 10;
@@ -809,20 +737,6 @@ main code { font-family: var(--font-mono); }
   const DEX = { Bulbasaur: 1, Charmander: 4, Squirtle: 7, Pidgey: 16, Rattata: 19, Spearow: 21, 'Nidoran M': 32, Mankey: 56 };
   // chat lines: [user, color, message, vote target or null, votes, tag override, event line]
   const SCENES = {
-    starter: {
-      route: 'Choosing starter', mons: ['Bulbasaur', 'Charmander', 'Squirtle'],
-      chat: [
-        ['GuvnaGruff', '#7cb8ff', 'Charmander', 'Charmander'],
-        ['TiySC2', '#f5d36b', 'squirtle', 'Squirtle'],
-        ['FreeXP117', '#a8d672', 'lets gooo new run', null],
-        ['Drolarius', '#ff8a5b', 'Squirtle', 'Squirtle'],
-        ['wrrwrrw', '#7fe0b0', 'Bulbasaur', 'Bulbasaur'],
-        ['Delthus', '#ff6b8a', 'squirtle pls', null],
-        ['kaelzy', '#c8a8e8', 'Charmander', 'Charmander'],
-        ['SethLight1988', '#ff77e0', 'Squirtle', 'Squirtle'],
-        ['Mordecant', '#5fc9a8', 'SQUIRTLE', 'Squirtle'],
-      ],
-    },
     vote: {
       route: 'Route 1', mons: ['Pidgey', 'Rattata'],
       chat: [
@@ -854,10 +768,10 @@ main code { font-family: var(--font-mono); }
     const cfg = SCENES[root.dataset.scene];
     root.setAttribute('aria-label', `Animated example: chat voting on ${cfg.route}`);
     root.innerHTML = `
-      <div class="stage-col"><span class="panel-label">You type</span><div class="tw">
-        <div class="tw-head"><span>Stream chat</span><span class="live">● Live</span></div>
+      <div class="stage-col"><div class="tw">
+        <div class="tw-head"><span>Stream chat</span><span>Example</span></div>
         <div class="tw-feed"></div></div></div>
-      <div class="stage-col"><span class="panel-label">On stream</span><div class="ov">
+      <div class="stage-col"><div class="ov">
         <div class="ov-route"><span>▸</span>${cfg.route}<span>◂</span></div>
         <div class="ov-catch none"></div>
         <div class="gb"><span class="gb-label">VOTE</span><div class="ov-votes${cfg.mons.length === 2 ? ' two' : ''}"></div></div>
@@ -936,21 +850,22 @@ main code { font-family: var(--font-mono); }
     finished(); // complete at rest; playback starts once it scrolls into view
     let playing = false;
     if (!still) {
-      new IntersectionObserver(([e]) => {
-        if (e.isIntersecting && !playing) { playing = true; reset(); timer = setTimeout(tick, 500); }
-        else if (!e.isIntersecting && playing) { playing = false; clearTimeout(timer); finished(); }
-      }, { threshold: 0.45 }).observe(root);
+      let seen = false;
+      const sync = () => {
+        const on = seen && !root.closest('[inert]');
+        if (on && !playing) { playing = true; reset(); timer = setTimeout(tick, 500); }
+        else if (!on && playing) { playing = false; clearTimeout(timer); finished(); }
+      };
+      new IntersectionObserver(([e]) => { seen = e.isIntersecting; sync(); }, { threshold: 0.45 }).observe(root);
+      root.addEventListener('playtab', sync);
     }
-    document.querySelector(`[data-replay="${root.id}"]`)?.addEventListener('click', () => {
-      if (still) return;
-      playing = true; reset(); timer = setTimeout(tick, 300);
-    });
   }
   // running bets: [if, then, footnote]; add a row here to add a bet
+  // rules viewers paid for: [name, what it does]; they render under Additional rules
   const BETS = [
-    ['If the Pokemon named after the current bit leader faints', 'the run restarts', 'Bit leader: this week\'s top cheerer, <code>!bitleader</code>'],
+    ['The feardragon special', 'Feardragon paid $500 big ones for the following rule: if a Pokemon faints, and it is named after the current bit leader (use <code>!bitleader</code> to check), then the run must be restarted, even if all the other Pokemon are A-OK.'],
   ];
-  $('bet-list').innerHTML = BETS.map(([when, then, note]) => `<span class="bet-row">${when}, <strong>${then}</strong>.</span><span class="bet-note">${note}</span>`).join('');
+  $('paid-rules').insertAdjacentHTML('beforeend', BETS.map(([when, note]) => `<li><b>${when}</b><span>${note}</span></li>`).join(''));
   document.querySelectorAll('.stage[data-scene]').forEach(scene);
 
   // ── Trainer scene, in the order it really runs: paid → UP NEXT queue → game is free → controls lock 2s
@@ -963,10 +878,10 @@ main code { font-family: var(--font-mono); }
   ];
   function trainerScene(root) {
     root.innerHTML = `
-      <div class="stage-col"><span class="panel-label">1 · You type</span><div class="tw">
-        <div class="tw-head"><span>Stream chat</span><span class="live">● Live</span></div>
+      <div class="stage-col"><div class="tw">
+        <div class="tw-head"><span>Stream chat</span><span>Example</span></div>
         <div class="tw-feed"></div></div></div>
-      <div class="stage-col"><span class="panel-label">2 · The game</span><div class="gbs-wrap">
+      <div class="stage-col"><div class="gbs-wrap">
         <div class="gbs">
           <img class="gb-world" src="route3.png" alt="Pokemon Red, Route 3">
           <div class="gb-battle" hidden>
@@ -979,7 +894,7 @@ main code { font-family: var(--font-mono); }
           <div class="gb-flash"></div>
         </div>
       </div></div>
-      <div class="stage-col"><span class="panel-label">3 · The overlay</span><div class="ov">
+      <div class="stage-col"><div class="ov">
         <div class="ov-view">
           <div class="ov-route"><span>▸</span>Route 3<span>◂</span></div>
           <div class="gb ov-spawnbox"><span class="gb-label">TRAINER SPAWN</span><span>Cheer, tip or sub to send a trainer at the streamer</span></div>
@@ -993,13 +908,11 @@ main code { font-family: var(--font-mono); }
           <div class="bt-card me"><img src="sprites/8.gif" alt=""><span class="nm">Wartortle</span><span class="lv">LV<br>15</span><span class="hpb"><i style="width:82%"></i></span></div>
         </div>
         <div class="q" hidden><span class="q-label">UP NEXT</span><span class="q-user"></span><div class="q-row"></div></div>
-      </div></div>
-      <p class="gb-cap"></p>`;
+      </div></div>`;
     const $r = (sel) => root.querySelector(sel);
-    const feed = $r('.tw-feed'), ov = $r('.ov'), bt = $r('.bt'), q = $r('.q'), cap = $r('.gb-cap');
+    const feed = $r('.tw-feed'), ov = $r('.ov'), bt = $r('.bt'), q = $r('.q');
     const battle = $r('.gb-battle'), text = $r('.gb-text'), flash = $r('.gb-flash');
     const foeImg = $r('.gb-mon.foe'), meImg = $r('.gb-mon.me'), foeHp = $r('.gb-hp.foe'), meHp = $r('.gb-hp.me');
-    const rungs = root.closest('.play').querySelectorAll('.rung');
     let queue = [], gen = 0;
     // every wait belongs to one playthrough; a reset abandons the old one mid-sleep
     const sleep = (ms) => { const g = gen; return new Promise((ok, no) => setTimeout(() => (g === gen ? ok() : no(new Error('reset'))), ms)); };
@@ -1014,7 +927,6 @@ main code { font-family: var(--font-mono); }
       }
       ov.style.setProperty('--qh', queue.length ? `${q.offsetHeight}px` : '0px');
     }
-    const light = (tier) => rungs.forEach((r) => r.classList.toggle('lit', r.dataset.tier === tier));
     function addMsg(m, animate) {
       const [u, c, msg, tier, , ev] = m;
       const el = document.createElement('p');
@@ -1026,12 +938,11 @@ main code { font-family: var(--font-mono); }
     function setOverlayHp(pct) { const i = bt.querySelector('.foe .hpb i'); i.style.width = `${pct}%`; i.classList.toggle('low', pct < 30); }
     function setGameHp(pct) { const i = foeHp.querySelector('i'); i.style.width = `${pct}%`; i.classList.toggle('low', pct < 30); }
     function reset() {
-      gen++; queue = []; feed.innerHTML = ''; light(null); flash.classList.remove('on');
+      gen++; queue = []; feed.innerHTML = ''; flash.classList.remove('on');
       battle.hidden = true; bt.hidden = true; bt.classList.remove('in'); paintQueue();
       foeImg.className = 'gb-mon foe'; foeImg.src = 'trainers/youngster.png'; meImg.className = 'gb-mon me'; meImg.hidden = true;
       foeHp.hidden = true; meHp.hidden = true; text.textContent = ''; setGameHp(100); setOverlayHp(100);
       bt.querySelector('.foe').classList.remove('ko');
-      cap.innerHTML = 'Walking <b>Route 3</b>.';
     }
     async function play() {
       reset();
@@ -1040,13 +951,10 @@ main code { font-family: var(--font-mono); }
         for (const m of TRAINER_CHAT) {
           const el = addMsg(m, true);
           await sleep(450);
-          el.classList.add('counted'); light(m[3]);
+          el.classList.add('counted');
           queue.push(m); paintQueue(true);
-          if (queue.length === 1) cap.innerHTML = 'A trainer is queued. It waits until the streamer is free: no menu, no talking, no battle.';
           await sleep(1500);
         }
-        light(null);
-        cap.innerHTML = 'Free now. <b>Controls lock for 2 seconds</b> so the streamer can\'t dodge it.';
         await sleep(2000);
         // the battle starts in the game; only then does the overlay switch and the queue move up
         restart(flash, 'on'); await sleep(900); flash.classList.remove('on');
@@ -1054,7 +962,6 @@ main code { font-family: var(--font-mono); }
         battle.hidden = false; foeImg.src = `trainers/${first[4]}.png`; restart(foeImg, 'in');
         bt.querySelector('[data-k="foe-name"]').textContent = first[0];
         bt.hidden = false; restart(bt, 'in'); paintQueue();
-        cap.innerHTML = 'The battle starts, and the overlay switches to <b>Chat Battle</b>.';
         await say(`${first[0]} wants to fight!`); await sleep(1300);
         await say(`${first[0]} sent out RATTATA!`);
         foeImg.src = 'sprites/19.gif'; restart(foeImg, 'in'); foeHp.hidden = false; await sleep(1100);
@@ -1069,7 +976,6 @@ main code { font-family: var(--font-mono); }
         restart(foeImg, 'faint'); bt.querySelector('.foe').classList.add('ko'); await sleep(1300);
         await say(`${first[0]} was defeated!`); await sleep(1600);
         battle.hidden = true; bt.hidden = true;
-        cap.innerHTML = `Back to the route. <b>${queue[0][0]}</b> is up next.`;
         await sleep(3500);
         play();
       } catch (_e) { /* a newer playthrough took over */ }
@@ -1082,18 +988,20 @@ main code { font-family: var(--font-mono); }
       battle.hidden = false; foeHp.hidden = false; meHp.hidden = false; meImg.hidden = false; foeImg.src = 'sprites/19.gif';
       text.textContent = 'WARTORTLE used WATER GUN!'; setGameHp(55); setOverlayHp(55);
       bt.hidden = false; bt.querySelector('[data-k="foe-name"]').textContent = first[0];
-      cap.innerHTML = 'The battle starts, and the overlay switches to <b>Chat Battle</b>.';
     }
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
     finished();
     let playing = false;
     if (!still) {
-      new IntersectionObserver(([e]) => {
-        if (e.isIntersecting && !playing) { playing = true; play(); }
-        else if (!e.isIntersecting && playing) { playing = false; finished(); }
-      }, { threshold: 0.35 }).observe(root);
+      let seen = false;
+      const sync = () => {
+        const on = seen && !root.closest('[inert]');
+        if (on && !playing) { playing = true; play(); }
+        else if (!on && playing) { playing = false; finished(); }
+      };
+      new IntersectionObserver(([e]) => { seen = e.isIntersecting; sync(); }, { threshold: 0.35 }).observe(root);
+      root.addEventListener('playtab', sync);
     }
-    document.querySelector('[data-replay="stage-trainer"]')?.addEventListener('click', () => { if (!still) { playing = true; play(); } });
   }
   trainerScene($('stage-trainer'));
 
@@ -1123,8 +1031,29 @@ main code { font-family: var(--font-mono); }
     ['Razor Leaf', 'grass', 'Route 21, grass near Pallet'], ['Ice Beam', 'ice', 'Seafoam Islands B4F'], ['Hi Jump Kick', 'fighting', 'Route 23, after Victory Road']];
   $('pr-tms').innerHTML = PR_TMS.map(([m, t, where]) => `<div class="pr-tm">${ty(t)}<b>${m}</b><span>${where}</span></div>`).join('');
 
-  // sub-tab router: #rules, #purered, #team, #stats
-  const TABS = ['rules', 'purered', 'team', 'stats'];
+  // ways-to-play tabs: one panel open at a time; each scene re-checks whether it should run
+  const playTabs = [...document.querySelectorAll('.play-tablist [role="tab"]')];
+  function openPlay(tab) {
+    playTabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      $(t.getAttribute('aria-controls')).inert = !on;
+    });
+    document.querySelectorAll('.play-panels .stage').forEach((st) => st.dispatchEvent(new Event('playtab')));
+  }
+  playTabs.forEach((t, i) => {
+    t.addEventListener('click', () => openPlay(t));
+    t.addEventListener('keydown', (e) => {
+      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (!step) return;
+      const next = playTabs[(i + step + playTabs.length) % playTabs.length];
+      next.focus(); openPlay(next);
+    });
+  });
+
+  // sub-tab router: #rules, #play, #purered, #team, #stats
+  const TABS = ['rules', 'play', 'purered', 'team', 'stats'];
   function show() {
     const tab = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'rules';
     document.querySelectorAll('.subtabs a').forEach((a) => { if (a.hash === `#${tab}`) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });

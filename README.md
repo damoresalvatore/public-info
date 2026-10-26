@@ -19,7 +19,7 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `contact/index.html` | Contact: Twitch, YouTube, Discord, Instagram and email, one card each in the platform's color. Static, no script. |
 | `themes/index.html` | Every stream theme, drawn in its own colors. |
 | `data/index.html` | Open data: every downloadable file in one list. |
-| `site.js` | The list of sections. Draws the top bar, breadcrumbs, footer sitemap and the home page cards from it. |
+| `site.js` | The list of sections. Draws the top bar, footer sitemap and the home page cards from it. |
 | `styles.css` | All visual styling. Dark theme, purple accents, Fraunces + DM Sans + JetBrains Mono via Google Fonts. |
 | `app.js` | Commands list and filter, the bits calculator, and the theme cards. Each part runs only on the page that has it. |
 | `sc2.js` | Renders the SC2 page from `sc2/`. |

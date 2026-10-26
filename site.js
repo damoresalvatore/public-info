@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────────────────────────────────
    UPATREE — Site shell
-   The one list of sections. Draws the top bar, breadcrumbs, footer sitemap,
-   and the home page's section cards from it. Load it at the end of <body>
+   The one list of sections. Draws the top bar, footer sitemap, and the
+   home page's section cards from it. Load it at the end of <body>
    (not deferred) so the nav is there on first paint.
    ───────────────────────────────────────────────────────────────────────── */
 
@@ -30,7 +30,7 @@
         { id: 'commands', group: 'chat',   nav: 'Commands', title: 'Chat commands',     path: 'commands/', blurb: 'Every trigger the bot answers, searchable.' },
         { id: 'sc2',      group: 'sc2',    nav: 'SC2',      title: 'SC2 games',         path: 'sc2/',      blurb: 'Every 1v1 ladder game with MMR, grade and replay stats.' },
         { id: 'timeout',  group: 'chat',   nav: 'Timeouts', title: 'Timeout with bits', path: 'timeout/',  blurb: 'Cheer to time someone out. Rules and a calculator.', meta: '100 bits = 2 min' },
-        { id: 'pokemon',  group: 'chat',   nav: 'Pokemon',  title: 'Pokemon',           path: 'pokemon/',  blurb: 'How to play the chat nuzlocke, the game it runs on, and the current team.', meta: 'Rules · Pure Red · Team · Stats' },
+        { id: 'pokemon',  group: 'chat',   nav: 'Pokemon',  title: 'Pokemon',           path: 'pokemon/',  blurb: 'The Nuzlocke chat takes part in: its rules, how to play, the game it runs on and the current run.', meta: 'Rules · How to play · Pure Red · Current run · Stats' },
         { id: 'themes',   group: 'screen', nav: 'Themes',   title: 'Stream themes',     path: 'themes/',   blurb: 'Every color theme the overlay can wear.' },
         { id: 'data',     group: 'more',   nav: 'Data',     title: 'Open data',         path: 'data/',     blurb: 'Every downloadable file on the site in one list.', meta: 'CSV · JSON' },
         { id: 'contact',  group: 'find',   nav: 'Contact',  title: 'Contact',           path: 'contact/',  blurb: 'Twitch, YouTube, Discord, Instagram and email.', meta: '5 places' }
@@ -49,7 +49,7 @@
     }
 
     function renderTopbar(el) {
-        const links = SECTIONS.map((s) => {
+        const links = [{ id: 'home', nav: 'Home', path: '' }, ...SECTIONS].map((s) => {
             const cur = s.id === page ? ' aria-current="page"' : '';
             return `<a href="${url(s.path)}"${cur}>${s.nav}</a>`;
         }).join('');
@@ -59,13 +59,6 @@
                 <a class="watch" href="https://twitch.tv/upatree" rel="noopener">Watch on Twitch</a>
             </div>
         `;
-    }
-
-    function renderCrumbs(el) {
-        const s = SECTIONS.find((x) => x.id === page);
-        if (!s) return;
-        const g = GROUPS.find((x) => x.id === s.group);
-        el.innerHTML = `<a href="${url('')}">Home</a><span>/</span><span>${g.label}</span>`;
     }
 
     function renderFooter(el) {
@@ -136,11 +129,9 @@
     }
 
     const topbar = $('#topbar');
-    const crumbs = $('#crumbs');
     const footer = $('#footer');
     const home = $('#home-groups');
     if (topbar) renderTopbar(topbar);
-    if (crumbs) renderCrumbs(crumbs);
     if (footer) renderFooter(footer);
     if (home) renderHome(home);
 })();
