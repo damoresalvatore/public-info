@@ -136,17 +136,7 @@ body {
 .battle svg { width: 52px; height: 64px; }
 .battle .call { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-cream); letter-spacing: .02em; line-height: 1.35; }
 .battle .call em { font-style: normal; color: var(--paid); }
-.ladder { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .35rem; }
-.rung { border: 1px solid var(--rule); border-radius: 6px; padding: .4rem .45rem; display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
-.rung b { font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .1em; text-transform: uppercase; }
-.rung span { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-soft); white-space: nowrap; }
-.rung small { font-size: var(--fs-s); color: var(--text-mute); }
-.rung.on { border-color: var(--paid); background: color-mix(in srgb, var(--paid) 10%, transparent); }
 .t1 { --t: #4ad06a; } .t2 { --t: #64b5f6; } .t3 { --t: #ffb74d; } .t4 { --t: #e84a3a; }
-.rung b { color: var(--t); }
-.rung { transition: border-color .3s, background .3s, box-shadow .3s; }
-.rung.lit { border-color: var(--t); background: color-mix(in srgb, var(--t) 12%, transparent); box-shadow: 0 0 12px color-mix(in srgb, var(--t) 35%, transparent); }
-@media (max-width: 460px) { .ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .namecard { display: flex; align-items: center; gap: .7rem; border: 1px dashed var(--pp-deep); border-radius: 8px; padding: .45rem .7rem; }
 .namecard div { min-width: 0; }
@@ -544,12 +534,6 @@ main code { font-family: var(--font-mono); }
         <div class="play-head"><h3>Summon a trainer with bits, a tip or a sub!</h3></div>
         <p class="play-rule"><strong>300 bits, a $3 tip, or any sub</strong> sends a trainer named after you. Spend more for a tougher one.</p>
         <div class="stage" id="stage-trainer" aria-label="Animated example: chat summons trainers, they queue up, then the battle starts"></div>
-        <div class="ladder" aria-label="Trainer strength by amount">
-          <div class="rung t1" data-tier="easy"><b>Easy</b><span>300 bits</span><small>$3 · any sub</small></div>
-          <div class="rung t2" data-tier="medium"><b>Medium</b><span>500 bits</span><small>$5 · 2 gifts</small></div>
-          <div class="rung t3" data-tier="hard"><b>Hard</b><span>1,000 bits</span><small>$10 · 3 gifts</small></div>
-          <div class="rung t4" data-tier="insane"><b>Insane</b><span>2,500 bits</span><small>$25 · 5+ gifts</small></div>
-        </div>
         <p class="stage-note"><span>Trainers wait in line and fight one at a time. The game decides when, so the streamer can't skip one.</span><button class="replay" type="button" data-replay="stage-trainer">↻ Replay</button></p>
       </article>
 
@@ -1025,7 +1009,6 @@ main code { font-family: var(--font-mono); }
     const feed = $r('.tw-feed'), ov = $r('.ov'), bt = $r('.bt'), q = $r('.q'), cap = $r('.gb-cap');
     const battle = $r('.gb-battle'), text = $r('.gb-text'), flash = $r('.gb-flash');
     const foeImg = $r('.gb-mon.foe'), meImg = $r('.gb-mon.me'), foeHp = $r('.gb-hp.foe'), meHp = $r('.gb-hp.me');
-    const rungs = root.closest('.play').querySelectorAll('.rung');
     let queue = [], gen = 0;
     // every wait belongs to one playthrough; a reset abandons the old one mid-sleep
     const sleep = (ms) => { const g = gen; return new Promise((ok, no) => setTimeout(() => (g === gen ? ok() : no(new Error('reset'))), ms)); };
@@ -1040,7 +1023,6 @@ main code { font-family: var(--font-mono); }
       }
       ov.style.setProperty('--qh', queue.length ? `${q.offsetHeight}px` : '0px');
     }
-    const light = (tier) => rungs.forEach((r) => r.classList.toggle('lit', r.dataset.tier === tier));
     function addMsg(m, animate) {
       const [u, c, msg, tier, , ev] = m;
       const el = document.createElement('p');
@@ -1052,7 +1034,7 @@ main code { font-family: var(--font-mono); }
     function setOverlayHp(pct) { const i = bt.querySelector('.foe .hpb i'); i.style.width = `${pct}%`; i.classList.toggle('low', pct < 30); }
     function setGameHp(pct) { const i = foeHp.querySelector('i'); i.style.width = `${pct}%`; i.classList.toggle('low', pct < 30); }
     function reset() {
-      gen++; queue = []; feed.innerHTML = ''; light(null); flash.classList.remove('on');
+      gen++; queue = []; feed.innerHTML = ''; flash.classList.remove('on');
       battle.hidden = true; bt.hidden = true; bt.classList.remove('in'); paintQueue();
       foeImg.className = 'gb-mon foe'; foeImg.src = 'trainers/youngster.png'; meImg.className = 'gb-mon me'; meImg.hidden = true;
       foeHp.hidden = true; meHp.hidden = true; text.textContent = ''; setGameHp(100); setOverlayHp(100);
@@ -1066,12 +1048,11 @@ main code { font-family: var(--font-mono); }
         for (const m of TRAINER_CHAT) {
           const el = addMsg(m, true);
           await sleep(450);
-          el.classList.add('counted'); light(m[3]);
+          el.classList.add('counted');
           queue.push(m); paintQueue(true);
           if (queue.length === 1) cap.innerHTML = 'A trainer is queued. It waits until the streamer is free: no menu, no talking, no battle.';
           await sleep(1500);
         }
-        light(null);
         cap.innerHTML = 'Free now. <b>Controls lock for 2 seconds</b> so the streamer can\'t dodge it.';
         await sleep(2000);
         // the battle starts in the game; only then does the overlay switch and the queue move up
