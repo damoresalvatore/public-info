@@ -245,12 +245,7 @@ body {
 @keyframes bump { 0% { transform: scale(1); } 35% { transform: scale(1.45); } 100% { transform: scale(1); } }
 @keyframes floatUp { 0% { opacity: 0; transform: translateY(6px); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(-16px); } }
 .you-em { font-style: italic; color: var(--pp-1); }
-.stage-note { font-family: var(--font-body); font-size: var(--fs-m); color: var(--text-soft); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-/* a long note wraps beside Replay instead of pushing it onto its own line */
-.stage-note > span { flex: 1 1 20rem; min-width: 0; }
-.stage-note .replay { margin-left: auto; }
-.replay { background: none; border: 0; color: var(--pp-1); font: inherit; cursor: pointer; padding: 0; }
-.replay:focus-visible { outline: 2px solid var(--pp-1); outline-offset: 2px; }
+.stage-note { font-family: var(--font-body); font-size: var(--fs-m); color: var(--text-soft); }
 
 /* trainer scene: route view, then the Chat Battle takeover; the queue stays pinned below both, as on stream */
 #stage-trainer { --panel-h: 25rem; }
@@ -489,7 +484,7 @@ main code { font-family: var(--font-mono); }
         <div class="play-head"><h3>One free vote per route, it's on the house!</h3></div>
         <p class="play-rule">Simply <strong>type the name of the Pokemon you want me to catch</strong> in chat, from the list of Pokemon on the screen. The game will block me from catching anything else!</p>
         <div class="stage" data-scene="vote" id="stage-vote"></div>
-        <p class="stage-note"><span>If you vote for a Pokemon, you have a chance to become that Pokemon! Each vote is a ticket, and if that Pokemon is caught the game does a draw, and the winning ticket becomes the Pokemon.</span><button class="replay" type="button" data-replay="stage-vote">↻ Replay</button></p>
+        <p class="stage-note"><span>If you vote for a Pokemon, you have a chance to become that Pokemon! Each vote is a ticket, and if that Pokemon is caught the game does a draw, and the winning ticket becomes the Pokemon.</span></p>
       </article>
 
       <!-- Boost your vote -->
@@ -497,7 +492,6 @@ main code { font-family: var(--font-mono); }
         <div class="play-head"><h3>Vote even more with your money, just like democracy!</h3></div>
         <p class="play-rule"><strong>Attach the name of your Pokemon</strong> with a cheer, tip, or resub message. <strong>100 bits per vote</strong>, subs and resubs are 5, and a buck will get you a vote too! This does increase your chances of becoming the Pokemon, remember each vote is a ticket that gets drawn by the game when we catch a Mon!</p>
         <div class="stage" data-scene="boost" id="stage-boost"></div>
-        <p class="stage-note"><button class="replay" type="button" data-replay="stage-boost">↻ Replay</button></p>
       </article>
 
       <!-- Summon a trainer -->
@@ -505,7 +499,7 @@ main code { font-family: var(--font-mono); }
         <div class="play-head"><h3>Summon a trainer with bits, a tip or a sub!</h3></div>
         <p class="play-rule"><strong>300 bits, a $3 tip, or any sub</strong> sends a trainer named after you. Spend more for a tougher one.</p>
         <div class="stage" id="stage-trainer" aria-label="Animated example: chat summons trainers, they queue up, then the battle starts"></div>
-        <p class="stage-note"><span>Trainers wait in line and fight one at a time. The game decides when, so the streamer can't skip one.</span><button class="replay" type="button" data-replay="stage-trainer">↻ Replay</button></p>
+        <p class="stage-note"><span>Trainers wait in line and fight one at a time. The game decides when, so the streamer can't skip one.</span></p>
       </article>
 
       </div>
@@ -908,10 +902,6 @@ main code { font-family: var(--font-mono); }
       new IntersectionObserver(([e]) => { seen = e.isIntersecting; sync(); }, { threshold: 0.45 }).observe(root);
       root.addEventListener('playtab', sync);
     }
-    document.querySelector(`[data-replay="${root.id}"]`)?.addEventListener('click', () => {
-      if (still) return;
-      playing = true; reset(); timer = setTimeout(tick, 300);
-    });
   }
   // running bets: [if, then, footnote]; add a row here to add a bet
   // rules viewers paid for: [name, what it does]; they render under Additional rules
@@ -1062,7 +1052,6 @@ main code { font-family: var(--font-mono); }
       new IntersectionObserver(([e]) => { seen = e.isIntersecting; sync(); }, { threshold: 0.35 }).observe(root);
       root.addEventListener('playtab', sync);
     }
-    document.querySelector('[data-replay="stage-trainer"]')?.addEventListener('click', () => { if (!still) { playing = true; play(); } });
   }
   trainerScene($('stage-trainer'));
 
