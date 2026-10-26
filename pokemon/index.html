@@ -48,28 +48,23 @@ body {
 .sprite { image-rendering: pixelated; width: 56px; height: 56px; flex: none; }
 .sprite.sm { width: 40px; height: 40px; }
 
-/* ── The run, in three rules ───────────────────────────── */
-/* the run at a glance: a day counter on the left, six rule tiles beside it */
-.pk-laws { display: grid; grid-template-columns: minmax(0, 13rem) repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-bottom: 2.4rem; }
-.pk-laws > div { background: var(--bg-elevated); padding: 1rem 1.15rem; display: flex; gap: .8rem; align-items: center; min-width: 0; }
-.pk-laws > div:not(.days) { align-items: flex-start; }
-.pk-laws svg { width: 30px; height: 30px; flex: none; margin-top: .05rem; }
-.pk-laws b { display: block; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--text-cream); line-height: 1.2; }
-.pk-laws span { font-size: var(--fs-s); color: var(--text-mute); }
-.pk-laws .days { grid-row: span 2; flex-direction: column; align-items: flex-start; justify-content: center; gap: .2rem; }
-.pk-laws .days .label { color: var(--pp-1); }
-.pk-laws .days .nw { white-space: nowrap; font-size: inherit; color: inherit; }
-.pk-laws .days strong span { font-size: inherit; color: inherit; }
-.pk-laws .days strong { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-l); line-height: 1; color: var(--text-cream); font-variant-numeric: tabular-nums; }
-.pk-laws .tiers { display: flex; gap: .25rem; flex-wrap: wrap; margin-top: .3rem; }
-.pk-laws .tiers i { font-style: normal; font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .08em; text-transform: uppercase; padding: .1rem .35rem; border-radius: 3px; border: 1px solid currentColor; }
-.pk-laws .bet-tile { grid-column: span 2; }
-.pk-laws .bet-tile b { color: var(--loss); }
-.pk-laws .bet-row { display: block; font-size: var(--fs-m); color: var(--text-cream); margin-top: .2rem; }
-.pk-laws .bet-row strong { color: var(--loss); font-weight: 700; }
-.pk-laws .bet-note code { font-family: var(--font-mono); color: var(--text-soft); }
-@media (max-width: 980px) { .pk-laws { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pk-laws .days { grid-row: auto; grid-column: 1 / -1; flex-direction: row; align-items: baseline; justify-content: flex-start; flex-wrap: wrap; column-gap: .8rem; } }
-@media (max-width: 560px) { .pk-laws { grid-template-columns: minmax(0, 1fr); } .pk-laws .bet-tile { grid-column: auto; } }
+/* ── Rules: a day counter card, then three groups (the classic rules, chat's twists, what ends a run) ── */
+.pk-rules { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 1.4rem; align-items: start; }
+.run-days { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .2rem; }
+.run-days .label { color: var(--pp-1); }
+.run-days .nw { white-space: nowrap; font-size: inherit; color: inherit; }
+.run-days span { font-size: var(--fs-s); color: var(--text-mute); }
+.run-days strong { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-l); line-height: 1; color: var(--text-cream); font-variant-numeric: tabular-nums; }
+.run-days strong span { font-size: inherit; color: inherit; }
+.rule-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.rule-group { background: var(--bg-elevated); padding: 1.1rem 1.15rem; min-width: 0; display: grid; gap: .8rem; align-content: start; }
+.rule-group h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--pp-1); line-height: 1.2; }
+.rule-group.ends h2 { color: var(--loss); }
+.rule-group ul { list-style: none; display: grid; gap: .8rem; }
+.rule-group li b { display: block; font-weight: 500; font-size: var(--fs-m); color: var(--text-cream); line-height: 1.3; }
+.rule-group li span { display: block; font-size: var(--fs-s); color: var(--text-mute); margin-top: .15rem; }
+.rule-group code { font-family: var(--font-mono); color: var(--text-soft); }
+@media (max-width: 980px) { .pk-rules { grid-template-columns: minmax(0, 1fr); } .rule-groups { grid-template-columns: minmax(0, 1fr); } }
 
 /* ── One card per way to play ──────────────────────────── */
 .plays { display: grid; gap: 1.4rem; }
@@ -78,7 +73,6 @@ body {
 .play-tabs { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
 .play-tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--rule); padding: 0 .5rem; }
 .play-tablist button { flex: 0 0 auto; display: flex; gap: .45rem; align-items: center; font: inherit; font-size: var(--fs-m); color: var(--text-mute); background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: .8rem .9rem; cursor: pointer; }
-.play-tablist button i { width: 7px; height: 7px; border-radius: 2px; background: var(--c); }
 .play-tablist button:hover { color: var(--text-cream); }
 .play-tablist button[aria-selected="true"] { color: var(--text-cream); border-bottom-color: var(--pp-1); }
 .play-tablist button:focus-visible { outline: 2px solid var(--pp-1); outline-offset: -2px; border-radius: 6px; }
@@ -93,7 +87,7 @@ body {
   .play-body { grid-template-columns: minmax(0, 1fr); }
   .arrow { justify-self: center; transform: rotate(90deg); line-height: 1; }
 }
-.play-rule { font-size: var(--fs-m); margin-top: -.4rem; color: var(--text-soft); max-width: 62ch; }
+.play-rule { font-size: var(--fs-m); margin-top: -.4rem; color: var(--text-soft); }
 .play-rule strong { color: var(--text-cream); font-weight: 500; }
 
 /* chat mock, like the Twitch chat column */
@@ -179,7 +173,6 @@ body {
 @media (max-width: 760px) { .stage { grid-template-columns: minmax(0, 1fr); } }
 .tw { background: var(--tw-bg); border: 1px solid var(--rule); border-radius: 8px; display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
 .tw-head { font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); padding: .6rem .85rem; border-bottom: 1px dashed var(--rule); background: var(--bg-card); display: flex; justify-content: space-between; }
-.tw-head .live { color: var(--loss); }
 .stage-col { display: flex; flex-direction: column; min-width: 0; }
 .stage-col > .tw, .stage-col > .ov { flex: 1; }
 /* feed never sizes to its messages: it fills the column on desktop, fixed height when stacked */
@@ -437,65 +430,66 @@ main code { font-family: var(--font-mono); }
   <header class="section-head">
     <nav class="crumbs" id="crumbs" aria-label="Breadcrumb"></nav>
     <h1 class="section-title">Pokemon</h1>
-    <p class="section-lede">A Pokemon Pure Red nuzlocke that chat plays along with. You choose what gets caught, every catch is named after a viewer, and bits send trainers to fight the streamer.</p>
+    <p class="section-lede">A Pokemon Pure Red Nuzlocke run that chat takes part in. A Nuzlocke is a challenge players set themselves: one catch per area, and any Pokemon that faints is gone for good. Here chat decides the catch, names it after a viewer, and spends bits to send trainers against the streamer.</p>
   </header>
 
   <nav class="subtabs" aria-label="Pokemon sections">
-    <a href="#rules" style="--c:var(--pp-1)"><i></i>Rules</a>
-    <a href="#purered" style="--c:var(--loss)"><i></i>Pure Red</a>
-    <a href="#team" style="--c:var(--c-pk)"><i></i>Team</a>
-    <a href="#stats" style="--c:var(--c-pred)"><i></i>Stats</a>
+    <a href="#rules">Rules</a>
+    <a href="#play">How to play</a>
+    <a href="#purered">Pure Red</a>
+    <a href="#team">Current run</a>
+    <a href="#stats">Stats</a>
   </nav>
 
   <!-- ═══════════════ RULES ═══════════════ -->
   <section class="panel" id="p-rules" role="tabpanel" hidden>
-    <div class="pk-laws" aria-label="The rules of the run">
-      <div class="days">
+    <div class="pk-rules">
+      <div class="run-days">
         <span class="label" id="days-label">Game start</span>
         <span>It has been</span>
         <strong><span id="days-n">–</span> days</strong>
         <span>since we first left Pallet Town</span>
       </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M2 15h26" stroke="var(--pp-1)" stroke-width="2"/><circle cx="15" cy="15" r="4" fill="var(--bg-elevated)" stroke="var(--pp-1)" stroke-width="2"/></svg>
-        <p><b>One catch per route</b><span>Chat votes on which one.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M4 6h13l9 9-11 11-11-11z" fill="none" stroke="var(--pp-1)" stroke-width="2" stroke-linejoin="round"/><circle cx="10" cy="11" r="2" fill="var(--pp-1)"/></svg>
-        <p><b>Chat names every catch</b><span>One voter's name, drawn by votes.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3l10 4v7c0 7-4.5 11-10 13C9.5 25 5 21 5 14V7z" fill="none" stroke="var(--pp-1)" stroke-width="2" stroke-linejoin="round"/><path d="M10.5 15l3 3 6-6.5" fill="none" stroke="var(--pp-1)" stroke-width="2"/></svg>
-        <p><b>All automated</b><span>The game enforces it. No cheating.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M8 27V12a7 7 0 0 1 14 0v15z" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M15 10v8M11.5 13.5h7" stroke="var(--pp-1)" stroke-width="2"/><path d="M4 27h22" stroke="var(--pp-1)" stroke-width="2"/></svg>
-        <p><b>Faint means gone</b><span>No revives. It goes to the graveyard.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M5 15a10 10 0 1 0 3-7" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M4 4v6h6" fill="none" stroke="var(--pp-1)" stroke-width="2"/></svg>
-        <p><b>Whole team down?</b><span>Back to Pallet Town. New run.</span></p>
-      </div>
-      <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M9 11c0-4 2.7-7 6-7s6 3 6 7z" fill="var(--pp-1)"/><circle cx="15" cy="15" r="4" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M7 28v-4c0-3 3.5-5 8-5s8 2 8 5v4" fill="none" stroke="var(--pp-1)" stroke-width="2"/></svg>
-        <p><b>Summon trainers</b><span class="tiers"><i style="color:#4ad06a">Easy</i><i style="color:#64b5f6">Medium</i><i style="color:#ffb74d">Hard</i><i style="color:#e84a3a">Insane</i></span></p>
-      </div>
-      <div class="bet-tile" id="bets">
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 4l12 21H3z" fill="none" stroke="var(--loss)" stroke-width="2" stroke-linejoin="round"/><path d="M15 12v6" stroke="var(--loss)" stroke-width="2"/><circle cx="15" cy="21.5" r="1.3" fill="var(--loss)"/></svg>
-        <p><b>Running bets</b><span id="bet-list"></span></p>
+      <div class="rule-groups">
+        <section class="rule-group">
+          <h2>The Nuzlocke rules</h2>
+          <ul>
+            <li><b>One catch per route</b><span>Only one Pokemon from each area joins the team.</span></li>
+            <li><b>Faint means gone</b><span>No revives. A faint from poison outside battle is the one exception.</span></li>
+            <li><b>Every catch gets a nickname</b><span>So each loss is a named one.</span></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h2>What chat adds</h2>
+          <ul>
+            <li><b>Chat picks the catch</b><span>Not the first one met: chat votes on which one.</span></li>
+            <li><b>Chat names it</b><span>After one voter, drawn by votes.</span></li>
+            <li><b>Chat sends trainers</b><span>Bits, tips and subs send a trainer to fight the streamer.</span></li>
+          </ul>
+        </section>
+        <section class="rule-group ends">
+          <h2>Back to Pallet Town when</h2>
+          <ul id="run-ends">
+            <li><b>The whole team faints</b><span>A new run starts from scratch.</span></li>
+            <li><b>The streamer picks the wrong starter</b><span>Any starter chat didn't vote for ends the run.</span></li>
+          </ul>
+        </section>
       </div>
     </div>
+  </section>
 
+  <!-- ═══════════════ HOW TO PLAY ═══════════════ -->
+  <section class="panel" id="p-play" role="tabpanel" hidden>
     <div class="sumhead" style="margin-top:0"><h2>Four ways for <em class="you-em">you</em> to play</h2></div>
 
     <div class="plays">
 
       <div class="play-tabs">
       <div class="play-tablist" role="tablist" aria-label="Ways to play">
-        <button type="button" role="tab" id="tab-starter" aria-controls="play-starter" aria-selected="true" style="--c:var(--free)"><i></i>Pick the starter</button>
-        <button type="button" role="tab" id="tab-vote" aria-controls="play-vote" aria-selected="false" tabindex="-1" style="--c:var(--free)"><i></i>Vote on the catch</button>
-        <button type="button" role="tab" id="tab-boost" aria-controls="play-boost" aria-selected="false" tabindex="-1" style="--c:var(--paid)"><i></i>Boost your vote</button>
-        <button type="button" role="tab" id="tab-trainer" aria-controls="play-trainer" aria-selected="false" tabindex="-1" style="--c:var(--paid)"><i></i>Summon a trainer</button>
+        <button type="button" role="tab" id="tab-starter" aria-controls="play-starter" aria-selected="true">Pick the starter</button>
+        <button type="button" role="tab" id="tab-vote" aria-controls="play-vote" aria-selected="false" tabindex="-1">Vote on the catch</button>
+        <button type="button" role="tab" id="tab-boost" aria-controls="play-boost" aria-selected="false" tabindex="-1">Boost your vote</button>
+        <button type="button" role="tab" id="tab-trainer" aria-controls="play-trainer" aria-selected="false" tabindex="-1">Summon a trainer</button>
       </div>
       <div class="play-panels">
 
@@ -861,7 +855,7 @@ main code { font-family: var(--font-mono); }
     root.setAttribute('aria-label', `Animated example: chat voting on ${cfg.route}`);
     root.innerHTML = `
       <div class="stage-col"><div class="tw">
-        <div class="tw-head"><span>Stream chat</span><span class="live">● Live</span></div>
+        <div class="tw-head"><span>Stream chat</span><span>Example</span></div>
         <div class="tw-feed"></div></div></div>
       <div class="stage-col"><div class="ov">
         <div class="ov-route"><span>▸</span>${cfg.route}<span>◂</span></div>
@@ -957,10 +951,11 @@ main code { font-family: var(--font-mono); }
     });
   }
   // running bets: [if, then, footnote]; add a row here to add a bet
+  // running bets: [what happens, footnote]; each one ends the run, so it joins the Back to Pallet Town list
   const BETS = [
-    ['If the Pokemon named after the current bit leader faints', 'the run restarts', 'Bit leader: this week\'s top cheerer, <code>!bitleader</code>'],
+    ['The bit leader\'s namesake faints', 'Running bet. Bit leader: this week\'s top cheerer, <code>!bitleader</code>'],
   ];
-  $('bet-list').innerHTML = BETS.map(([when, then, note]) => `<span class="bet-row">${when}, <strong>${then}</strong>.</span><span class="bet-note">${note}</span>`).join('');
+  $('run-ends').insertAdjacentHTML('beforeend', BETS.map(([when, note]) => `<li><b>${when}</b><span>${note}</span></li>`).join(''));
   document.querySelectorAll('.stage[data-scene]').forEach(scene);
 
   // ── Trainer scene, in the order it really runs: paid → UP NEXT queue → game is free → controls lock 2s
@@ -974,7 +969,7 @@ main code { font-family: var(--font-mono); }
   function trainerScene(root) {
     root.innerHTML = `
       <div class="stage-col"><div class="tw">
-        <div class="tw-head"><span>Stream chat</span><span class="live">● Live</span></div>
+        <div class="tw-head"><span>Stream chat</span><span>Example</span></div>
         <div class="tw-feed"></div></div></div>
       <div class="stage-col"><div class="gbs-wrap">
         <div class="gbs">
@@ -1155,8 +1150,8 @@ main code { font-family: var(--font-mono); }
     });
   });
 
-  // sub-tab router: #rules, #purered, #team, #stats
-  const TABS = ['rules', 'purered', 'team', 'stats'];
+  // sub-tab router: #rules, #play, #purered, #team, #stats
+  const TABS = ['rules', 'play', 'purered', 'team', 'stats'];
   function show() {
     const tab = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'rules';
     document.querySelectorAll('.subtabs a').forEach((a) => { if (a.hash === `#${tab}`) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
