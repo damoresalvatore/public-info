@@ -69,7 +69,7 @@ body {
 /* ── One card per way to play ──────────────────────────── */
 .plays { display: grid; gap: 1.4rem; }
 .play { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.4rem 1.2rem; display: grid; gap: 1rem; min-width: 0; }
-/* the four ways share one tabbed card; panels stack in one cell so the card keeps the tallest one's height and never resizes on a switch */
+/* the three ways share one tabbed card; panels stack in one cell so the card keeps the tallest one's height and never resizes on a switch */
 .play-tabs { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
 .play-tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--rule); padding: 0 .5rem; }
 .play-tablist button { flex: 0 0 auto; display: flex; gap: .45rem; align-items: center; font: inherit; font-size: var(--fs-m); color: var(--text-mute); background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: .8rem .9rem; cursor: pointer; }
@@ -119,12 +119,6 @@ body {
 .screen-foot { font-size: var(--fs-s); color: var(--text-mute); border-top: 1px dashed var(--rule); padding-top: .5rem; margin-top: auto; }
 .screen-foot b { color: var(--text-cream); font-weight: 500; }
 
-.starters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
-.starter { border: 1px solid var(--rule); border-radius: 8px; padding: .5rem .3rem .45rem; display: flex; flex-direction: column; align-items: center; gap: .15rem; min-width: 0; }
-.starter b { font-size: var(--fs-s); color: var(--text-cream); font-weight: 500; }
-.starter span { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); }
-.starter.win { border-color: var(--free); background: color-mix(in srgb, var(--free) 8%, transparent); }
-.starter.win span { color: var(--free); }
 
 .battle { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; align-items: center; background: linear-gradient(180deg, color-mix(in srgb, var(--paid) 14%, transparent), transparent); border: 1px solid var(--pp-deep); border-radius: 8px; padding: .75rem .85rem; }
 .battle svg { width: 52px; height: 64px; }
@@ -478,29 +472,20 @@ main code { font-family: var(--font-mono); }
 
   <!-- ═══════════════ HOW TO PLAY ═══════════════ -->
   <section class="panel" id="p-play" role="tabpanel" hidden>
-    <div class="sumhead" style="margin-top:0"><h2>Four ways for <em class="you-em">you</em> to play</h2></div>
+    <div class="sumhead" style="margin-top:0"><h2>Three ways for <em class="you-em">you</em> to play</h2></div>
 
     <div class="plays">
 
       <div class="play-tabs">
       <div class="play-tablist" role="tablist" aria-label="Ways to play">
-        <button type="button" role="tab" id="tab-starter" aria-controls="play-starter" aria-selected="true">Pick the starter</button>
-        <button type="button" role="tab" id="tab-vote" aria-controls="play-vote" aria-selected="false" tabindex="-1">Vote on the catch</button>
+        <button type="button" role="tab" id="tab-vote" aria-controls="play-vote" aria-selected="true">Vote on the catch</button>
         <button type="button" role="tab" id="tab-boost" aria-controls="play-boost" aria-selected="false" tabindex="-1">Boost your vote</button>
         <button type="button" role="tab" id="tab-trainer" aria-controls="play-trainer" aria-selected="false" tabindex="-1">Summon a trainer</button>
       </div>
       <div class="play-panels">
 
-      <!-- Pick the starter -->
-      <article class="play" id="play-starter" role="tabpanel" aria-labelledby="tab-starter">
-        <div class="play-head"><h3>Pick my starter, it's free!</h3></div>
-        <p class="play-rule">At the start of every run, <strong>type a starter's name</strong>. Most votes wins, and the streamer <strong>has to</strong> pick that one.</p>
-        <div class="stage" data-scene="starter" id="stage-starter"></div>
-        <p class="stage-note"><span>Only a message that is just the name counts. Picking any other starter ends the run.</span><button class="replay" type="button" data-replay="stage-starter">↻ Replay</button></p>
-      </article>
-
       <!-- Vote on the catch -->
-      <article class="play" id="play-vote" role="tabpanel" aria-labelledby="tab-vote" inert>
+      <article class="play" id="play-vote" role="tabpanel" aria-labelledby="tab-vote">
         <div class="play-head"><h3>Vote on my catch, it's free!</h3></div>
         <p class="play-rule"><strong>Type a Pokemon's name</strong> from the route the streamer is on. One vote per route. The streamer <strong>can only catch the one in CATCH ALLOWED</strong>.</p>
         <div class="stage" data-scene="vote" id="stage-vote"></div>
@@ -807,20 +792,6 @@ main code { font-family: var(--font-mono); }
   const DEX = { Bulbasaur: 1, Charmander: 4, Squirtle: 7, Pidgey: 16, Rattata: 19, Spearow: 21, 'Nidoran M': 32, Mankey: 56 };
   // chat lines: [user, color, message, vote target or null, votes, tag override, event line]
   const SCENES = {
-    starter: {
-      route: 'Choosing starter', mons: ['Bulbasaur', 'Charmander', 'Squirtle'],
-      chat: [
-        ['GuvnaGruff', '#7cb8ff', 'Charmander', 'Charmander'],
-        ['TiySC2', '#f5d36b', 'squirtle', 'Squirtle'],
-        ['FreeXP117', '#a8d672', 'lets gooo new run', null],
-        ['Drolarius', '#ff8a5b', 'Squirtle', 'Squirtle'],
-        ['wrrwrrw', '#7fe0b0', 'Bulbasaur', 'Bulbasaur'],
-        ['Delthus', '#ff6b8a', 'squirtle pls', null],
-        ['kaelzy', '#c8a8e8', 'Charmander', 'Charmander'],
-        ['SethLight1988', '#ff77e0', 'Squirtle', 'Squirtle'],
-        ['Mordecant', '#5fc9a8', 'SQUIRTLE', 'Squirtle'],
-      ],
-    },
     vote: {
       route: 'Route 1', mons: ['Pidgey', 'Rattata'],
       chat: [
