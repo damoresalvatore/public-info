@@ -248,6 +248,7 @@ body {
 .stage-note { font-family: var(--font-body); font-size: var(--fs-m); color: var(--text-soft); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 /* a long note wraps beside Replay instead of pushing it onto its own line */
 .stage-note > span { flex: 1 1 20rem; min-width: 0; }
+.stage-note .replay { margin-left: auto; }
 .replay { background: none; border: 0; color: var(--pp-1); font: inherit; cursor: pointer; padding: 0; }
 .replay:focus-visible { outline: 2px solid var(--pp-1); outline-offset: 2px; }
 
@@ -494,9 +495,9 @@ main code { font-family: var(--font-mono); }
       <!-- Boost your vote -->
       <article class="play" id="play-boost" role="tabpanel" aria-labelledby="tab-boost" inert>
         <div class="play-head"><h3>Vote even more with your money, just like democracy!</h3></div>
-        <p class="play-rule"><strong>Attach the name of your Pokemon</strong> with a cheer, tip, or resub message. <strong>100 bits per vote</strong>, subs and resubs are 5, and a buck will get you a vote too!</p>
+        <p class="play-rule"><strong>Attach the name of your Pokemon</strong> with a cheer, tip, or resub message. <strong>100 bits per vote</strong>, subs and resubs are 5, and a buck will get you a vote too! This does increase your chances of becoming the Pokemon, remember each vote is a ticket that gets drawn by the game when we catch a Mon!</p>
         <div class="stage" data-scene="boost" id="stage-boost"></div>
-        <p class="stage-note"><span>When it's caught, one voter's name becomes its nickname. More votes, better odds.</span><button class="replay" type="button" data-replay="stage-boost">↻ Replay</button></p>
+        <p class="stage-note"><button class="replay" type="button" data-replay="stage-boost">↻ Replay</button></p>
       </article>
 
       <!-- Summon a trainer -->
