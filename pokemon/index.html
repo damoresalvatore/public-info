@@ -573,12 +573,12 @@ main code { font-family: var(--font-mono); }
     </div>
 
     <div class="box" id="party-box">
-      <div class="boxhead"><h3>The party</h3><span class="label" id="party-label"></span></div>
+      <div class="boxhead"><h3>The party</h3></div>
       <div class="party" id="party"></div>
     </div>
 
     <div class="box" id="trail-box" style="margin-top:1.1rem">
-      <div class="boxhead"><h3>Where each one was caught</h3><span class="label">route by route, in game order</span></div>
+      <div class="boxhead"><h3>Where each one was caught</h3></div>
       <div class="legend" style="margin:-.3rem 0 .8rem"><span style="--c:var(--c-pk)"><i></i>In the party</span><span style="--c:var(--c-sc2)"><i></i>In the box</span><span style="--c:var(--loss)"><i></i>Fallen</span></div>
       <div class="trail" id="trail"></div>
     </div>
@@ -649,8 +649,6 @@ main code { font-family: var(--font-mono); }
     }
     $('team-title').textContent = `Run ${T.run}: the ${T.starter || 'new'} run`;
     $('team-sub').textContent = `Started ${day(T.start)}. Every Pokemon carries the name of the viewer who won its nickname. Updated once a day.${T.over ? ' This run is over: next stop, Pallet Town.' : ''}`;
-    const best = Math.max(0, ...T.party.map((m) => m[2] || 0));
-    $('party-label').textContent = T.party.length ? `${T.party.length} of 6 · level ${best} best` : '';
     $('party').innerHTML = T.party.length ? T.party.map(([nick, sp, lv, hp, max, route, as]) => {
       const pct = max ? Math.max(0, Math.min(100, (hp / max) * 100)) : 0;
       const cls = pct < 20 ? 'low' : pct < 50 ? 'mid' : '';
