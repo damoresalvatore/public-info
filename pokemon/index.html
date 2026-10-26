@@ -56,13 +56,14 @@ body {
 .pk-laws svg { width: 30px; height: 30px; flex: none; margin-top: .05rem; }
 .pk-laws b { display: block; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-m); color: var(--text-cream); line-height: 1.2; }
 .pk-laws span { font-size: var(--fs-s); color: var(--text-mute); }
-.pk-laws .days { grid-row: span 2; flex-direction: column; align-items: flex-start; justify-content: center; gap: .2rem; background: linear-gradient(180deg, color-mix(in srgb, var(--c-pk) 10%, var(--bg-elevated)), var(--bg-elevated)); }
-.pk-laws .days .label { color: var(--c-pk); }
+.pk-laws .days { grid-row: span 2; flex-direction: column; align-items: flex-start; justify-content: center; gap: .2rem; }
+.pk-laws .days .label { color: var(--pp-1); }
 .pk-laws .days .nw { white-space: nowrap; font-size: inherit; color: inherit; }
+.pk-laws .days strong span { font-size: inherit; color: inherit; }
 .pk-laws .days strong { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-l); line-height: 1; color: var(--text-cream); font-variant-numeric: tabular-nums; }
 .pk-laws .tiers { display: flex; gap: .25rem; flex-wrap: wrap; margin-top: .3rem; }
 .pk-laws .tiers i { font-style: normal; font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .08em; text-transform: uppercase; padding: .1rem .35rem; border-radius: 3px; border: 1px solid currentColor; }
-.pk-laws .bet-tile { grid-column: span 2; background: linear-gradient(180deg, color-mix(in srgb, var(--loss) 10%, var(--bg-elevated)), var(--bg-elevated)); }
+.pk-laws .bet-tile { grid-column: span 2; }
 .pk-laws .bet-tile b { color: var(--loss); }
 .pk-laws .bet-row { display: block; font-size: var(--fs-m); color: var(--text-cream); margin-top: .2rem; }
 .pk-laws .bet-row strong { color: var(--loss); font-weight: 700; }
@@ -465,31 +466,32 @@ main code { font-family: var(--font-mono); }
     <div class="pk-laws" aria-label="The rules of the run">
       <div class="days">
         <span class="label" id="days-label">Game start</span>
-        <strong id="days-n">–</strong>
-        <span id="days-sub">days since we started</span>
+        <span>It has been</span>
+        <strong><span id="days-n">–</span> days</strong>
+        <span>since we first left Pallet Town</span>
       </div>
       <div>
         <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M2 15h26" stroke="var(--pp-1)" stroke-width="2"/><circle cx="15" cy="15" r="4" fill="var(--bg-elevated)" stroke="var(--pp-1)" stroke-width="2"/></svg>
         <p><b>One catch per route</b><span>Chat votes on which one.</span></p>
       </div>
       <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M4 6h13l9 9-11 11-11-11z" fill="none" stroke="var(--c-pk)" stroke-width="2" stroke-linejoin="round"/><circle cx="10" cy="11" r="2" fill="var(--c-pk)"/></svg>
+        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M4 6h13l9 9-11 11-11-11z" fill="none" stroke="var(--pp-1)" stroke-width="2" stroke-linejoin="round"/><circle cx="10" cy="11" r="2" fill="var(--pp-1)"/></svg>
         <p><b>Chat names every catch</b><span>One voter's name, drawn by votes.</span></p>
       </div>
       <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3l10 4v7c0 7-4.5 11-10 13C9.5 25 5 21 5 14V7z" fill="none" stroke="var(--c-sc2)" stroke-width="2" stroke-linejoin="round"/><path d="M10.5 15l3 3 6-6.5" fill="none" stroke="var(--c-sc2)" stroke-width="2"/></svg>
+        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3l10 4v7c0 7-4.5 11-10 13C9.5 25 5 21 5 14V7z" fill="none" stroke="var(--pp-1)" stroke-width="2" stroke-linejoin="round"/><path d="M10.5 15l3 3 6-6.5" fill="none" stroke="var(--pp-1)" stroke-width="2"/></svg>
         <p><b>All automated</b><span>The game enforces it. No cheating.</span></p>
       </div>
       <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M8 27V12a7 7 0 0 1 14 0v15z" fill="none" stroke="var(--loss)" stroke-width="2"/><path d="M15 10v8M11.5 13.5h7" stroke="var(--loss)" stroke-width="2"/><path d="M4 27h22" stroke="var(--loss)" stroke-width="2"/></svg>
+        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M8 27V12a7 7 0 0 1 14 0v15z" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M15 10v8M11.5 13.5h7" stroke="var(--pp-1)" stroke-width="2"/><path d="M4 27h22" stroke="var(--pp-1)" stroke-width="2"/></svg>
         <p><b>Faint means gone</b><span>No revives. It goes to the graveyard.</span></p>
       </div>
       <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M5 15a10 10 0 1 0 3-7" fill="none" stroke="var(--c-pred)" stroke-width="2"/><path d="M4 4v6h6" fill="none" stroke="var(--c-pred)" stroke-width="2"/></svg>
+        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M5 15a10 10 0 1 0 3-7" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M4 4v6h6" fill="none" stroke="var(--pp-1)" stroke-width="2"/></svg>
         <p><b>Whole team down?</b><span>Back to Pallet Town. New run.</span></p>
       </div>
       <div>
-        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M9 11c0-4 2.7-7 6-7s6 3 6 7z" fill="var(--paid)"/><circle cx="15" cy="15" r="4" fill="none" stroke="var(--paid)" stroke-width="2"/><path d="M7 28v-4c0-3 3.5-5 8-5s8 2 8 5v4" fill="none" stroke="var(--paid)" stroke-width="2"/></svg>
+        <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M9 11c0-4 2.7-7 6-7s6 3 6 7z" fill="var(--pp-1)"/><circle cx="15" cy="15" r="4" fill="none" stroke="var(--pp-1)" stroke-width="2"/><path d="M7 28v-4c0-3 3.5-5 8-5s8 2 8 5v4" fill="none" stroke="var(--pp-1)" stroke-width="2"/></svg>
         <p><b>Summon trainers</b><span class="tiers"><i style="color:#4ad06a">Easy</i><i style="color:#64b5f6">Medium</i><i style="color:#ffb74d">Hard</i><i style="color:#e84a3a">Insane</i></span></p>
       </div>
       <div class="bet-tile" id="bets">
@@ -795,11 +797,12 @@ main code { font-family: var(--font-mono); }
     new ResizeObserver(() => { const w = $('pkruns').clientWidth; if (w && w !== lastW) { lastW = w; drawRuns(); } }).observe($('pkruns'));
 
     // day counter on the Rules tab: season start from the nightly export, counted in the viewer's today
-    const days = Math.floor((Date.now() - Date.parse(`${K.start}T00:00:00`)) / 864e5) + 1;
+    // whole days between two local midnights; round absorbs a DST hour
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const days = Math.round((today - Date.parse(`${K.start}T00:00:00`)) / 864e5);
     $('days-n').textContent = fmt(days);
     // two no-wrap halves, so a narrow column breaks at the dot instead of inside the date
     $('days-label').innerHTML = `<span class="nw">Game start ·</span> <span class="nw">${day(K.start)}</span>`;
-    $('days-sub').textContent = 'days since we started';
     $('pk-title').textContent = `${fmt(K.attempts)} runs, ${fmt(K.deaths)} Pokemon lost`;
     $('pk-sub').textContent = `Chat picks the starter, names every catch after a viewer, and spends bits to send trainers. One wipe and it's back to Pallet Town. Everything here counts from ${day(K.start)}, when the game started.`;
     let pkN = 10;
