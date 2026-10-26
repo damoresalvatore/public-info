@@ -385,7 +385,7 @@ body {
 .pr-tm { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .3rem .55rem; align-items: center; justify-items: start; background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 8px; padding: .5rem .75rem; min-width: 0; }
 .pr-tm b { font-family: var(--font-mono); font-size: var(--fs-m); color: var(--text-cream); white-space: nowrap; }
 .pr-tm span { grid-column: 1 / -1; font-size: var(--fs-s); color: var(--text-mute); }
-.dhead a.src { color: var(--pp-1); }
+.dhead a.src, .pr-stack a.src { color: var(--pp-1); }
 
 /* shared site classes (styles.css, stats.css) snapped to the page's three sizes */
 main :is(h1.section-title, .dhead h2, .sumhead h2, .rec b) { font-size: var(--fs-l); }
@@ -518,6 +518,7 @@ main code { font-family: var(--font-mono); }
       <p>This is a rom-hack of the original Pokemon games. Same Kanto, same 151 Pokemon, now with running shoes, new moves and more Pokemon on each route. Made by Vortyne: <a class="src" href="https://github.com/Vortyne/pureRGB" rel="noopener">PureRGB on GitHub</a>, <a class="src" href="https://github.com/Vortyne/pureRGB/wiki" rel="noopener">the PureRGB wiki</a>.</p>
     </div>
     <div class="pr-stack">
+      <div class="boxhead"><h3>Here are some examples of Pure Red's changes, for an exhaustive list check <a class="src" href="https://github.com/Vortyne/pureRGB/wiki" rel="noopener">the wiki</a>, or watch streamer suffer.</h3></div>
       <div class="pr-facts">
         <div><b>All 151 in one game</b><span>Alakazam, Machamp, Golem and Gengar evolve by level. No trading needed.</span></div>
         <div><b>Starters in the wild</b><span>Squirtle, Bulbasaur and Charmander can be caught on routes. Eevee shows up on Route 1.</span></div>
