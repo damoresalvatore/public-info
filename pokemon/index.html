@@ -71,17 +71,16 @@ body {
 
 /* ── One card per way to play ──────────────────────────── */
 .plays { display: grid; gap: 1.4rem; }
-.play { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.4rem 1.2rem; display: grid; gap: 1rem; min-width: 0; }
-/* the three ways share one tabbed card; panels stack in one cell so the card keeps the tallest one's height and never resizes on a switch */
+.play { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; padding: 1.3rem 1.4rem; display: grid; gap: 1rem; min-width: 0; }
+/* the three ways share one tabbed card; only the open panel is laid out, so the card fits its content */
 .play-tabs { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
 .play-tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--rule); padding: 0 .5rem; }
 .play-tablist button { flex: 0 0 auto; display: flex; gap: .45rem; align-items: center; font: inherit; font-size: var(--fs-m); color: var(--text-mute); background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: .8rem .9rem; cursor: pointer; }
 .play-tablist button:hover { color: var(--text-cream); }
 .play-tablist button[aria-selected="true"] { color: var(--text-cream); border-bottom-color: var(--pp-1); }
 .play-tablist button:focus-visible { outline: 2px solid var(--pp-1); outline-offset: -2px; border-radius: 6px; }
-.play-panels { display: grid; }
-.play-panels > .play { grid-area: 1 / 1; align-content: start; background: none; border: 0; border-radius: 0; }
-.play-panels > .play[inert] { visibility: hidden; }
+.play-panels > .play { align-content: start; background: none; border: 0; border-radius: 0; }
+.play-panels > .play[inert] { display: none; }
 .play-head { display: flex; align-items: center; gap: .7rem 1rem; flex-wrap: wrap; }
 .play-head h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-l); color: var(--text-cream); letter-spacing: -.015em; line-height: 1.05; text-wrap: balance; }
 .play-body { display: grid; grid-template-columns: minmax(0, 5fr) auto minmax(0, 7fr); gap: 1rem; align-items: stretch; }
