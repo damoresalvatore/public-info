@@ -7696,4 +7696,7 @@ game_id,time_utc,hero_name,hero_race,hero_mmr,region,account,villain_name,villai
 7909,2026-10-26T19:25:10Z,UpATree,Terran,4431,EU,UpATree EU,weeRA,Protoss,4961,At Eternity's Edge LE,357,W,0,4451,C-,35.1,69.7,20,10.5,31,0.25,0.2639,84.1,295.9,0.5
 7910,2026-10-26T19:41:57Z,UpATree,Terran,4451,EU,UpATree EU,Nomad,Zerg,4561,At Eternity's Edge LE,497,L,0,4432,C+,48.5,240.3,70,13.2,67,0.61,0.2331,91.9,440.9,1.21
 7911,2026-10-26T19:51:34Z,UpATree,Terran,4432,EU,UpATree EU,maxricky,Protoss,4035,Rainfall LE,504,W,0,4449,B,62.4,186.1,80,9.2,47,3.01,0.2058,80.1,334.3,0.95
-7912,2026-10-26T20:04:49Z,UpATree,Terran,4449,EU,UpATree EU,Hupsaiya,Protoss,4780,Rainfall LE,734,L,0,4434,C+,48.3,245.5,190,9.5,75,1.05,0.2539,83,460.1,0.82
+7912,2026-10-26T20:04:49Z,UpATree,Terran,4449,EU,UpATree EU,Hupsaiya,Protoss,4780,Rainfall LE,734,L,0,4436,C+,48.3,245.5,190,9.5,75,1.05,0.2539,83,460.1,0.82
+7913,2026-11-08T20:22:02Z,UpATree,Terran,,NA,UpATree EU,A.I. 1 (Easy),Protoss,,Rainfall LE,531,L,0,,A-,79.5,257.5,80,11.4,56,3.19,0.2494,200,493.7,1.36
+7914,2026-11-08T20:33:08Z,UpATree,Terran,4436,EU,UpATree EU,Hupsaiya,Protoss,4809,Rainfall LE,537,W,0,4466,C+,50.6,147.8,90,8.1,48,2.1,0.3151,91.2,478.1,0.78
+7915,2026-11-08T21:19:50Z,UpATree,Terran,,EU,UpATree EU,A.I. 1 (Easy),Terran,,Rainfall LE,477,W,0,,B+,75,233.4,60,16.6,56,1.69,0.2292,174.1,425.7,1.13

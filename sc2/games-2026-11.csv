@@ -1,0 +1,4 @@
+game_id,time_utc,hero_name,hero_race,hero_mmr,region,account,villain_name,villain_race,villain_mmr,map,duration_sec,outcome,off_race,hero_mmr_after,grade,grade_score,sq,supply_block_sec,avg_supply_cushion,workers_built,army_efficiency,spending_ratio,income_vs_opponent,avg_unspent,race_mechanic_rate
+7913,2026-11-08T20:22:02Z,UpATree,Terran,,NA,UpATree EU,A.I. 1 (Easy),Protoss,,Rainfall LE,531,L,0,,A-,79.5,257.5,80,11.4,56,3.19,0.2494,200,493.7,1.36
+7914,2026-11-08T20:33:08Z,UpATree,Terran,4436,EU,UpATree EU,Hupsaiya,Protoss,4809,Rainfall LE,537,W,0,4466,C+,50.6,147.8,90,8.1,48,2.1,0.3151,91.2,478.1,0.78
+7915,2026-11-08T21:19:50Z,UpATree,Terran,,EU,UpATree EU,A.I. 1 (Easy),Terran,,Rainfall LE,477,W,0,,B+,75,233.4,60,16.6,56,1.69,0.2292,174.1,425.7,1.13
