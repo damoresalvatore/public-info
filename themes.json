@@ -1,1 +1,340 @@
-{"starcraft":{"main-text-color":"#e0e4e8","primary-color":"#60df8a","secondary-color":"#3aad60","background-bar-color":"#1a1e24","gradient-dark":"#12161c","gradient-light":"#1e2430","govTheme":{"r":0,"g":203,"b":38}},"dark":{"main-text-color":"#e0e0e0","primary-color":"#ea9462","secondary-color":"#c47040","background-bar-color":"#1e1e1e","gradient-dark":"#141414","gradient-light":"#242424","govTheme":{"r":255,"g":83,"b":0}},"protoss":{"main-text-color":"#e8e4dc","primary-color":"#e8b840","secondary-color":"#b08820","background-bar-color":"#18182a","gradient-dark":"#101020","gradient-light":"#1c1c30","govTheme":{"r":255,"g":229,"b":0}},"zerg":{"main-text-color":"#ffffff","primary-color":"#c46bdb","secondary-color":"#8a3aa0","background-bar-color":"#1a141e","gradient-dark":"#120e16","gradient-light":"#231c2b","govTheme":{"r":160,"g":60,"b":200}},"terran":{"main-text-color":"#ffffff","primary-color":"#5b9bf5","secondary-color":"#3a6ec4","background-bar-color":"#141820","gradient-dark":"#0e1219","gradient-light":"#1a2130","govTheme":{"r":70,"g":140,"b":230}},"ember":{"main-text-color":"#ffffff","primary-color":"#f04040","secondary-color":"#b02020","background-bar-color":"#1e1414","gradient-dark":"#160e0e","gradient-light":"#2a1a1a","govTheme":{"r":240,"g":64,"b":64}},"ocean":{"main-text-color":"#ffffff","primary-color":"#2ee8c0","secondary-color":"#1aad8e","background-bar-color":"#121c1a","gradient-dark":"#0c1514","gradient-light":"#162826","govTheme":{"r":46,"g":232,"b":192}},"frost":{"main-text-color":"#ffffff","primary-color":"#88ccff","secondary-color":"#5a9fd4","background-bar-color":"#151a20","gradient-dark":"#0d1318","gradient-light":"#1a222c","govTheme":{"r":100,"g":180,"b":255}},"sakura":{"main-text-color":"#ffffff","primary-color":"#f2a0c4","secondary-color":"#c47090","background-bar-color":"#1e1418","gradient-dark":"#160f12","gradient-light":"#2a1c22","govTheme":{"r":242,"g":160,"b":196}},"neon":{"main-text-color":"#ffffff","primary-color":"#00ffaa","secondary-color":"#00cc88","background-bar-color":"#0e1412","gradient-dark":"#080e0c","gradient-light":"#141e1a","govTheme":{"r":0,"g":255,"b":170}},"slate":{"main-text-color":"#e0e0e0","primary-color":"#8899aa","secondary-color":"#667788","background-bar-color":"#181a1c","gradient-dark":"#111315","gradient-light":"#1e2124","govTheme":{"r":136,"g":153,"b":170}},"solar":{"main-text-color":"#ffffff","primary-color":"#ffb830","secondary-color":"#d49520","background-bar-color":"#1c1812","gradient-dark":"#14100a","gradient-light":"#282018","govTheme":{"r":255,"g":184,"b":48}}}
+{
+    "starcraft": {
+        "main-text-color": "#e0e4e8",
+        "primary-color": "#60df8a",
+        "secondary-color": "#3aad60",
+        "background-bar-color": "#1a1e24",
+        "gradient-dark": "#12161c",
+        "gradient-light": "#1e2430",
+        "govTheme": {
+            "r": 0,
+            "g": 203,
+            "b": 38
+        }
+    },
+    "dark": {
+        "main-text-color": "#e0e0e0",
+        "primary-color": "#ea9462",
+        "secondary-color": "#c47040",
+        "background-bar-color": "#1e1e1e",
+        "gradient-dark": "#141414",
+        "gradient-light": "#242424",
+        "govTheme": {
+            "r": 255,
+            "g": 83,
+            "b": 0
+        }
+    },
+    "protoss": {
+        "main-text-color": "#e8e4dc",
+        "primary-color": "#e8b840",
+        "secondary-color": "#b08820",
+        "background-bar-color": "#18182a",
+        "gradient-dark": "#101020",
+        "gradient-light": "#1c1c30",
+        "govTheme": {
+            "r": 255,
+            "g": 229,
+            "b": 0
+        }
+    },
+    "zerg": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#c46bdb",
+        "secondary-color": "#8a3aa0",
+        "background-bar-color": "#1a141e",
+        "gradient-dark": "#120e16",
+        "gradient-light": "#231c2b",
+        "govTheme": {
+            "r": 160,
+            "g": 60,
+            "b": 200
+        }
+    },
+    "terran": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#5b9bf5",
+        "secondary-color": "#3a6ec4",
+        "background-bar-color": "#141820",
+        "gradient-dark": "#0e1219",
+        "gradient-light": "#1a2130",
+        "govTheme": {
+            "r": 70,
+            "g": 140,
+            "b": 230
+        }
+    },
+    "ember": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#f04040",
+        "secondary-color": "#b02020",
+        "background-bar-color": "#1e1414",
+        "gradient-dark": "#160e0e",
+        "gradient-light": "#2a1a1a",
+        "govTheme": {
+            "r": 240,
+            "g": 64,
+            "b": 64
+        }
+    },
+    "ocean": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#2ee8c0",
+        "secondary-color": "#1aad8e",
+        "background-bar-color": "#121c1a",
+        "gradient-dark": "#0c1514",
+        "gradient-light": "#162826",
+        "govTheme": {
+            "r": 46,
+            "g": 232,
+            "b": 192
+        }
+    },
+    "frost": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#88ccff",
+        "secondary-color": "#5a9fd4",
+        "background-bar-color": "#151a20",
+        "gradient-dark": "#0d1318",
+        "gradient-light": "#1a222c",
+        "govTheme": {
+            "r": 100,
+            "g": 180,
+            "b": 255
+        }
+    },
+    "sakura": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#f2a0c4",
+        "secondary-color": "#c47090",
+        "background-bar-color": "#1e1418",
+        "gradient-dark": "#160f12",
+        "gradient-light": "#2a1c22",
+        "govTheme": {
+            "r": 242,
+            "g": 160,
+            "b": 196
+        }
+    },
+    "neon": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#00ffaa",
+        "secondary-color": "#00cc88",
+        "background-bar-color": "#0e1412",
+        "gradient-dark": "#080e0c",
+        "gradient-light": "#141e1a",
+        "govTheme": {
+            "r": 0,
+            "g": 255,
+            "b": 170
+        }
+    },
+    "slate": {
+        "main-text-color": "#e0e0e0",
+        "primary-color": "#8899aa",
+        "secondary-color": "#667788",
+        "background-bar-color": "#181a1c",
+        "gradient-dark": "#111315",
+        "gradient-light": "#1e2124",
+        "govTheme": {
+            "r": 136,
+            "g": 153,
+            "b": 170
+        }
+    },
+    "solar": {
+        "main-text-color": "#ffffff",
+        "primary-color": "#ffb830",
+        "secondary-color": "#d49520",
+        "background-bar-color": "#1c1812",
+        "gradient-dark": "#14100a",
+        "gradient-light": "#282018",
+        "govTheme": {
+            "r": 255,
+            "g": 184,
+            "b": 48
+        }
+    },
+    "kanto-pallet": {
+        "main-text-color": "#f3f8f5",
+        "primary-color": "#cfeee2",
+        "secondary-color": "#78b4a0",
+        "background-bar-color": "#121816",
+        "gradient-dark": "#0c1110",
+        "gradient-light": "#1a2420",
+        "govTheme": {
+            "r": 170,
+            "g": 255,
+            "b": 220
+        }
+    },
+    "kanto-route": {
+        "main-text-color": "#eef5e4",
+        "primary-color": "#b8e266",
+        "secondary-color": "#6a9a2e",
+        "background-bar-color": "#12180d",
+        "gradient-dark": "#0c1109",
+        "gradient-light": "#1a2414",
+        "govTheme": {
+            "r": 140,
+            "g": 255,
+            "b": 40
+        }
+    },
+    "kanto-viridian": {
+        "main-text-color": "#eef6e2",
+        "primary-color": "#7fd12a",
+        "secondary-color": "#4a8a14",
+        "background-bar-color": "#10170b",
+        "gradient-dark": "#0a1007",
+        "gradient-light": "#172212",
+        "govTheme": {
+            "r": 90,
+            "g": 220,
+            "b": 0
+        }
+    },
+    "kanto-pewter": {
+        "main-text-color": "#f2f1ec",
+        "primary-color": "#c6c4ba",
+        "secondary-color": "#85837a",
+        "background-bar-color": "#161614",
+        "gradient-dark": "#0f0f0e",
+        "gradient-light": "#21201e",
+        "govTheme": {
+            "r": 200,
+            "g": 190,
+            "b": 170
+        }
+    },
+    "kanto-cerulean": {
+        "main-text-color": "#eef1fb",
+        "primary-color": "#86a8ff",
+        "secondary-color": "#4467cc",
+        "background-bar-color": "#0f1320",
+        "gradient-dark": "#0a0d18",
+        "gradient-light": "#161d33",
+        "govTheme": {
+            "r": 50,
+            "g": 100,
+            "b": 255
+        }
+    },
+    "kanto-vermilion": {
+        "main-text-color": "#fbf3e8",
+        "primary-color": "#ff9d1e",
+        "secondary-color": "#c26700",
+        "background-bar-color": "#1c140b",
+        "gradient-dark": "#140e07",
+        "gradient-light": "#281c10",
+        "govTheme": {
+            "r": 255,
+            "g": 110,
+            "b": 0
+        }
+    },
+    "kanto-lavender": {
+        "main-text-color": "#f6eef8",
+        "primary-color": "#dba3e6",
+        "secondary-color": "#9a5cb0",
+        "background-bar-color": "#181220",
+        "gradient-dark": "#110c17",
+        "gradient-light": "#231a2e",
+        "govTheme": {
+            "r": 180,
+            "g": 80,
+            "b": 255
+        }
+    },
+    "kanto-celadon": {
+        "main-text-color": "#ebf8f1",
+        "primary-color": "#72eeb0",
+        "secondary-color": "#2fae76",
+        "background-bar-color": "#0d1914",
+        "gradient-dark": "#08120e",
+        "gradient-light": "#13251d",
+        "govTheme": {
+            "r": 30,
+            "g": 255,
+            "b": 140
+        }
+    },
+    "kanto-saffron": {
+        "main-text-color": "#fbf8e6",
+        "primary-color": "#ecd92a",
+        "secondary-color": "#a8960e",
+        "background-bar-color": "#1b190b",
+        "gradient-dark": "#131207",
+        "gradient-light": "#272412",
+        "govTheme": {
+            "r": 255,
+            "g": 200,
+            "b": 0
+        }
+    },
+    "kanto-fuchsia": {
+        "main-text-color": "#fbeef4",
+        "primary-color": "#ff74b0",
+        "secondary-color": "#c23a78",
+        "background-bar-color": "#1d1118",
+        "gradient-dark": "#150c11",
+        "gradient-light": "#2a1822",
+        "govTheme": {
+            "r": 255,
+            "g": 30,
+            "b": 130
+        }
+    },
+    "kanto-cinnabar": {
+        "main-text-color": "#fbefeb",
+        "primary-color": "#f0623c",
+        "secondary-color": "#a8331a",
+        "background-bar-color": "#1d110e",
+        "gradient-dark": "#150b09",
+        "gradient-light": "#2b1712",
+        "govTheme": {
+            "r": 255,
+            "g": 45,
+            "b": 10
+        }
+    },
+    "kanto-indigo": {
+        "main-text-color": "#f3eefa",
+        "primary-color": "#b47ee6",
+        "secondary-color": "#6c44a8",
+        "background-bar-color": "#15111f",
+        "gradient-dark": "#0e0b16",
+        "gradient-light": "#201a31",
+        "govTheme": {
+            "r": 110,
+            "g": 50,
+            "b": 255
+        }
+    },
+    "kanto-cave": {
+        "main-text-color": "#f6efe8",
+        "primary-color": "#d39a68",
+        "secondary-color": "#8a5a34",
+        "background-bar-color": "#19130e",
+        "gradient-dark": "#110d09",
+        "gradient-light": "#251c15",
+        "govTheme": {
+            "r": 220,
+            "g": 110,
+            "b": 30
+        }
+    },
+    "kanto-tower": {
+        "main-text-color": "#efedf4",
+        "primary-color": "#b8b2cc",
+        "secondary-color": "#6e6a86",
+        "background-bar-color": "#131218",
+        "gradient-dark": "#0c0b10",
+        "gradient-light": "#1c1a24",
+        "govTheme": {
+            "r": 90,
+            "g": 70,
+            "b": 170
+        }
+    }
+}
