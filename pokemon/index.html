@@ -356,8 +356,15 @@ body {
 .stop .dt { font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-faint); white-space: nowrap; }
 .stop .st { font-family: var(--font-mono); font-size: var(--fs-s); letter-spacing: .1em; text-transform: uppercase; color: var(--c); }
 @media (max-width: 560px) { .stop { grid-template-columns: 1.4rem minmax(0, 1fr) 40px auto; } .stop .who { grid-column: 2 / 4; grid-row: 2; margin-top: -.4rem; } .stop .dt { grid-column: 4; grid-row: 2; margin-top: -.4rem; justify-self: end; } }
-/* the whole season's graveyard scrolls inside its box instead of stretching the page */
-.grave.scroll { max-height: 30rem; overflow-y: auto; overscroll-behavior: contain; padding-right: .3rem; }
+/* Graveyard tab: three across like the party, sprite greyed out */
+.graves { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; }
+@media (max-width: 900px) { .graves { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .graves { grid-template-columns: minmax(0, 1fr); } }
+.grave-mon { background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 10px; padding: .6rem .8rem; display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: .1rem .7rem; align-items: center; min-width: 0; }
+.grave-mon .sprite { width: 48px; height: 48px; grid-row: span 3; filter: grayscale(1); opacity: .6; }
+.grave-mon b { font-family: var(--font-mono); font-size: var(--fs-m); color: var(--text-cream); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.grave-mon span { font-size: var(--fs-s); color: var(--text-mute); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.grave-mon .died { color: var(--text-soft); }
 .legend { display: flex; gap: 1rem; flex-wrap: wrap; font-family: var(--font-mono); font-size: var(--fs-s); color: var(--text-mute); }
 .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c); margin-right: .35rem; }
 .datalink:hover { border-color: var(--c-pk) !important; }
@@ -415,6 +422,7 @@ main code { font-family: var(--font-mono); }
     <a href="#purered">Pure Red</a>
     <a href="#team">Current run</a>
     <a href="#stats">Stats</a>
+    <a href="#graveyard">Graveyard</a>
   </nav>
 
   <!-- ═══════════════ RULES ═══════════════ -->
@@ -600,10 +608,16 @@ main code { font-family: var(--font-mono); }
       <div class="boxhead"><h3>Records</h3><span class="label">this season</span></div>
       <div class="recs" id="pkrecs"></div>
     </div>
+  </section>
 
-    <div class="box" style="margin-top:1.1rem">
-      <div class="boxhead"><h3>Graveyard</h3><span class="label" id="pkgrave-n">most recent first</span></div>
-      <div class="grave scroll" id="pkgrave" tabindex="0" aria-label="Every Pokemon lost this season, most recent first"></div>
+  <!-- ═══════════════ GRAVEYARD ═══════════════ -->
+  <section class="panel" id="p-graveyard" role="tabpanel" hidden>
+    <div class="dhead">
+      <h2>Graveyard</h2>
+      <p id="pkgrave-n">Pokemon lost this season, most recent first. Updated once a day.</p>
+    </div>
+    <div class="box">
+      <div class="graves" id="pkgrave"></div>
     </div>
   </section>
 </section>
@@ -731,9 +745,9 @@ main code { font-family: var(--font-mono); }
     ].map(([b, tx]) => `<div class="rec"><b>${b}</b><span>${tx}</span></div>`).join('');
     // the whole season once the export sends it; until then the newest 12
     const graves = K.graveyard ?? K.grave;
-    if (K.graveyard) $('pkgrave-n').textContent = `${fmt(graves.length)} fallen, most recent first`;
+    if (K.graveyard) $('pkgrave-n').textContent = `All ${fmt(graves.length)} Pokemon lost this season, most recent first. Updated once a day.`;
     $('pkgrave').innerHTML = graves.map(([n, sp, lv, route, d]) => `
-      <div class="tomb"><b>${esc(n || sp)}</b><span>${esc(sp)}${lv ? `, level ${lv}` : ''}</span><span>${route ? `${esc(route)} · ` : ''}${day(d)}</span></div>`).join('');
+      <div class="grave-mon">${sprite(sp, '')}<b title="${esc(n || sp)}">${esc(n || sp)}</b><span>${esc(sp)}${lv ? `, Lv ${lv}` : ''}${route ? ` · ${esc(route)}` : ''}</span><span class="died">Died ${day(d)}</span></div>`).join('');
   }).catch((err) => console.error('[pokemon] stats.json:', err));
 
   // ── Animated chat → overlay scenes. Plays while on screen; reduced motion gets the end state.
@@ -1055,8 +1069,8 @@ main code { font-family: var(--font-mono); }
     });
   });
 
-  // sub-tab router: #rules, #play, #purered, #team, #stats
-  const TABS = ['rules', 'play', 'purered', 'team', 'stats'];
+  // sub-tab router: #rules, #play, #purered, #team, #stats, #graveyard
+  const TABS = ['rules', 'play', 'purered', 'team', 'stats', 'graveyard'];
   function show() {
     const tab = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'rules';
     document.querySelectorAll('.subtabs a').forEach((a) => { if (a.hash === `#${tab}`) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
