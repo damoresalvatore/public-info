@@ -15,7 +15,7 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `commands/index.html` | Chat commands, searchable. |
 | `sc2/index.html` | SC2 games: stats, MMR chart, games by month, downloads. |
 | `timeout/index.html` | Timeout with bits: rules, calculator, examples. |
-| `pokemon/index.html` | Pokemon: Rules (animated examples of each way to play), Pure Red (how it differs from Red), Team (the current run, from `pk.team` in `stats/stats.json`) and Stats tabs (`#rules`, `#purered`, `#team`, `#stats`). Sprites, trainer pictures and the Route 3 screen live beside it. |
+| `pokemon/index.html` | Pokemon: Rules (animated examples of each way to play), Pure Red (how it differs from Red), Team (the current run, with where and when each one was caught, from `pk.team` in `stats/stats.json`), Stats and Graveyard (every Pokemon lost this season, from `pk.graveyard`) tabs (`#rules`, `#play`, `#purered`, `#team`, `#stats`, `#graveyard`). Sprites, trainer pictures and the Route 3 screen live beside it. |
 | `contact/index.html` | Contact: Twitch, YouTube, Discord, Instagram and email, one card each in the platform's color. Static, no script. |
 | `themes/index.html` | Every stream theme, drawn in its own colors. |
 | `data/index.html` | Open data: every downloadable file in one list. |
