@@ -27,7 +27,7 @@ Each section is its own page in its own folder. The home page lists them, groupe
 | `home-stats.js` | The home page's headline numbers and fun facts, from `stats/stats.json`. |
 | `data.js` | Renders the open data list from `sc2/index.json`. |
 | `commands.json` | Source of truth for the command list. Shape: `{ "commands": [ { "title": "!cmd", "response": "...", "type": "text", "interval": false }, ... ] }`. |
-| `themes.json` | Every theme and its colors. |
+| `themes.json` | Every theme and its colors. Copied nightly from the Overlay box's `data/themes.json` by `scripts/export-sc2.sh`, so a theme saved on stream shows here the next morning; don't edit it by hand, the next export overwrites it. |
 | `sc2/` | Every SC2 game as CSV and JSON (`all.*`, one `games-YYYY-MM.*` pair per month, `index.json`). Rebuilt and pushed nightly by `scripts/export-sc2.sh` on the Overlay box; don't edit the data files by hand. `sc2/index.html` is the page and is safe to edit. |
 | `og/mark.png` | The small square image link apps show beside a link to the site. See [Link previews](#link-previews). |
 | `stats/stats.json` | The summarized stats behind the Stats page and the home page facts. Rebuilt and pushed nightly by `scripts/export-stats.js` (run from `export-sc2.sh`) on the Overlay box; don't edit it by hand. |
@@ -59,7 +59,7 @@ The rules are baked into `timeout/index.html` (the static "Rules" card) and `app
 Current constants mirror collector.js:
 ```
 secondsPer100Bits:        120     // 100 bits = 2 min
-maxSessionSecondsPerUser: 600     // 10 min per-target cap
+maxSessionSecondsPerUser: 1800    // 30 min per-target cap
 minBitsPerTimeout:        100     // floor per target
 PAID_TIMEOUT_MAX_TARGETS: 3
 ```
