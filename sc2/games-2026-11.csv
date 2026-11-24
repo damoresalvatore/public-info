@@ -1,4 +1,14 @@
 game_id,time_utc,hero_name,hero_race,hero_mmr,region,account,villain_name,villain_race,villain_mmr,map,duration_sec,outcome,off_race,hero_mmr_after,grade,grade_score,sq,supply_block_sec,avg_supply_cushion,workers_built,army_efficiency,spending_ratio,income_vs_opponent,avg_unspent,race_mechanic_rate
 7913,2026-11-08T20:22:02Z,UpATree,Terran,,NA,UpATree EU,A.I. 1 (Easy),Protoss,,Rainfall LE,531,L,0,,A-,79.5,257.5,80,11.4,56,3.19,0.2494,200,493.7,1.36
 7914,2026-11-08T20:33:08Z,UpATree,Terran,4436,EU,UpATree EU,Hupsaiya,Protoss,4809,Rainfall LE,537,W,0,4466,C+,50.6,147.8,90,8.1,48,2.1,0.3151,91.2,478.1,0.78
-7915,2026-11-08T21:19:50Z,UpATree,Terran,,EU,UpATree EU,A.I. 1 (Easy),Terran,,Rainfall LE,477,W,0,,B+,75,233.4,60,16.6,56,1.69,0.2292,174.1,425.7,1.13
+7915,2026-11-08T21:19:50Z,UpATree,Terran,,EU,UpATree EU,A.I. 1 (Easy),Terran,,Rainfall LE,477,W,0,4470,B+,75,233.4,60,16.6,56,1.69,0.2292,174.1,425.7,1.13
+7916,2026-11-23T17:44:31Z,UpATree,Terran,4470,EU,UpATree EU,Isten,Terran,4665,At Eternity's Edge LE,1383,W,0,4497,C,44.7,367.9,70,20.1,101,0.99,0.2476,106.6,512.4,0.39
+7917,2026-11-23T17:55:54Z,UpATree,Terran,4497,EU,UpATree EU,Vaeda,Zerg,4624,At Eternity's Edge LE,610,L,0,4479,C,44.7,298.6,140,12.8,77,1.16,0.2472,91.2,534.6,0.69
+7918,2026-11-23T18:11:10Z,UpATree,Terran,4479,EU,UpATree EU,NightSniper,Protoss,4796,At Eternity's Edge LE,533,W,0,4510,B-,57.7,211.3,50,12.3,48,1.79,0.3199,92.9,579,0.9
+7919,2026-11-23T18:33:31Z,UpATree,Terran,4510,EU,UpATree EU,JCIPOWER,Terran,4474,At Eternity's Edge LE,739,L,0,4488,C,40.1,328.8,120,14.6,70,0.59,0.2064,90.5,449.9,0.81
+7920,2026-11-23T18:42:44Z,UpATree,Terran,4488,EU,UpATree EU,maxricky,Protoss,4239,Rorschach LE,475,W,0,4503,B+,72.2,213.4,40,12.9,53,1.69,0.2581,95.8,460.9,0.88
+7921,2026-11-23T18:55:07Z,UpATree,Terran,4503,EU,UpATree EU,Artanior,Protoss,4271,Washout LE,592,L,0,4475,C+,46,242.4,80,23.3,59,0.78,0.2456,85.7,468.8,0.61
+7922,2026-11-23T18:59:13Z,UpATree,Terran,4475,EU,UpATree EU,KerchBridge,Terran,4382,Lockdown LE,139,W,0,4494,C,41.6,18,20,4.8,20,0,0.195,97.5,159,0.43
+7923,2026-11-23T19:20:07Z,UpATree,Terran,4494,EU,UpATree EU,Risk,Protoss,4317,Rainfall LE,530,W,0,4510,B-,56.6,171.1,80,13.1,49,1.68,0.2142,91.8,334.6,0.91
+7924,2026-11-23T19:34:28Z,UpATree,Terran,4510,EU,UpATree EU,VasterMasya,Protoss,4316,Washout LE,548,W,0,4526,A-,76.9,272.3,40,14.3,60,1.67,0.219,102.7,443.5,0.88
+7925,2026-11-23T19:46:03Z,UpATree,Terran,4526,EU,UpATree EU,titan,Terran,4613,At Eternity's Edge LE,543,W,0,4549,C+,47.6,209.1,60,12.7,65,1.08,0.2924,128.7,522.1,0.66
